@@ -2,4 +2,140 @@
 
 header
 
-    display: block
+    position: relative
+    z-index: 3
+    display: flex
+
+    width: 100%
+    margin-bottom: $globalSpace
+
+    // Responsive
+
+    +screen($xs)
+
+        flex-direction: column
+
+        margin-bottom: $globalSpace / 2
+
+    // Children
+
+    span
+
+        flex: 1
+        display: flex
+        flex-wrap: no-wrap
+        justify-content: center
+        align-items: center
+
+        // Pseudo
+
+        &:first-child
+
+            // Children
+
+            a
+
+                margin-right: auto
+
+        &:nth-child(2)
+
+            // Responsive
+
+            +screen($xs)
+
+                order: -1
+
+        &:last-child
+
+            // Children
+
+            a
+
+                margin-left: auto
+
+        // Children
+
+        a
+
+            // Classes
+
+            &.btn
+
+                padding: 12px 20px
+
+                color: $dark
+
+                // Responsive
+
+                +screen($xs)
+
+                    margin: 10px 0
+
+            &.latestEpisode
+
+                background-color: $primary
+
+                // States
+
+                &:hover
+
+                    background-color: $secondary
+
+            &.aboutUs
+
+                background-color: $secondary
+
+                // States
+
+                &:hover
+
+                    background-color: $primary
+
+            &.logoWrap
+
+                width: 240px
+
+                // Children
+
+                svg
+
+                    width: 100%
+
+                    // Children
+
+                    .chosen, .wines
+
+                        stroke-width: .03
+
+                    .chosen
+
+                        &.-c, &.-o, &.-e
+
+                            fill: $primary
+                            stroke: $primary
+
+                            +animation(logoP, 1s, linear, infinite)
+
+                        &.-h, &.-s, &.-n
+
+                            fill: $secondary
+                            stroke: $secondary
+
+
+                            +animation(logoS, 1s, linear, infinite)
+
+                    .wines
+
+                        &.-w, &.-n, &.-s
+
+                            fill: $secondary
+                            stroke: $secondary
+
+                            +animation(logoS, 1s, linear, infinite)
+
+                        &.-i, &.-e
+
+                            fill: $primary
+                            stroke: $secondary
+
+                            +animation(logoP, 1s, linear, infinite)

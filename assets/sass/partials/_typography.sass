@@ -2,17 +2,49 @@
 
 h1, h2, h3
 
-    display: block
+    display: inline-block
 
 h1
 
-    margin: 10px 0
+    display: block
+
+    margin: 0
+    margin-bottom: $globalSpace / 2
+    padding-bottom: 10px
 
     font-family: $fontHead
     font-size: $h1
     font-weight: 700
 
-    color: $primary
+    text-align: center
+
+    border-bottom: 10px solid $dark
+
+    // Classes
+
+    &.sparkling
+
+        border-bottom-color: $sparkling
+
+    &.white
+
+        border-bottom-color: $white
+
+    &.red
+
+        border-bottom-color: $red
+
+    &.rose
+
+        border-bottom-color: $rose
+
+    &.orange
+
+        border-bottom-color: $orange
+
+    &.sweet
+
+        border-bottom-color: $sweet
 
 h2
 
@@ -26,7 +58,40 @@ h3
 
 a
 
+    text-decoration: none
+    text-transform: uppercase
+
+    color: $link
+
+    cursor: pointer
+
+    // States
+
+    &:hover
+
+        color: $primary
+
+    // Classes
+
+    &.backLink
+
+        display: block
+
+        margin-bottom: $globalSpace / 4
+
 p
+
+    font-size: $fontBase * 2
+
+    // Children
+
+    a
+
+        display: inline-block
+        margin: 0
+
+        font-weight: 400
+        text-transform: none
 
 ul
 

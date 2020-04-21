@@ -2,6 +2,12 @@
 
 main
 
+    position: relative
     display: block
+    z-index: 1
+
+    @extend %maxWidth
+    @extend %center
+    @extend %padding
 
 @import 'layout/header', 'layout/nav', 'layout/footer', 'layout/section'
