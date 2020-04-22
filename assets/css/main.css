@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -39,31 +40,46 @@ input, textarea, select {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
-main, section.about .inner {
+main, header, footer {
   padding: 100px 100px; }
   @media screen and (max-width: 1024px) {
-    main, section.about .inner {
+    main, header, footer {
       padding: 80px 80px; } }
   @media screen and (max-width: 800px) {
-    main, section.about .inner {
+    main, header, footer {
       padding: 60px 60px; } }
   @media screen and (max-width: 640px) {
-    main, section.about .inner {
+    main, header, footer {
       padding: 40px 40px; } }
   @media screen and (max-width: 480px) {
-    main, section.about .inner {
+    main, header, footer {
       padding: 20px 20px; } }
 
-main, section.about .inner {
+main, header, footer {
   width: 1600px;
   max-width: 1600px; }
   @media screen and (max-width: 1600px) {
-    main, section.about .inner {
+    main, header, footer {
       width: 100%; } }
 
-main, section.about .inner {
+main, header, footer {
   margin-left: auto;
   margin-right: auto; }
+
+section.post .btn:before, section.post .details .rating {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga'; }
 
 @media screen and (max-width: 1600px) {
   .hideXL {
@@ -95,6 +111,74 @@ body {
   line-height: 1.3;
   background-color: white;
   color: black; }
+  body.about {
+    background-color: #FF7E79; }
+    body.about .logoWrap svg .chosen.-c, body.about .logoWrap svg .chosen.-o, body.about .logoWrap svg .chosen.-e {
+      fill: white;
+      stroke: white;
+      -webkit-animation-name: logoL;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-delay: 0s;
+      -webkit-animation-fill-mode: none;
+      animation-name: logoL;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 0s;
+      animation-fill-mode: none; }
+    body.about .logoWrap svg .chosen.-h, body.about .logoWrap svg .chosen.-s, body.about .logoWrap svg .chosen.-n {
+      fill: #FFE700;
+      stroke: #FFE700;
+      -webkit-animation-name: logoT;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-delay: 0s;
+      -webkit-animation-fill-mode: none;
+      animation-name: logoT;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 0s;
+      animation-fill-mode: none; }
+    body.about .logoWrap svg .wines.-w, body.about .logoWrap svg .wines.-n, body.about .logoWrap svg .wines.-s {
+      fill: #FFE700;
+      stroke: #FFE700;
+      -webkit-animation-name: logoL;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-delay: 0s;
+      -webkit-animation-fill-mode: none;
+      animation-name: logoL;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 0s;
+      animation-fill-mode: none; }
+    body.about .logoWrap svg .wines.-i, body.about .logoWrap svg .wines.-e {
+      fill: white;
+      stroke: white;
+      -webkit-animation-name: logoT;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-delay: 0s;
+      -webkit-animation-fill-mode: none;
+      animation-name: logoT;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 0s;
+      animation-fill-mode: none; }
+    body.about .latestEpisode {
+      background-color: white;
+      color: black; }
+    body.about .aboutUs {
+      background-color: #FFE700 !important;
+      color: black; }
 
 main {
   position: relative;
@@ -102,11 +186,10 @@ main {
   z-index: 1; }
 
 header {
-  position: relative;
-  z-index: 3;
   display: flex;
-  width: 100%;
-  margin-bottom: 100px; }
+  position: relative;
+  z-index: 20;
+  padding-bottom: 0; }
   @media screen and (max-width: 640px) {
     header {
       flex-direction: column;
@@ -125,7 +208,7 @@ header {
     header span:last-child a {
       margin-left: auto; }
     header span a.btn {
-      padding: 12px 20px;
+      padding: 16px 26px;
       color: black; }
       @media screen and (max-width: 640px) {
         header span a.btn {
@@ -145,7 +228,7 @@ header {
         header span a.logoWrap svg .chosen, header span a.logoWrap svg .wines {
           stroke-width: .03; }
         header span a.logoWrap svg .chosen.-c, header span a.logoWrap svg .chosen.-o, header span a.logoWrap svg .chosen.-e {
-          fill: #FF7E79;
+          fill: #FFE700;
           stroke: #FF7E79;
           -webkit-animation-name: logoP;
           -webkit-animation-duration: 1s;
@@ -210,6 +293,28 @@ nav {
 
 footer {
   display: block; }
+  footer ul {
+    width: 100%;
+    padding-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    border-top: 2px solid #e6e6e6;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 25px; }
+    @media screen and (max-width: 1024px) {
+      footer ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 25px; } }
+    @media screen and (max-width: 640px) {
+      footer ul {
+        flex-direction: column; } }
+    @media screen and (max-width: 800px) {
+      footer ul li:nth-child(1), footer ul li:nth-child(5) {
+        order: 5; } }
+    footer ul li a {
+      text-transform: none; }
 
 section {
   position: relative;
@@ -287,15 +392,8 @@ section {
         width: 100%;
         height: 100%; }
   section.about {
-    position: fixed;
-    z-index: 10;
-    display: none;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #FF7E79;
-    color: black; }
+    position: relative;
+    z-index: 10; }
     section.about a.closeAboutUs {
       display: block;
       margin-bottom: 25px;
@@ -304,26 +402,117 @@ section {
       margin: 25px 0; }
       section.about p a {
         color: white; }
+  section.post .btn {
+    position: relative;
+    display: block;
+    margin-bottom: 25px;
+    padding: 25px 0;
+    width: 100%;
+    background-color: #7A81FF;
+    color: white;
+    text-align: center;
+    font-size: 26.4px; }
+    @media screen and (max-width: 1024px) {
+      section.post .btn {
+        padding: 18px 0;
+        font-size: 22px; } }
+    section.post .btn:before {
+      content: 'videocam';
+      position: absolute;
+      top: 20px;
+      left: 10%;
+      font-size: 44px; }
+      @media screen and (max-width: 1024px) {
+        section.post .btn:before {
+          left: 5%;
+          font-size: 26.4px; } }
+  section.post .vid {
+    position: relative;
+    display: none;
+    margin-bottom: 50px;
+    padding-bottom: 56.25%;
+    height: 0;
+    max-width: 100%;
+    overflow: hidden; }
+    section.post .vid iframe, section.post .vid object, section.post .vid embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
   section.post .review {
     display: grid;
     grid-template-columns: 62% 34%;
     grid-gap: 4%; }
-    section.post .review .img {
+    @media screen and (max-width: 1024px) {
+      section.post .review {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 25px; } }
+    @media screen and (max-width: 1024px) {
+      section.post .review .col {
+        order: -1; } }
+    section.post .review img {
       width: 100%;
-      height: 100%;
       background-color: #FF7E79; }
   section.post .details {
     margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 50px; }
-    section.post .details h2 {
+    @media screen and (max-width: 1440px) {
+      section.post .details {
+        grid-gap: 25px; } }
+    @media screen and (max-width: 1024px) {
+      section.post .details {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px; } }
+    @media screen and (max-width: 640px) {
+      section.post .details {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 25px; } }
+    section.post .details h3 {
       display: block;
       width: 100%;
       margin-bottom: 25px;
       padding-bottom: 10px;
       border-bottom: 3px solid #FF7E79;
       color: #FF7E79; }
+    section.post .details .rating {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 50px;
+      font-size: 39.6px;
+      line-height: 1;
+      letter-spacing: -6px;
+      color: black; }
+      section.post .details .rating:before {
+        width: 100%; }
+      section.post .details .rating.-half:after {
+        content: 'star_half star_border star_border star_border star_border'; }
+      section.post .details .rating.-one:after {
+        content: 'star star_border star_border star_border star_border'; }
+      section.post .details .rating.-onehalf:after {
+        content: 'star star_half star_border star_border star_border'; }
+      section.post .details .rating.-two:after {
+        content: 'star star star_border star_border star_border'; }
+      section.post .details .rating.-twohalf:after {
+        content: 'star star star_half star_border star_border'; }
+      section.post .details .rating.-three:after {
+        content: 'star star star star_border star_border'; }
+      section.post .details .rating.-threehalf:after {
+        content: 'star star star star_half star_border'; }
+      section.post .details .rating.-four:after {
+        content: 'star star star star star_border'; }
+      section.post .details .rating.-fourhalf:after {
+        content: 'star star star star star_half'; }
+      section.post .details .rating.-five:after {
+        content: 'star star star star star'; }
 
 h1, h2, h3 {
   display: inline-block; }
@@ -338,6 +527,15 @@ h1 {
   font-weight: 700;
   text-align: center;
   border-bottom: 10px solid black; }
+  @media screen and (max-width: 1024px) {
+    h1 {
+      font-size: 62px; } }
+  @media screen and (max-width: 800px) {
+    h1 {
+      font-size: 52px; } }
+  @media screen and (max-width: 640px) {
+    h1 {
+      font-size: 32px; } }
   h1.sparkling {
     border-bottom-color: #F0E68C; }
   h1.white {
@@ -352,10 +550,18 @@ h1 {
     border-bottom-color: #BA55D3; }
 
 h2 {
-  font-size: 34px; }
+  font-size: 34px;
+  font-weight: 600; }
+  @media screen and (max-width: 1024px) {
+    h2 {
+      font-size: 24px; } }
 
 h3 {
-  font-size: 30px; }
+  font-size: 30px;
+  font-weight: 600; }
+  @media screen and (max-width: 1024px) {
+    h3 {
+      font-size: 20px; } }
 
 a {
   text-decoration: none;
@@ -370,6 +576,15 @@ a {
 
 p {
   font-size: 44px; }
+  @media screen and (max-width: 1024px) {
+    p {
+      font-size: 39.6px; } }
+  @media screen and (max-width: 800px) {
+    p {
+      font-size: 30.8px; } }
+  @media screen and (max-width: 640px) {
+    p {
+      font-size: 22px; } }
   p a {
     display: inline-block;
     margin: 0;
@@ -431,6 +646,62 @@ p {
   100% {
     fill: #FF7E79;
     stroke: #FF7E79; } }
+
+@keyframes logoL {
+  0% {
+    fill: white;
+    stroke: white; }
+  49% {
+    fill: white;
+    stroke: white; }
+  50% {
+    fill: #FFE700;
+    stroke: #FFE700; }
+  100% {
+    fill: #FFE700;
+    stroke: #FFE700; } }
+
+@-webkit-keyframes logoL {
+  0% {
+    fill: white;
+    stroke: white; }
+  49% {
+    fill: white;
+    stroke: white; }
+  50% {
+    fill: #FFE700;
+    stroke: #FFE700; }
+  100% {
+    fill: #FFE700;
+    stroke: #FFE700; } }
+
+@keyframes logoT {
+  0% {
+    fill: #FFE700;
+    stroke: #FFE700; }
+  49% {
+    fill: #FFE700;
+    stroke: #FFE700; }
+  50% {
+    fill: white;
+    stroke: white; }
+  100% {
+    fill: white;
+    stroke: white; } }
+
+@-webkit-keyframes logoT {
+  0% {
+    fill: #FFE700;
+    stroke: #FFE700; }
+  49% {
+    fill: #FFE700;
+    stroke: #FFE700; }
+  50% {
+    fill: white;
+    stroke: white; }
+  100% {
+    fill: white;
+    stroke: white; } }
 
 form {
   display: block; }

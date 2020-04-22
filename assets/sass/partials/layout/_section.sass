@@ -153,27 +153,10 @@ section
 
     &.about
 
-        position: fixed
+        position: relative
         z-index: 10
 
-        display: none
-
-        top: 0
-        left: 0
-
-        width: 100vw
-        height: 100vh
-
-        background-color: $primary
-        color: $dark
-
         // Children
-
-        .inner
-
-            @extend %maxWidth
-            @extend %center
-            @extend %padding
 
         a.closeAboutUs
 
@@ -195,16 +178,99 @@ section
 
         // Children
 
+        .btn
+
+            position: relative
+            display: block
+
+            margin-bottom: 25px
+            padding: 25px 0
+
+            width: 100%
+
+            background-color: $secondary
+            color: $light
+
+            text-align: center
+            font-size: $fontBase * 1.2
+
+            // Responsive
+
+            +screen($md)
+
+                padding: 18px 0
+
+                font-size: $fontBase
+
+            // Pseudo
+
+            &:before
+
+                content: 'videocam'
+
+                position: absolute
+                top: 20px
+                left: 10%
+
+                font-size: $fontBase * 2
+
+                @extend %icon
+
+                // Responsive
+
+                +screen($md)
+
+                    left: 5%
+
+                    font-size: $fontBase * 1.2
+
+
+        .vid
+
+            position: relative
+            display: none
+
+            margin-bottom: $globalSpace / 2
+            padding-bottom: 56.25%
+
+            height: 0
+            max-width: 100%
+
+            overflow: hidden
+
+            // Children
+
+            iframe, object, embed
+
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+
         .review
 
             display: grid
             grid-template-columns: 62% 34%
             grid-gap: 4%
 
-            .img
+            // Responsive
+
+            +screen($md)
+
+                +grid(1, 1fr, $globalSpace / 4)
+
+            // Children
+
+            .col
+
+                +screen($md)
+
+                    order: -1
+
+            img
 
                 width: 100%
-                height: 100%
 
                 background-color: $primary
 
@@ -214,9 +280,27 @@ section
 
             +grid(4, 1fr, $globalSpace / 2)
 
+            // Responsive
+
+            +screen($lg)
+
+                grid-gap: $globalSpace / 4
+
+            +screen($md)
+
+                margin-top: $globalSpace / 2
+
+                +grid(2, 1fr, $globalSpace / 2)
+
+            +screen($xs)
+
+                margin-top: $globalSpace / 4
+
+                +grid(1, 1fr, $globalSpace / 4)
+
             // Children
 
-            h2
+            h3
 
                 display: block
 
@@ -228,3 +312,68 @@ section
                 border-bottom: 3px solid $primary
 
                 color: $primary
+
+            .rating
+
+                position: relative
+                display: block
+
+                width: 100%
+                height: 50px
+
+                font-size: $fontBase * 1.8
+                line-height: 1
+
+                letter-spacing: -6px
+
+                color: $dark
+
+                @extend %icon
+
+                // Pseudo
+
+                &:before
+
+                    width: 100%
+
+                // Classes
+
+                &.-half:after
+
+                    content: 'star_half star_border star_border star_border star_border'
+
+                &.-one:after
+
+                    content: 'star star_border star_border star_border star_border'
+
+                &.-onehalf:after
+
+                    content: 'star star_half star_border star_border star_border'
+
+                &.-two:after
+
+                    content: 'star star star_border star_border star_border'
+
+                &.-twohalf:after
+
+                    content: 'star star star_half star_border star_border'
+
+                &.-three:after
+
+                    content: 'star star star star_border star_border'
+
+                &.-threehalf:after
+
+                    content: 'star star star star_half star_border'
+
+                &.-four:after
+
+                    content: 'star star star star star_border'
+
+                &.-fourhalf:after
+
+                    content: 'star star star star star_half'
+
+                &.-five:after
+
+                    content: 'star star star star star'

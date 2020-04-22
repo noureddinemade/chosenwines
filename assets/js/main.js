@@ -1,23 +1,12 @@
 //
 
-const aboutOverlay      = document.querySelector('section.about');
-const aboutOpen         = document.querySelector('a.aboutUs');
-const aboutClose        = document.querySelector('a.closeAboutUs');
+const watchEpisode       = document.querySelector('.btn.watchEpisode');
+const watchCont          = document.querySelector('.vid');
 
 //
 
-// Toggle about us section
+watchEpisode.addEventListener('click', () => {
 
-aboutOpen.addEventListener('click', () => {
-
-    aboutOverlay.style.display = 'block';
+    watchCont.style.display = 'block';
 
 });
-
-aboutClose.addEventListener('click', () => {
-
-    aboutOverlay.style.display = 'none';
-
-});
-
-//

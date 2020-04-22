@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>Chosen Wines - {{ post.title }}</title>
+    <title>Chosen Wines: {{ page.title }}</title>
     <meta name="description" content="">
     <meta property="og:title" content="">
     <meta property="og:description" content="">
@@ -24,17 +24,86 @@
 </head>
 <body>
 
-    {% include about.html %}
+    {% include header.html %}
 
     <main>
 
-        {% include header.html %}
+        <section class="post">
 
-        {{ content }}
+            <h1 class="{{ page.type | downcase }}">{{ page.title }}</h1>
 
-        {% include footer.html %}
+            <div class="vid">
+                <iframe src='https://www.youtube.com/embed/{{ page.video }}' frameborder='0' allowfullscreen></iframe>
+            </div>
+
+            <div class="review">
+
+                {{ content }}
+
+                <div class="col">
+
+                    <a class="btn watchEpisode">Watch Episode</a>
+
+                    <img src="/assets/img/blank.png" alt="">
+
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <div class="item">
+
+                    <h3>Wine details</h3>
+
+                    <ul>
+                        <li>{{ page.type }}</li>
+                        <li>{{ page.vintage }}</li>
+                        <li>{{ page.grape }}</li>
+                        <li>{{ page.abv }}</li>
+                        <li>{{ page.region }}</li>
+                    </ul>
+
+                </div>
+
+                <div class="item">
+
+                    <h3>Our rating</h3>
+                    <span class="rating -{{ page.rating }}"></span>
+
+                </div>
+
+                <div class="item">
+
+                    <h3>Food pairings</h3>
+
+                    <ul>
+                        {% for pairing in page.pairings %}
+                        <li>{{ pairing }}</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+
+                <div class="item">
+
+                    <h3>Character</h3>
+
+                    <ul>
+                        {% for tag in page.tags %}
+                        <li>{{ tag }}</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
+
+    {% include footer.html %}
 
     <script src="/assets/js/main.js"></script>
 

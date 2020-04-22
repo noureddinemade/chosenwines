@@ -3,56 +3,18 @@ title: Chosen Wines - The blog!
 desc:
 ---
 
-{% link _posts/2020-04-21-m-de-ligny-le-rose-brut.html %}
-
 <section class="blog">
 
-    <a class="item" data-type="sparkling">
+    {% for post in site.posts %}
 
-        <!-- <img src="" alt=""> -->
+    <a href="{{ post.url }}" class="item" data-type="{{ post.type | downcase }}">
+
+        <!-- <img src="{{ post.img }}" alt="{{ post.title }}"> -->
         <div class="img"></div>
-        <h2>M. De Ligny Le Rose Brut</h2>
+        <h2>{{ post.title }}</h2>
 
     </a>
 
-    <a class="item" data-type="white">
-
-        <!-- <img src="" alt=""> -->
-        <div class="img"></div>
-        <h2>Cirelli Trebbiano D&rsquo;Abruzzo</h2>
-
-    </a>
-
-    <a class="item" data-type="rose">
-
-        <!-- <img src="" alt=""> -->
-        <div class="img"></div>
-        <h2>La Ruchette Doree</h2>
-
-    </a>
-
-    <a class="item" data-type="red">
-
-        <!-- <img src="" alt=""> -->
-        <div class="img"></div>
-        <h2>Ravensworth Wines Tinto</h2>
-
-    </a>
-
-    <a class="item" data-type="sweet">
-
-        <!-- <img src="" alt=""> -->
-        <div class="img"></div>
-        <h2>L&rsquo;amour Late Harvest</h2>
-
-    </a>
-
-    <a class="item" data-type="orange">
-
-        <!-- <img src="" alt=""> -->
-        <div class="img"></div>
-        <h2>Orange Frankly This Wine Was Made By Bob</h2>
-
-    </a>
+    {% endfor %}
 
 </section>

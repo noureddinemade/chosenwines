@@ -10,3 +10,55 @@ body
 
     background-color: $bg
     color: $text
+
+    &.about
+
+        background-color: $primary
+
+        // Children
+
+        .logoWrap svg .chosen
+
+            // Classes
+
+            &.-c, &.-o, &.-e
+
+                fill: $light
+                stroke: $light
+
+                +animation(logoL, 1s, linear, infinite)
+
+            &.-h, &.-s, &.-n
+
+                fill: $tertiary
+                stroke: $tertiary
+
+                +animation(logoT, 1s, linear, infinite)
+
+        .logoWrap svg .wines
+
+            // Classes
+
+            &.-w, &.-n, &.-s
+
+                fill: $tertiary
+                stroke: $tertiary
+
+                +animation(logoL, 1s, linear, infinite)
+
+            &.-i, &.-e
+
+                fill: $light
+                stroke: $light
+
+                +animation(logoT, 1s, linear, infinite)
+
+        .latestEpisode
+
+            background-color: $light
+            color: $dark
+
+        .aboutUs
+
+            background-color: $tertiary !important
+            color: $dark

@@ -22,19 +22,17 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 
 </head>
-<body>
+<body {% if page.permalink == "/about/" %} class="about" {% endif %}>
 
-    {% include about.html %}
+    {% include header.html %}
 
     <main>
 
-        {% include header.html %}
-
         {{ content }}
 
-        {% include footer.html %}
-
     </main>
+
+    {% include footer.html %}
 
     <script src="/assets/js/main.js"></script>
 
