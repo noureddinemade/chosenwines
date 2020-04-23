@@ -1,1 +1,19 @@
 // Colours
+
+@each $label, $colour in $wineList
+
+    .-b-#{$label}
+
+        border-color: $colour !important
+
+        // Pseudo
+
+        &:before
+
+            background-image: linear-gradient(145deg, transparent, $colour)
+
+        // Children
+
+        h2
+
+            background-color: $colour

@@ -7,11 +7,17 @@ desc:
 
     {% for post in site.posts %}
 
-    <a href="{{ post.url }}" class="item" data-type="{{ post.type | downcase }}">
+    <a href="{{ post.url }}" class="item -b-{{ post.type | downcase }}">
 
-        <!-- <img src="{{ post.img }}" alt="{{ post.title }}"> -->
-        <div class="img"></div>
-        <h2>{{ post.title }}</h2>
+        <div class="rating -{{ post.rating }}"></div>
+
+        <img src="/assets/img/wines/{{ post.title | replace: " ", "-" | remove: "." | remove: "," | downcase }}.png" alt="{{ post.title }}">
+
+        <span>
+
+            <h2 data-type="{{ post.type | downcase }}">{{ post.title }}</h2>
+
+        </span>
 
     </a>
 

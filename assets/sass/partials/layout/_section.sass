@@ -27,15 +27,15 @@ section
 
             position: relative
 
-            height: 300px
-
-            padding: $globalSpace / 2
+            height: auto
 
             color: $text
             font-weight: 400
             text-transform: none
 
-            border: 10px solid
+            border-bottom: 20px solid transparent
+
+            overflow: hidden
 
             // States
 
@@ -43,63 +43,9 @@ section
 
                 // Children
 
-                h2, &:after
+                &:before
 
                     opacity: 1
-
-                &:before
-
-                    opacity: .3
-
-            // Wines
-
-            &[data-type="sparkling"]
-
-                border-color: $sparkling
-
-                &:before
-
-                    background-color: $sparkling
-
-            &[data-type="white"]
-
-                border-color: $white
-
-                &:before
-
-                    background-color: $white
-
-            &[data-type="red"]
-
-                border-color: $red
-
-                &:before
-
-                    background-color: $red
-
-            &[data-type="rose"]
-
-                border-color: $rose
-
-                &:before
-
-                    background-color: $rose
-
-            &[data-type="orange"]
-
-                border-color: $orange
-
-                &:before
-
-                    background-color: $orange
-
-            &[data-type="sweet"]
-
-                border-color: $sweet
-
-                &:before
-
-                    background-color: $sweet
 
             // Pseudo
 
@@ -110,46 +56,74 @@ section
                 position: absolute
                 z-index: 2
 
-                top: 0
+                bottom: 0
                 left: 0
 
                 width: 100%
                 height: 100%
 
                 opacity: 0
-
-            &:after
-
-                content: attr(data-type)
-
-                position: relative
-                z-index: 3
-
-                opacity: 0
-
-                text-transform: uppercase
-                font-size: $fontBase - 8px
-                font-weight: 600
 
             // Children
 
-            h2
-
-                position: relative
-                z-index: 2
-
-                opacity: 0
-
-            div.img, img
+            .rating
 
                 position: absolute
+                z-index: 3
+
+                top: 20px
+                right: 20px
+
+                text-align: right
+
+                transform-origin: 100% 0%
+
+                +transform(scale, .8)
+
+            span
+
+                position: absolute
+                z-index: 3
+
+                bottom: 14%
+                left: 10%
+
+                width: 80%
+
+                // Children
+
+                h2
+
+                    position: relative
+                    display: inline
+
+                    line-height: 1.2
+
+                    // Psuedo
+
+                    &:after
+
+                        content: attr(data-type)
+
+                        position: absolute
+
+                        left: 0
+                        bottom: -30%
+
+                        text-transform: uppercase
+                        font-size: $fontBase - 8px
+                        font-weight: 600
+
+                        background-color: inherit
+
+            img
+
                 z-index: 1
 
-                top: 0
-                left: 0
-
                 width: 100%
-                height: 100%
+                height: auto
+
+                object-fit: contain
 
     &.about
 
@@ -313,67 +287,69 @@ section
 
                 color: $primary
 
-            .rating
+    // Children
 
-                position: relative
-                display: block
+    .rating
 
-                width: 100%
-                height: 50px
+        position: relative
+        display: block
 
-                font-size: $fontBase * 1.8
-                line-height: 1
+        width: 100%
+        height: 50px
 
-                letter-spacing: -6px
+        font-size: $fontBase * 1.8
+        line-height: 1
 
-                color: $dark
+        letter-spacing: -6px
 
-                @extend %icon
+        color: $dark
 
-                // Pseudo
+        @extend %icon
 
-                &:before
+        // Pseudo
 
-                    width: 100%
+        &:before
 
-                // Classes
+            width: 100%
 
-                &.-half:after
+        // Classes
 
-                    content: 'star_half star_border star_border star_border star_border'
+        &.-half:after
 
-                &.-one:after
+            content: 'star_half star_border star_border star_border star_border'
 
-                    content: 'star star_border star_border star_border star_border'
+        &.-one:after
 
-                &.-onehalf:after
+            content: 'star star_border star_border star_border star_border'
 
-                    content: 'star star_half star_border star_border star_border'
+        &.-onehalf:after
 
-                &.-two:after
+            content: 'star star_half star_border star_border star_border'
 
-                    content: 'star star star_border star_border star_border'
+        &.-two:after
 
-                &.-twohalf:after
+            content: 'star star star_border star_border star_border'
 
-                    content: 'star star star_half star_border star_border'
+        &.-twohalf:after
 
-                &.-three:after
+            content: 'star star star_half star_border star_border'
 
-                    content: 'star star star star_border star_border'
+        &.-three:after
 
-                &.-threehalf:after
+            content: 'star star star star_border star_border'
 
-                    content: 'star star star star_half star_border'
+        &.-threehalf:after
 
-                &.-four:after
+            content: 'star star star star_half star_border'
 
-                    content: 'star star star star star_border'
+        &.-four:after
 
-                &.-fourhalf:after
+            content: 'star star star star star_border'
 
-                    content: 'star star star star star_half'
+        &.-fourhalf:after
 
-                &.-five:after
+            content: 'star star star star star_half'
 
-                    content: 'star star star star star'
+        &.-five:after
+
+            content: 'star star star star star'
