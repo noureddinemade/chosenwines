@@ -2,9 +2,14 @@
 
 @each $label, $colour in $wineList
 
+    $g1: lighten($colour, 10%)
+    $g2: adjust-hue($g1, 20deg)
+
     .-b-#{$label}
 
-        border-color: $colour !important
+        // background-image: linear-gradient(167deg, $g1, $g1 50%, $g2 50%, $g2)
+
+        // border-color: $colour !important
 
         // Pseudo
 

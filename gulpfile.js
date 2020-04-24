@@ -98,7 +98,17 @@ function doImg(cb) {
     // Minify images and move to ready
 
     return src(imgSrc)
-        .pipe(imagemin())
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.mozjpeg({quality: 75, progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {removeViewBox: true},
+                    {cleanupIDs: false}
+                ]
+            })
+        ]))
         .pipe(dest(imgDest))
         .pipe(browserSync.stream());
 
@@ -194,4 +204,5 @@ exports.default = function() {
 
 }
 
-exports.deploy = doDeploy
+exports.deploy  = doDeploy;
+exports.image   = doImg;

@@ -322,14 +322,14 @@ section {
   width: 100%; }
   section.blog {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 100px; }
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px; }
     @media screen and (max-width: 480px) {
       section.blog {
         grid-template-columns: 100%; } }
     section.blog a.item {
       position: relative;
-      height: auto;
+      height: 300px;
       color: black;
       font-weight: 400;
       text-transform: none;
@@ -355,31 +355,37 @@ section {
         transform-origin: 100% 0%;
         -webkit-transform: scale(0.8);
         -ms-transform: scale(0.8);
-        transform: scale(0.8); }
+        transform: scale(0.8);
+        display: none; }
       section.blog a.item span {
         position: absolute;
         z-index: 3;
         bottom: 14%;
         left: 10%;
-        width: 80%; }
+        width: 80%;
+        display: none; }
         section.blog a.item span h2 {
           position: relative;
           display: inline;
           line-height: 1.2; }
           section.blog a.item span h2:after {
             content: attr(data-type);
-            position: absolute;
-            left: 0;
-            bottom: -30%;
+            display: block;
+            margin-top: 4px;
             text-transform: uppercase;
             font-size: 14px;
-            font-weight: 600;
-            background-color: inherit; }
+            font-weight: 600; }
       section.blog a.item img {
+        position: absolute;
         z-index: 1;
-        width: 100%;
-        height: auto;
-        object-fit: contain; }
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%); }
   section.about {
     position: relative;
     z-index: 10; }
@@ -503,47 +509,41 @@ section {
     section .rating.-five:after {
       content: 'star star star star star'; }
 
-.-b-sparkling {
-  border-color: #F0E68C !important; }
-  .-b-sparkling:before {
-    background-image: linear-gradient(145deg, transparent, #F0E68C); }
-  .-b-sparkling h2 {
-    background-color: #F0E68C; }
+.-b-sparkling:before {
+  background-image: linear-gradient(145deg, transparent, #F0E68C); }
 
-.-b-white {
-  border-color: #eeeeee !important; }
-  .-b-white:before {
-    background-image: linear-gradient(145deg, transparent, #eeeeee); }
-  .-b-white h2 {
-    background-color: #eeeeee; }
+.-b-sparkling h2 {
+  background-color: #F0E68C; }
 
-.-b-red {
-  border-color: #DC143C !important; }
-  .-b-red:before {
-    background-image: linear-gradient(145deg, transparent, #DC143C); }
-  .-b-red h2 {
-    background-color: #DC143C; }
+.-b-white:before {
+  background-image: linear-gradient(145deg, transparent, #eeeeee); }
 
-.-b-rose {
-  border-color: #FFC0CB !important; }
-  .-b-rose:before {
-    background-image: linear-gradient(145deg, transparent, #FFC0CB); }
-  .-b-rose h2 {
-    background-color: #FFC0CB; }
+.-b-white h2 {
+  background-color: #eeeeee; }
 
-.-b-orange {
-  border-color: #FFA07A !important; }
-  .-b-orange:before {
-    background-image: linear-gradient(145deg, transparent, #FFA07A); }
-  .-b-orange h2 {
-    background-color: #FFA07A; }
+.-b-red:before {
+  background-image: linear-gradient(145deg, transparent, #DC143C); }
 
-.-b-sweet {
-  border-color: #BA55D3 !important; }
-  .-b-sweet:before {
-    background-image: linear-gradient(145deg, transparent, #BA55D3); }
-  .-b-sweet h2 {
-    background-color: #BA55D3; }
+.-b-red h2 {
+  background-color: #DC143C; }
+
+.-b-rose:before {
+  background-image: linear-gradient(145deg, transparent, #FFC0CB); }
+
+.-b-rose h2 {
+  background-color: #FFC0CB; }
+
+.-b-orange:before {
+  background-image: linear-gradient(145deg, transparent, #FFA07A); }
+
+.-b-orange h2 {
+  background-color: #FFA07A; }
+
+.-b-sweet:before {
+  background-image: linear-gradient(145deg, transparent, #BA55D3); }
+
+.-b-sweet h2 {
+  background-color: #BA55D3; }
 
 h1, h2, h3 {
   display: inline-block; }

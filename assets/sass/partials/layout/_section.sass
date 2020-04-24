@@ -11,9 +11,7 @@ section
 
     &.blog
 
-        display: grid
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
-        grid-gap: $globalSpace
+        +grid(4,1fr,$globalSpace / 2)
 
         // Responsive
 
@@ -27,7 +25,7 @@ section
 
             position: relative
 
-            height: auto
+            height: 300px
 
             color: $text
             font-weight: 400
@@ -80,6 +78,8 @@ section
 
                 +transform(scale, .8)
 
+                display: none
+
             span
 
                 position: absolute
@@ -89,6 +89,8 @@ section
                 left: 10%
 
                 width: 80%
+
+                display: none
 
                 // Children
 
@@ -105,25 +107,28 @@ section
 
                         content: attr(data-type)
 
-                        position: absolute
+                        display: block
 
-                        left: 0
-                        bottom: -30%
+                        margin-top: 4px
 
                         text-transform: uppercase
                         font-size: $fontBase - 8px
                         font-weight: 600
 
-                        background-color: inherit
-
             img
 
+                position: absolute
                 z-index: 1
 
-                width: 100%
-                height: auto
+                top: 50%
+                left: 50%
+
+                width: 90%
+                height: 90%
 
                 object-fit: contain
+
+                +transform((translateX, translateY), (-50%, -50%))
 
     &.about
 
