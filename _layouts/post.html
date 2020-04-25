@@ -27,12 +27,13 @@
     <!-- Prepare image filename -->
 
     {% assign imgLink = page.title | remove: "." | remove: "," | remove: "'" | replace: "é", "e" | replace: " ", "-" %}
+    {% assign imgClass = page.type | replace: "é", "e" | downcase %}
 
     {% include header.html %}
 
     <main>
 
-        <section class="post -p-{{ page.type | downcase }}">
+        <section class="post -p-{{ imgClass }}">
 
             <div class="title">
 
@@ -50,13 +51,13 @@
 
             <div class="review">
 
-                <div class="col">
+                <div class="col -img">
 
                     <img srcset="/assets/img/wines/{{ imgLink }}@2x.png 2x, /assets/img/wines/{{ imgLink }}.png 1x" src="/assets/img/wines/{{ imgLink }}.png" alt="{{ page.title}}">
 
                 </div>
 
-                <div class="col">
+                <div class="col -text">
 
                     {{ content }}
 

@@ -327,7 +327,6 @@ section {
     section.blog a.item {
       position: relative;
       padding: 80px;
-      overflow: hidden;
       background-color: #eaebff; }
       @media screen and (max-width: 480px) {
         section.blog a.item {
@@ -365,9 +364,9 @@ section {
       section.blog a.item:hover:before {
         opacity: .2; }
       section.blog a.item:hover img {
-        -webkit-transform: translateY(-10px);
-        -ms-transform: translateY(-10px);
-        transform: translateY(-10px); }
+        -webkit-transform: translateY(-10px) scale(2.4) rotate(-16deg);
+        -ms-transform: translateY(-10px) scale(2.4) rotate(-16deg);
+        transform: translateY(-10px) scale(2.4) rotate(-16deg); }
       section.blog a.item .rating {
         position: absolute;
         z-index: 2;
@@ -381,10 +380,11 @@ section {
         transform: scale(0.6); }
       section.blog a.item img {
         position: relative;
-        z-index: 1;
+        z-index: 3;
         width: 100%;
         height: 100%;
         object-fit: contain;
+        pointer-events: none;
         transition-property: transform;
         transition-duration: 0.2s;
         transition-delay: 0s;
@@ -446,15 +446,26 @@ section {
   section.post .review {
     display: flex;
     width: 100%; }
-    section.post .review .col:first-child {
-      width: 30%; }
-    section.post .review .col:last-child {
-      width: 70%;
-      padding-left: 50px; }
-    section.post .review img {
-      padding: 80px;
-      width: 100%;
-      background-color: #fff599; }
+    section.post .review .col {
+      position: relative; }
+      section.post .review .col:first-child {
+        width: 30%; }
+      section.post .review .col:last-child {
+        width: 70%;
+        padding-left: 50px; }
+      section.post .review .col.-img {
+        padding: 80px;
+        background-size: 80% 80%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-image: repeating-radial-gradient(circle at 0% 0%, #fff166, #fff166 50px, #fff599, #fff599 50px 100px); }
+        section.post .review .col.-img img {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          -webkit-transform: scale(1.4);
+          -ms-transform: scale(1.4);
+          transform: scale(1.4); }
   section.post .details {
     width: 100%;
     margin-top: 100px;
@@ -561,18 +572,6 @@ h1 {
   @media screen and (max-width: 640px) {
     h1 {
       font-size: 32px; } }
-  h1.sparkling {
-    border-bottom-color: #FFFF00; }
-  h1.white {
-    border-bottom-color: #ffffff; }
-  h1.red {
-    border-bottom-color: #DC143C; }
-  h1.rose {
-    border-bottom-color: #FF69B4; }
-  h1.orange {
-    border-bottom-color: #FFA500; }
-  h1.sweet {
-    border-bottom-color: #BA55D3; }
 
 h2 {
   font-size: 34px;
