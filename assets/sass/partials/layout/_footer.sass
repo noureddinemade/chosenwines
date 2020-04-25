@@ -4,8 +4,9 @@ footer
 
     display: block
 
+    margin-top: $globalSpace
+
     @extend %maxWidth
-    @extend %padding
     @extend %center
 
     // Children
@@ -27,11 +28,7 @@ footer
 
         +screen($md)
 
-            +grid(4,1fr,$globalSpace / 4)
-
-        +screen($xs)
-
-            flex-direction: column
+            +grid(1,1fr,$globalSpace / 6)
 
         // Children
 
@@ -39,13 +36,27 @@ footer
 
             // Pseudo
 
-            &:nth-child(1), &:nth-child(5)
+            &:first-child, &:last-child
 
                 // Responsive
 
-                +screen($sm)
+                +screen($md)
+
+                    text-align: center !important
+
+            &:first-child
+
+                text-align: left
+
+                // Responsive
+
+                +screen($md)
 
                     order: 5
+
+            &:last-child
+
+                text-align: right
 
             // Children
 

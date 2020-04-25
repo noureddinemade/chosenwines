@@ -1,12 +1,12 @@
 ---
-title: "Drink the Sun"
+title: "True Colours"
 video: ""
-type: "Rosé"
+type: "Sweet"
 vintage: "2019"
 grape: "Mataro and Grenache"
 abv: "13% Alchohol"
 region: "Australia"
-rating: "five"
+rating: "fourhalf"
 pairings: []
 tags: []
 class: postSingle
