@@ -24,13 +24,25 @@
 </head>
 <body>
 
+    <!-- Prepare image filename -->
+
+    {% assign imgLink = page.title | remove: "." | remove: "," | remove: "'" | replace: "é", "e" | replace: " ", "-" %}
+
     {% include header.html %}
 
     <main>
 
-        <section class="post">
+        <section class="post -p-{{ page.type | downcase }}">
 
-            <h1 class="{{ page.type | downcase }}">{{ page.title }}</h1>
+            <div class="title">
+
+                <a href="/">Back to blog</a>
+
+                <h1>{{ page.title }}</h1>
+
+                <a class="watchEpisode">Watch Episode</a>
+
+            </div>
 
             <div class="vid">
                 <iframe src='https://www.youtube.com/embed/{{ page.video }}' frameborder='0' allowfullscreen></iframe>
@@ -38,13 +50,15 @@
 
             <div class="review">
 
-                {{ content }}
+                <div class="col">
+
+                    <img srcset="/assets/img/wines/{{ imgLink }}@2x.png 2x, /assets/img/wines/{{ imgLink }}.png 1x" src="/assets/img/wines/{{ imgLink }}.png" alt="{{ page.title}}">
+
+                </div>
 
                 <div class="col">
 
-                    <a class="btn watchEpisode">Watch Episode</a>
-
-                    <img src="/assets/img/blank.png" alt="">
+                    {{ content }}
 
                 </div>
 

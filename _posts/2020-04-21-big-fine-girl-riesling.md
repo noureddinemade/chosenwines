@@ -1,12 +1,13 @@
 ---
 title: "Big Fine Girl Riesling"
 video: ""
-type: "Riesling"
+type: "Orange"
 vintage: "2019"
 grape: "Mataro and Grenache"
 abv: "13% Alchohol"
 region: "Australia"
-rating: ""
+rating: "four"
 pairings: []
 tags: []
+class: postSingle
 ---

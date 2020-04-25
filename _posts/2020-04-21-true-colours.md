@@ -1,12 +1,13 @@
 ---
-title: "Big Fine Girl Riesling"
+title: "True Colours"
 video: ""
-type: "Riesling"
+type: "Sweet"
 vintage: "2019"
 grape: "Mataro and Grenache"
 abv: "13% Alchohol"
 region: "Australia"
-rating: ""
+rating: "fourhalf"
 pairings: []
 tags: []
+class: postSingle
 ---

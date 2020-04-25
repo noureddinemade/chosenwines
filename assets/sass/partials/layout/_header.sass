@@ -2,143 +2,89 @@
 
 header
 
-    display: flex
     position: relative
     z-index: 20
 
-    padding-bottom: 0
+    margin-bottom: $globalSpace
+
+    text-align: center
 
     @extend %maxWidth
     @extend %center
-    @extend %padding
 
     // Responsive
 
-    +screen($xs)
-
-        flex-direction: column
+    +screen($md)
 
         margin-bottom: $globalSpace / 2
 
+    +screen($xs)
+
+        margin-bottom: $globalSpace / 4
+
     // Children
 
-    span
+    a.logoWrap
 
-        flex: 1
-        display: flex
-        flex-wrap: no-wrap
-        justify-content: center
-        align-items: center
+        display: inline-block
+        position: relative
 
-        // Pseudo
+        width: 20%
 
-        &:first-child
+        // Responsive
 
-            // Children
+        +screen($md)
 
-            a
+            width: 50%
 
-                margin-right: auto
+        +screen($xs)
 
-        &:nth-child(2)
-
-            // Responsive
-
-            +screen($xs)
-
-                order: -1
-
-        &:last-child
-
-            // Children
-
-            a
-
-                margin-left: auto
+            width: 80%
 
         // Children
 
-        a
+        svg
 
-            // Classes
+            position: relative
 
-            &.btn
+            width: 100%
+            height: auto
 
-                padding: 16px 26px
+            // Children
 
-                color: $dark
+            .chosen, .wines
 
-                // Responsive
+                stroke-width: .03
 
-                +screen($xs)
+            .chosen
 
-                    margin: 10px 0
+                &.-c, &.-o, &.-e
 
-            &.latestEpisode
+                    fill: $tertiary
+                    stroke: $primary
 
-                background-color: $primary
+                    +animation(logoP, 1s, linear, infinite)
 
-                // States
+                &.-h, &.-s, &.-n
 
-                &:hover
-
-                    background-color: $secondary
-
-            &.aboutUs
-
-                background-color: $secondary
-
-                // States
-
-                &:hover
-
-                    background-color: $primary
-
-            &.logoWrap
-
-                width: 240px
-
-                // Children
-
-                svg
-
-                    width: 100%
-
-                    // Children
-
-                    .chosen, .wines
-
-                        stroke-width: .03
-
-                    .chosen
-
-                        &.-c, &.-o, &.-e
-
-                            fill: $tertiary
-                            stroke: $primary
-
-                            +animation(logoP, 1s, linear, infinite)
-
-                        &.-h, &.-s, &.-n
-
-                            fill: $secondary
-                            stroke: $secondary
+                    fill: $secondary
+                    stroke: $secondary
 
 
-                            +animation(logoS, 1s, linear, infinite)
+                    +animation(logoS, 1s, linear, infinite)
 
-                    .wines
+            .wines
 
-                        &.-w, &.-n, &.-s
+                &.-w, &.-n, &.-s
 
-                            fill: $secondary
-                            stroke: $secondary
+                    fill: $secondary
+                    stroke: $secondary
 
-                            +animation(logoS, 1s, linear, infinite)
+                    +animation(logoS, 1s, linear, infinite)
 
-                        &.-i, &.-e
+                &.-i, &.-e
 
-                            fill: $primary
-                            stroke: $secondary
+                    fill: $primary
+                    stroke: $secondary
 
-                            +animation(logoP, 1s, linear, infinite)
+                    +animation(logoP, 1s, linear, infinite)

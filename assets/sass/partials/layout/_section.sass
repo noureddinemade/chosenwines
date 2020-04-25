@@ -11,13 +11,15 @@ section
 
     &.blog
 
-        +grid(4,1fr,$globalSpace / 2)
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+        grid-gap: $globalSpace / 4
 
         // Responsive
 
-        +screen($xxs)
+        +screen($xs2)
 
-            grid-template-columns: 100%
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
 
         // Children
 
@@ -25,36 +27,65 @@ section
 
             position: relative
 
-            height: 300px
-
-            color: $text
-            font-weight: 400
-            text-transform: none
-
-            border-bottom: 20px solid transparent
+            padding: 80px
 
             overflow: hidden
 
-            // States
+            background-color: lighten($secondary, 22%)
 
-            &:hover
+            // Responsive
+
+            +screen($xs2)
+
+                padding: 50px
+
+            // Pseudo
+
+            &:first-child
+
+                $g1: lighten($tertiary, 22%)
+                $g2: lighten($tertiary, 32%)
+
+                background-image: repeating-radial-gradient(circle at 0 0, $g1, $g1 10%, $g2, $g2 10% 20%)
+
+                // Pseudo
+
+                &:after
+
+                    display: none
 
                 // Children
 
-                &:before
+                h2
+
+                    color: $secondary !important
 
                     opacity: 1
 
-            // Pseudo
+            &:nth-child(2n + 1)
+
+                background-color: lighten($primary, 22%)
+
+                // Pseudo
+
+                &:before
+
+                    border-color: $primary
+
+                // Children
+
+                h2
+
+                    color: $primary
 
             &:before
 
                 content: ''
 
                 position: absolute
-                z-index: 2
+                z-index: 0
 
-                bottom: 0
+                top: 0
                 left: 0
 
                 width: 100%
@@ -62,73 +93,99 @@ section
 
                 opacity: 0
 
+                border: 10px solid $secondary
+
+                @extend %boxSize
+
+            &:after
+
+                $s: 30px
+
+                content: ''
+
+                position: absolute
+
+                bottom: 20px
+                left: 20px
+
+                width: $s
+                height: $s
+
+            // States
+
+            &:hover
+
+                // Pseudo
+
+                &:before
+
+                    opacity: .2
+
+                // Children
+
+                img
+
+                    +transform(translateY, -10px)
+
+            // Classes
+
             // Children
 
             .rating
 
                 position: absolute
-                z-index: 3
+                z-index: 2
+
+                width: auto
 
                 top: 20px
                 right: 20px
 
-                text-align: right
+                color: $secondary
 
-                transform-origin: 100% 0%
+                transform-origin: 100% 0
 
-                +transform(scale, .8)
-
-                display: none
-
-            span
-
-                position: absolute
-                z-index: 3
-
-                bottom: 14%
-                left: 10%
-
-                width: 80%
-
-                display: none
-
-                // Children
-
-                h2
-
-                    position: relative
-                    display: inline
-
-                    line-height: 1.2
-
-                    // Psuedo
-
-                    &:after
-
-                        content: attr(data-type)
-
-                        display: block
-
-                        margin-top: 4px
-
-                        text-transform: uppercase
-                        font-size: $fontBase - 8px
-                        font-weight: 600
+                +transform(scale, .6)
 
             img
 
-                position: absolute
+                position: relative
                 z-index: 1
 
-                top: 50%
-                left: 50%
-
-                width: 90%
-                height: 90%
+                width: 100%
+                height: 100%
 
                 object-fit: contain
 
-                +transform((translateX, translateY), (-50%, -50%))
+                +transition(transform, .2s)
+
+            h2
+
+                position: absolute
+                z-index: 0
+
+                top: 50%
+                left: 5%
+
+                width: 90%
+
+                font-size: 5vmin !important
+                line-height: 1
+                word-wrap: break-word
+                text-align: center
+
+                opacity: .2
+
+                color: $secondary
+
+                +transform(translateY, -50%)
+                +transition(font-size, .2s)
+
+                // Responsive
+
+                +screen($xs)
+
+                    font-size: 10vmin !important
 
     &.about
 
@@ -157,52 +214,22 @@ section
 
         // Children
 
-        .btn
+        .title
 
-            position: relative
-            display: block
+            display: flex
+            justify-content: space-between
+            align-items: center
 
-            margin-bottom: 25px
-            padding: 25px 0
+            margin-bottom: $globalSpace / 2
+            padding-bottom: $globalSpace / 4
 
-            width: 100%
+            border-bottom: 10px solid $dark
 
-            background-color: $secondary
-            color: $light
+            // Children
 
-            text-align: center
-            font-size: $fontBase * 1.2
+            h1
 
-            // Responsive
-
-            +screen($md)
-
-                padding: 18px 0
-
-                font-size: $fontBase
-
-            // Pseudo
-
-            &:before
-
-                content: 'videocam'
-
-                position: absolute
-                top: 20px
-                left: 10%
-
-                font-size: $fontBase * 2
-
-                @extend %icon
-
-                // Responsive
-
-                +screen($md)
-
-                    left: 5%
-
-                    font-size: $fontBase * 1.2
-
+            a
 
         .vid
 
@@ -229,31 +256,36 @@ section
 
         .review
 
-            display: grid
-            grid-template-columns: 62% 34%
-            grid-gap: 4%
-
-            // Responsive
-
-            +screen($md)
-
-                +grid(1, 1fr, $globalSpace / 4)
+            display: flex
+            width: 100%
 
             // Children
 
             .col
 
-                +screen($md)
+                // Pseudo
 
-                    order: -1
+                &:first-child
+
+                    width: 30%
+
+                &:last-child
+
+                    width: 70%
+
+                    padding-left: $globalSpace / 2
 
             img
 
+                padding: 80px
+
                 width: 100%
 
-                background-color: $primary
+                background-color: lighten($tertiary, 30%)
 
         .details
+
+            width: 100%
 
             margin-top: $globalSpace
 
@@ -278,6 +310,19 @@ section
                 +grid(1, 1fr, $globalSpace / 4)
 
             // Children
+
+            .item
+
+                // Pseudo
+
+                &:nth-child(2n + 1)
+
+                    // Children
+
+                    h3
+
+                        color: $secondary
+                        border-color: $secondary
 
             h3
 
@@ -315,41 +360,54 @@ section
 
         &:before
 
+            content: 'star_border star_border star_border star_border star_border'
+
+            position: relative
+            z-index: 2
+
+        &:after
+
+            position: absolute
+            z-index: 1
+
+            top: 0
+            left: 0
+
             width: 100%
 
         // Classes
 
         &.-half:after
 
-            content: 'star_half star_border star_border star_border star_border'
+            content: 'star_half'
 
         &.-one:after
 
-            content: 'star star_border star_border star_border star_border'
+            content: 'star'
 
         &.-onehalf:after
 
-            content: 'star star_half star_border star_border star_border'
+            content: 'star star_half'
 
         &.-two:after
 
-            content: 'star star star_border star_border star_border'
+            content: 'star star'
 
         &.-twohalf:after
 
-            content: 'star star star_half star_border star_border'
+            content: 'star star star_half'
 
         &.-three:after
 
-            content: 'star star star star_border star_border'
+            content: 'star star star'
 
         &.-threehalf:after
 
-            content: 'star star star star_half star_border'
+            content: 'star star star star_half'
 
         &.-four:after
 
-            content: 'star star star star star_border'
+            content: 'star star star star'
 
         &.-fourhalf:after
 
