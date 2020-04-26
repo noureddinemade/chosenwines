@@ -88,3 +88,17 @@
 
         fill: $light
         stroke: $light
+
++keyframes(bottleMove)
+
+    0%
+
+        +transform((scale, translateY, rotate), (1.4, 0, 0deg))
+
+    50%
+
+        +transform((scale, translateY, rotate), (1.4, -10px, 1deg))
+
+    100%
+
+        +transform((scale, translateY, rotate), (1.4, 0, 0deg))

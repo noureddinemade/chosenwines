@@ -188,29 +188,6 @@ section
 
                     font-size: 10vmin !important
 
-    &.about
-
-        position: relative
-        z-index: 10
-
-        // Children
-
-        a.closeAboutUs
-
-            display: block
-
-            margin-bottom: $globalSpace / 4
-
-            color: $light
-
-        p
-
-            margin: 25px 0
-
-            a
-
-                color: $light
-
     &.post
 
         // Children
@@ -226,11 +203,52 @@ section
 
             border-bottom: 10px solid $dark
 
+            // Responsive
+
+            +screen($md)
+
+                flex-direction: column
+
             // Children
 
             h1
 
+                display: block
+
+                text-align: center
+
             a
+
+                padding: 12px 22px
+
+                background-color: $secondary
+                color: $light
+
+                +transition(background-color, .1s)
+
+                // Responsive
+
+                +screen($sm)
+
+                    width: 100%
+
+                    text-align: center
+
+                // States
+
+                &:hover
+
+                    background-color: $primary
+
+                // Pseudo
+
+                &:first-child
+
+                    // Responsive
+
+                    +screen($md)
+
+                        display: none
 
         .vid
 
@@ -258,13 +276,29 @@ section
         .review
 
             display: flex
+            align-items: flex-start
+
             width: 100%
+
+            // Responsive
+
+            +screen($md)
+
+                flex-direction: column
 
             // Children
 
             .col
 
                 position: relative
+
+                // Responsive
+
+                +screen($md)
+
+                    width: 100% !important
+
+                    padding: 0 !important
 
                 // Pseudo
 
@@ -292,6 +326,49 @@ section
                     background-position: 50% 50%
                     background-image: repeating-radial-gradient(circle at 0% 0%, $g1, $g1 50px, $g2, $g2 50px 100px)
 
+                    // Responsive
+
+                    +screen($md)
+
+                        padding: 40px
+
+                        background-size: 100%
+
+                        overflow: hidden
+
+                        text-align: center
+
+                    // Pseudo
+
+                    &:before
+
+                        content: ''
+
+                        position: absolute
+                        z-index: 1
+
+                        top: 20%
+                        left: 20%
+
+                        width: 60%
+                        height: 60%
+
+                        border: 20px solid transparent
+
+                        opacity: 1
+
+                        @extend %boxSize
+
+                        // Responsive
+
+                        +screen($md)
+
+                            top: 5%
+                            left: 5%
+
+                            width: 90%
+                            height: 90%
+
                     // Children
 
                     img
@@ -302,6 +379,20 @@ section
                         width: 100%
 
                         +transform(scale, 1.4)
+                        +animation(bottleMove, 2s, linear, infinite)
+
+                        // Responsive
+
+                        +screen($md)
+
+                            padding: 20px 0
+                            width: 50%
+
+                            +transform(scale, 1)
+
+            p:first-child
+
+                margin-top: $globalSpace / 2
 
         .details
 
@@ -356,6 +447,39 @@ section
                 border-bottom: 3px solid $primary
 
                 color: $primary
+
+        .images
+
+            $g1: #7FFFD4
+            $g2: lighten($g1, 10%)
+
+            display: block
+
+            max-height: 500px
+
+            margin-top: $globalSpace / 2
+
+            background-image: repeating-radial-gradient(circle at 0 0, $g1, $g1 100px, $g2, $g2 100px 200px)
+
+            overflow: hidden
+
+            // Children
+
+            img
+
+                width: 100%
+                height: 100%
+
+                background-size: 12%
+                background-position: 50% 50%
+
+                +transform((translateY, translateX, rotate), (-50%, 1%, 4deg))
+
+                // Responsive
+
+                +screen($sm)
+
+                    display: none
 
     // Children
 
