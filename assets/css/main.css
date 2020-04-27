@@ -69,7 +69,7 @@ main, header, footer {
   margin-left: auto;
   margin-right: auto; }
 
-section .rating {
+section.post .title a.watchEpisode:after, section .rating {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -289,7 +289,11 @@ section {
         width: 100%;
         height: 100%;
         opacity: 0;
-        border: 10px solid #7A81FF; }
+        border: 10px solid #7A81FF;
+        transition-property: opacity;
+        transition-duration: 0.1s;
+        transition-delay: 0s;
+        transition-timing-function: linear; }
       section.blog a.item:after {
         content: '';
         position: absolute;
@@ -377,6 +381,15 @@ section {
       @media screen and (max-width: 1024px) {
         section.post .title a:first-child {
           display: none; } }
+      section.post .title a.watchEpisode {
+        padding-right: 40px; }
+        section.post .title a.watchEpisode:after {
+          content: 'expand_more';
+          position: absolute;
+          right: 10px;
+          font-size: 26.4px; }
+        section.post .title a.watchEpisode.on:after {
+          content: 'expand_less'; }
   section.post .vid {
     position: relative;
     display: none;
@@ -503,13 +516,13 @@ section {
     background-image: repeating-radial-gradient(circle at 0 0, #7FFFD4, #7FFFD4 100px, #b2ffe5, #b2ffe5 100px 200px);
     overflow: hidden; }
     section.post .images img {
-      width: 100%;
-      height: 100%;
-      background-size: 12%;
+      width: 200%;
+      height: 200%;
+      background-size: 6%;
       background-position: 50% 50%;
-      -webkit-transform: translateY(-50%) translateX(1%) rotate(4deg);
-      -ms-transform: translateY(-50%) translateX(1%) rotate(4deg);
-      transform: translateY(-50%) translateX(1%) rotate(4deg); }
+      -webkit-transform: translateY(-50%) translateX(1%) scale(2);
+      -ms-transform: translateY(-50%) translateX(1%) scale(2);
+      transform: translateY(-50%) translateX(1%) scale(2); }
       @media screen and (max-width: 800px) {
         section.post .images img {
           display: none; } }

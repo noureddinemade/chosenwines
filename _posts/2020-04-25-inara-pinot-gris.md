@@ -19,4 +19,4 @@ The appearance is clear and pale gold in colour. The smell is very pronounced, t
 
 On the palate it is dry with high acidity with a medium body. And that pear taste really comes to its own. The quality is great, but personally I need a little less acidity which is why I rate it as 3.5 stars. But I think to food it will come into its own. They suggest Korean fried chicken which isn&rsquo;t my thing but I can see this going down well with a roast as that acidity would go through the salty roast potatoes really well.
 
-If you&rsquo;re interested, you can find out more [about the winery](https://helenandjoeyestate.com.au "Helen and Joey") and [try the wine yourself](https://helenandjoeyestate.com.au/shop/2018-inara-pinot-gris/ "2018 Inara Pinot Gris") or get more information about how it is made.
+If you&rsquo;re interested, you can find out more <a href="https://helenandjoeyestate.com.au" target="_blank" title="Helen and Joey">about the winery</a> and <a href="https://helenandjoeyestate.com.au/shop/2018-inara-pinot-gris/" target="_blank" title="2018 Inara Pinot Gris">try the wine yourself</a> or get more information about how it is made.
