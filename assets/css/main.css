@@ -222,6 +222,9 @@ nav {
 footer {
   display: block;
   margin-top: 100px; }
+  @media screen and (max-width: 1024px) {
+    footer {
+      margin-top: 50px; } }
   footer ul {
     width: 100%;
     padding-top: 20px;
