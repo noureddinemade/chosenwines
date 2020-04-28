@@ -40,7 +40,7 @@ input, textarea, select {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
-section.blog a.item:before, section.post .review .col.-img:before {
+section.blocks a.item:before, section.single .group .col.-img:before {
   box-sizing: border-box; }
 
 body {
@@ -69,7 +69,7 @@ main, header, footer {
   margin-left: auto;
   margin-right: auto; }
 
-section.post .title a.watchEpisode:after, section .rating {
+section.single .title a.watchEpisode:after, section .rating {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -256,34 +256,34 @@ section {
   position: relative;
   z-index: 2;
   width: 100%; }
-  section.blog {
+  section.blocks {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 25px; }
     @media screen and (max-width: 480px) {
-      section.blog {
+      section.blocks {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); } }
-    section.blog a.item {
+    section.blocks a.item {
       position: relative;
       padding: 80px;
       background-color: #eaebff; }
       @media screen and (max-width: 480px) {
-        section.blog a.item {
+        section.blocks a.item {
           padding: 50px; } }
-      section.blog a.item:first-child {
+      section.blocks a.item:first-child {
         background-image: repeating-radial-gradient(circle at 0 0, #fff270, #fff270 10%, #fff6a3, #fff6a3 10% 20%); }
-        section.blog a.item:first-child:after {
+        section.blocks a.item:first-child:after {
           display: none; }
-        section.blog a.item:first-child h2 {
+        section.blocks a.item:first-child h2 {
           color: #7A81FF !important;
           opacity: 1; }
-      section.blog a.item:nth-child(2n + 1) {
+      section.blocks a.item:nth-child(2n + 1) {
         background-color: #ffeae9; }
-        section.blog a.item:nth-child(2n + 1):before {
+        section.blocks a.item:nth-child(2n + 1):before {
           border-color: #FF7E79; }
-        section.blog a.item:nth-child(2n + 1) h2 {
+        section.blocks a.item:nth-child(2n + 1) h2 {
           color: #FF7E79; }
-      section.blog a.item:before {
+      section.blocks a.item:before {
         content: '';
         position: absolute;
         z-index: 0;
@@ -297,20 +297,20 @@ section {
         transition-duration: 0.1s;
         transition-delay: 0s;
         transition-timing-function: linear; }
-      section.blog a.item:after {
+      section.blocks a.item:after {
         content: '';
         position: absolute;
         bottom: 20px;
         left: 20px;
         width: 30px;
         height: 30px; }
-      section.blog a.item:hover:before {
+      section.blocks a.item:hover:before {
         opacity: .2; }
-      section.blog a.item:hover img {
+      section.blocks a.item:hover img {
         -webkit-transform: translateY(-10px) scale(2.4) rotate(-16deg);
         -ms-transform: translateY(-10px) scale(2.4) rotate(-16deg);
         transform: translateY(-10px) scale(2.4) rotate(-16deg); }
-      section.blog a.item .rating {
+      section.blocks a.item .rating {
         position: absolute;
         z-index: 2;
         width: auto;
@@ -321,7 +321,7 @@ section {
         -webkit-transform: scale(0.6);
         -ms-transform: scale(0.6);
         transform: scale(0.6); }
-      section.blog a.item img {
+      section.blocks a.item img {
         position: relative;
         z-index: 3;
         width: 100%;
@@ -332,7 +332,7 @@ section {
         transition-duration: 0.2s;
         transition-delay: 0s;
         transition-timing-function: linear; }
-      section.blog a.item h2 {
+      section.blocks a.item h2 {
         position: absolute;
         z-index: 0;
         top: 50%;
@@ -352,9 +352,9 @@ section {
         transition-delay: 0s;
         transition-timing-function: linear; }
         @media screen and (max-width: 640px) {
-          section.blog a.item h2 {
+          section.blocks a.item h2 {
             font-size: 10vmin !important; } }
-  section.post .title {
+  section.single .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -362,12 +362,12 @@ section {
     padding-bottom: 25px;
     border-bottom: 10px solid black; }
     @media screen and (max-width: 1024px) {
-      section.post .title {
+      section.single .title {
         flex-direction: column; } }
-    section.post .title h1 {
+    section.single .title h1 {
       display: block;
       text-align: center; }
-    section.post .title a {
+    section.single .title a {
       padding: 12px 22px;
       background-color: #7A81FF;
       color: white;
@@ -376,24 +376,24 @@ section {
       transition-delay: 0s;
       transition-timing-function: linear; }
       @media screen and (max-width: 800px) {
-        section.post .title a {
+        section.single .title a {
           width: 100%;
           text-align: center; } }
-      section.post .title a:hover {
+      section.single .title a:hover {
         background-color: #FF7E79; }
       @media screen and (max-width: 1024px) {
-        section.post .title a:first-child {
+        section.single .title a:first-child {
           display: none; } }
-      section.post .title a.watchEpisode {
+      section.single .title a.watchEpisode {
         padding-right: 40px; }
-        section.post .title a.watchEpisode:after {
+        section.single .title a.watchEpisode:after {
           content: 'expand_more';
           position: absolute;
           right: 10px;
           font-size: 26.4px; }
-        section.post .title a.watchEpisode.on:after {
+        section.single .title a.watchEpisode.on:after {
           content: 'expand_less'; }
-  section.post .vid {
+  section.single .vid {
     position: relative;
     display: none;
     margin-bottom: 50px;
@@ -401,43 +401,43 @@ section {
     height: 0;
     max-width: 100%;
     overflow: hidden; }
-    section.post .vid iframe, section.post .vid object, section.post .vid embed {
+    section.single .vid iframe, section.single .vid object, section.single .vid embed {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%; }
-  section.post .review {
+  section.single .group {
     display: flex;
     align-items: flex-start;
     width: 100%; }
     @media screen and (max-width: 1024px) {
-      section.post .review {
+      section.single .group {
         flex-direction: column; } }
-    section.post .review .col {
+    section.single .group .col {
       position: relative; }
       @media screen and (max-width: 1024px) {
-        section.post .review .col {
+        section.single .group .col {
           width: 100% !important;
           padding: 0 !important; } }
-      section.post .review .col:first-child {
+      section.single .group .col:first-child {
         width: 30%; }
-      section.post .review .col:last-child {
+      section.single .group .col:last-child {
         width: 70%;
         padding-left: 50px; }
-      section.post .review .col.-img {
+      section.single .group .col.-img {
         padding: 80px;
         background-size: 80% 80%;
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-image: repeating-radial-gradient(circle at 0% 0%, #fff166, #fff166 50px, #fff599, #fff599 50px 100px); }
         @media screen and (max-width: 1024px) {
-          section.post .review .col.-img {
+          section.single .group .col.-img {
             padding: 40px;
             background-size: 100%;
             overflow: hidden;
             text-align: center; } }
-        section.post .review .col.-img:before {
+        section.single .group .col.-img:before {
           content: '';
           position: absolute;
           z-index: 1;
@@ -448,12 +448,12 @@ section {
           border: 20px solid transparent;
           opacity: 1; }
           @media screen and (max-width: 1024px) {
-            section.post .review .col.-img:before {
+            section.single .group .col.-img:before {
               top: 5%;
               left: 5%;
               width: 90%;
               height: 90%; } }
-        section.post .review .col.-img img {
+        section.single .group .col.-img img {
           position: relative;
           z-index: 2;
           width: 100%;
@@ -473,52 +473,52 @@ section {
           animation-delay: 0s;
           animation-fill-mode: none; }
           @media screen and (max-width: 1024px) {
-            section.post .review .col.-img img {
+            section.single .group .col.-img img {
               padding: 20px 0;
               width: 50%;
               -webkit-transform: scale(1);
               -ms-transform: scale(1);
               transform: scale(1); } }
-    section.post .review p:first-child {
+    section.single .group p:first-child {
       margin-top: 50px; }
-  section.post .details {
+  section.single .details {
     width: 100%;
     margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 50px; }
     @media screen and (max-width: 1440px) {
-      section.post .details {
+      section.single .details {
         grid-gap: 25px; } }
     @media screen and (max-width: 1024px) {
-      section.post .details {
+      section.single .details {
         margin-top: 50px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 50px; } }
     @media screen and (max-width: 640px) {
-      section.post .details {
+      section.single .details {
         margin-top: 25px;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 25px; } }
-    section.post .details .item:nth-child(2n + 1) h3 {
+    section.single .details .item:nth-child(2n + 1) h3 {
       color: #7A81FF;
       border-color: #7A81FF; }
-    section.post .details h3 {
+    section.single .details h3 {
       display: block;
       width: 100%;
       margin-bottom: 25px;
       padding-bottom: 10px;
       border-bottom: 3px solid #FF7E79;
       color: #FF7E79; }
-  section.post .images {
+  section.single .images {
     display: block;
     max-height: 500px;
     margin-top: 50px;
     background-image: repeating-radial-gradient(circle at 0 0, #7FFFD4, #7FFFD4 100px, #b2ffe5, #b2ffe5 100px 200px);
     overflow: hidden; }
-    section.post .images img {
+    section.single .images img {
       width: 200%;
       height: 200%;
       background-size: 6%;
@@ -527,7 +527,7 @@ section {
       -ms-transform: translateY(-50%) translateX(1%) scale(2);
       transform: translateY(-50%) translateX(1%) scale(2); }
       @media screen and (max-width: 800px) {
-        section.post .images img {
+        section.single .images img {
           display: none; } }
   section .rating {
     position: relative;
