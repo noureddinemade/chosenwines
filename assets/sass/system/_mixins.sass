@@ -99,11 +99,11 @@
 
 @mixin keyframes($name)
 
-    @keyframes #{$name}
+    @-webkit-keyframes #{$name}
 
         @content
 
-    @-webkit-keyframes #{$name}
+    @keyframes #{$name}
 
         @content
 

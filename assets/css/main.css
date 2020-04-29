@@ -153,10 +153,8 @@ header {
       position: relative;
       width: 100%;
       height: auto; }
-      header a.logoWrap svg .chosen, header a.logoWrap svg .wines {
-        stroke-width: .03; }
-      header a.logoWrap svg .chosen.-c, header a.logoWrap svg .chosen.-o, header a.logoWrap svg .chosen.-e {
-        fill: #FFFF33;
+      header a.logoWrap svg .chosen .-c, header a.logoWrap svg .chosen .-o, header a.logoWrap svg .chosen .-e {
+        fill: #FF99CC;
         stroke: #FF99CC;
         -webkit-animation-name: logoP;
         -webkit-animation-duration: 1s;
@@ -170,7 +168,7 @@ header {
         animation-iteration-count: infinite;
         animation-delay: 0s;
         animation-fill-mode: none; }
-      header a.logoWrap svg .chosen.-h, header a.logoWrap svg .chosen.-s, header a.logoWrap svg .chosen.-n {
+      header a.logoWrap svg .chosen .-h, header a.logoWrap svg .chosen .-s, header a.logoWrap svg .chosen .-n {
         fill: #B273FF;
         stroke: #B273FF;
         -webkit-animation-name: logoS;
@@ -185,24 +183,9 @@ header {
         animation-iteration-count: infinite;
         animation-delay: 0s;
         animation-fill-mode: none; }
-      header a.logoWrap svg .wines.-w, header a.logoWrap svg .wines.-n, header a.logoWrap svg .wines.-s {
-        fill: #B273FF;
-        stroke: #B273FF;
-        -webkit-animation-name: logoS;
-        -webkit-animation-duration: 1s;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-delay: 0s;
-        -webkit-animation-fill-mode: none;
-        animation-name: logoS;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-delay: 0s;
-        animation-fill-mode: none; }
-      header a.logoWrap svg .wines.-i, header a.logoWrap svg .wines.-e {
+      header a.logoWrap svg .wines .-w, header a.logoWrap svg .wines .-n, header a.logoWrap svg .wines .-s {
         fill: #FF99CC;
-        stroke: #B273FF;
+        stroke: #FF99CC;
         -webkit-animation-name: logoP;
         -webkit-animation-duration: 1s;
         -webkit-animation-timing-function: linear;
@@ -210,6 +193,21 @@ header {
         -webkit-animation-delay: 0s;
         -webkit-animation-fill-mode: none;
         animation-name: logoP;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 0s;
+        animation-fill-mode: none; }
+      header a.logoWrap svg .wines .-i, header a.logoWrap svg .wines .-e {
+        fill: #B273FF;
+        stroke: #B273FF;
+        -webkit-animation-name: logoS;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: 0s;
+        -webkit-animation-fill-mode: none;
+        animation-name: logoS;
         animation-duration: 1s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
@@ -665,20 +663,6 @@ p {
     font-weight: 400;
     text-transform: none; }
 
-@keyframes logoP {
-  0% {
-    fill: #FF99CC;
-    stroke: #FF99CC; }
-  49% {
-    fill: #FF99CC;
-    stroke: #FF99CC; }
-  50% {
-    fill: #B273FF;
-    stroke: #B273FF; }
-  100% {
-    fill: #B273FF;
-    stroke: #B273FF; } }
-
 @-webkit-keyframes logoP {
   0% {
     fill: #FF99CC;
@@ -693,19 +677,19 @@ p {
     fill: #B273FF;
     stroke: #B273FF; } }
 
-@keyframes logoS {
+@keyframes logoP {
   0% {
-    fill: #B273FF;
-    stroke: #B273FF; }
-  49% {
-    fill: #B273FF;
-    stroke: #B273FF; }
-  50% {
     fill: #FF99CC;
     stroke: #FF99CC; }
-  100% {
+  49% {
     fill: #FF99CC;
-    stroke: #FF99CC; } }
+    stroke: #FF99CC; }
+  50% {
+    fill: #B273FF;
+    stroke: #B273FF; }
+  100% {
+    fill: #B273FF;
+    stroke: #B273FF; } }
 
 @-webkit-keyframes logoS {
   0% {
@@ -721,63 +705,21 @@ p {
     fill: #FF99CC;
     stroke: #FF99CC; } }
 
-@keyframes logoL {
+@keyframes logoS {
   0% {
-    fill: white;
-    stroke: white; }
+    fill: #B273FF;
+    stroke: #B273FF; }
   49% {
-    fill: white;
-    stroke: white; }
+    fill: #B273FF;
+    stroke: #B273FF; }
   50% {
-    fill: #FFFF33;
-    stroke: #FFFF33; }
+    fill: #FF99CC;
+    stroke: #FF99CC; }
   100% {
-    fill: #FFFF33;
-    stroke: #FFFF33; } }
+    fill: #FF99CC;
+    stroke: #FF99CC; } }
 
-@-webkit-keyframes logoL {
-  0% {
-    fill: white;
-    stroke: white; }
-  49% {
-    fill: white;
-    stroke: white; }
-  50% {
-    fill: #FFFF33;
-    stroke: #FFFF33; }
-  100% {
-    fill: #FFFF33;
-    stroke: #FFFF33; } }
-
-@keyframes logoT {
-  0% {
-    fill: #FFFF33;
-    stroke: #FFFF33; }
-  49% {
-    fill: #FFFF33;
-    stroke: #FFFF33; }
-  50% {
-    fill: white;
-    stroke: white; }
-  100% {
-    fill: white;
-    stroke: white; } }
-
-@-webkit-keyframes logoT {
-  0% {
-    fill: #FFFF33;
-    stroke: #FFFF33; }
-  49% {
-    fill: #FFFF33;
-    stroke: #FFFF33; }
-  50% {
-    fill: white;
-    stroke: white; }
-  100% {
-    fill: white;
-    stroke: white; } }
-
-@keyframes bottleMove {
+@-webkit-keyframes bottleMove {
   0% {
     -webkit-transform: scale(1.4) translateY(0) rotate(0deg);
     -ms-transform: scale(1.4) translateY(0) rotate(0deg);
@@ -791,7 +733,7 @@ p {
     -ms-transform: scale(1.4) translateY(0) rotate(0deg);
     transform: scale(1.4) translateY(0) rotate(0deg); } }
 
-@-webkit-keyframes bottleMove {
+@keyframes bottleMove {
   0% {
     -webkit-transform: scale(1.4) translateY(0) rotate(0deg);
     -ms-transform: scale(1.4) translateY(0) rotate(0deg);

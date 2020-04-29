@@ -50,22 +50,20 @@ header
             width: 100%
             height: auto
 
+
+
             // Children
-
-            .chosen, .wines
-
-                stroke-width: .03
 
             .chosen
 
-                &.-c, &.-o, &.-e
+                .-c, .-o, .-e
 
-                    fill: $tertiary
+                    fill: $primary
                     stroke: $primary
 
                     +animation(logoP, 1s, linear, infinite)
 
-                &.-h, &.-s, &.-n
+                .-h, .-s, .-n
 
                     fill: $secondary
                     stroke: $secondary
@@ -75,16 +73,16 @@ header
 
             .wines
 
-                &.-w, &.-n, &.-s
+                .-w, .-n, .-s
+
+                    fill: $primary
+                    stroke: $primary
+
+                    +animation(logoP, 1s, linear, infinite)
+
+                .-i, .-e
 
                     fill: $secondary
                     stroke: $secondary
 
                     +animation(logoS, 1s, linear, infinite)
-
-                &.-i, &.-e
-
-                    fill: $primary
-                    stroke: $secondary
-
-                    +animation(logoP, 1s, linear, infinite)
