@@ -4,11 +4,27 @@
 
     .-b-#{$label}
 
+        @if $label == white
+
+            $c: darken($colour, 3%)
+
+            background-color: $c
+
+        @else
+
+            $c: lighten($colour, 15%)
+
+            background-color: $c
+
         // Pseudo
 
         &:after
 
             background-color: $colour
+
+        &:before
+
+            border-color: $colour !important
 
     .-p-#{$label}
 
@@ -16,8 +32,16 @@
 
         .-img
 
-            // Pseudo
+            @if $label == white
 
-            &:before
+                $g1: darken($colour, 7%)
+                $g2: darken($colour, 3%)
 
-                border-color: $colour !important
+                background-image: repeating-radial-gradient(circle at 0% 0%, $g1, $g1 50px, $g2, $g2 50px 100px)
+
+            @else
+
+                $g1: lighten($colour, 5%)
+                $g2: lighten($colour, 10%)
+
+                background-image: repeating-radial-gradient(circle at 0% 0%, $g1, $g1 50px, $g2, $g2 50px 100px)
