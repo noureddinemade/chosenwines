@@ -103,6 +103,30 @@ p
 
 ul
 
+    // Classes
+
+    &.tags
+
+        // Children
+
+        li
+
+            display: inline-block
+
+            // Pseudo
+
+            &:after
+
+                content: ','
+
+            &:nth-last-child(2):after
+
+                content: ' and '
+
+            &:last-child:after
+
+                content: '.'
+
     // Children
 
     li

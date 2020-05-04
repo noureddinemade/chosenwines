@@ -675,6 +675,15 @@ p {
     font-weight: 400;
     text-transform: none; }
 
+ul.tags li {
+  display: inline-block; }
+  ul.tags li:after {
+    content: ','; }
+  ul.tags li:nth-last-child(2):after {
+    content: ' and '; }
+  ul.tags li:last-child:after {
+    content: '.'; }
+
 @-webkit-keyframes logoP {
   0% {
     fill: #FF99CC;
