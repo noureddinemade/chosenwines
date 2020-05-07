@@ -1,6 +1,6 @@
 ---
 title: "Drink The Sun"
-video: ""
+video: "Eqd5ZbOcess"
 type: "Rosé"
 vintage: "2019"
 grape: "Grenache and Mataro"
