@@ -1,5 +1,5 @@
 ---
-title: "Drink The Sun"
+title: "Drink the Sun"
 video: "Eqd5ZbOcess"
 type: "Rosé"
 vintage: "2019"
