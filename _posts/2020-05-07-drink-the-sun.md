@@ -9,6 +9,7 @@ region: "Australia"
 rating: "four"
 pairings: [Light fish dishes, Salad, Poolside drinking]
 tags: [Fruity, Summer, Strawberry, Red berry, Floral, Tasty]
+permalink: :title:output_ext
 ---
 
 We had big expectations for this wine, as it is desribed as a wine that should emulate summer drinking, which is definitely our style. Safe to say this did not disappoint. The bottle itself is really well branded we felt like nothing was missed when creating this wine as it felt like every element was thought through.
