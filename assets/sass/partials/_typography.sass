@@ -101,6 +101,51 @@ p
         font-weight: 400
         text-transform: none
 
+ol
+
+    counter-reset: c404
+
+    // Classes
+
+    &.list
+
+        li
+
+            position: relative
+            display: block
+
+            margin-bottom: $globalSpace / 4
+            padding-left: 60px
+
+            font-size: $fontBase * 1.4
+
+            counter-increment: c404
+
+            // Pseudo
+
+            &:before
+
+                content: counter(c404)
+
+                position: absolute
+
+                top: 0
+                left: 0
+
+                width: 40px
+                height: 40px
+
+                font-size: $fontBase - 2px
+                text-align: center
+                line-height: 40px
+
+                background-color: $secondary
+                color: $dark
+
+            &:nth-child(2n + 1):before
+
+                background-color: $primary
+
 ul
 
     // Classes

@@ -675,6 +675,30 @@ p {
     font-weight: 400;
     text-transform: none; }
 
+ol {
+  counter-reset: c404; }
+  ol.list li {
+    position: relative;
+    display: block;
+    margin-bottom: 25px;
+    padding-left: 60px;
+    font-size: 30.8px;
+    counter-increment: c404; }
+    ol.list li:before {
+      content: counter(c404);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      text-align: center;
+      line-height: 40px;
+      background-color: #B273FF;
+      color: black; }
+    ol.list li:nth-child(2n + 1):before {
+      background-color: #FF99CC; }
+
 ul.tags li {
   display: inline-block; }
   ul.tags li:after {
