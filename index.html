@@ -24,7 +24,9 @@ class: home
 
             <div class="rating -{{ post.rating }}"></div>
 
-            <img srcset="/assets/img/wines/{{ imgLink }}@2x.png 2x, /assets/img/wines/{{ imgLink }}.png 1x," src="/assets/img/wines/{{ imgLink }}.png" alt="{{ post.title }}">
+            <img srcset="/assets/img/wines/{{ imgLink }}@2x.png 2x, /assets/img/wines/{{ imgLink }}.png" src="/assets/img/wines/{{ imgLink }}@2x.png.png" alt="{{ post.title }}">
+
+            <img srcset="/assets/img/wines/{{ imgLink }}-shadow@2x.png 2x, /assets/img/wines/{{ imgLink }}-shadow.png" src="/assets/img/wines/{{ imgLink }}-shadow@2x.png.png" class="shadow">
 
             <h2>{{ post.title }}</h2>
 

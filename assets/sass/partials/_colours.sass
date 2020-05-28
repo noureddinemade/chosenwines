@@ -45,3 +45,15 @@
                 $g2: lighten($colour, 10%)
 
                 background-image: repeating-radial-gradient(circle at 0% 0%, $g1, $g1 50px, $g2, $g2 50px 100px)
+
+    .-r-#{$label}
+
+        @if $label == white
+
+            $c: darken($colour, 3%)
+
+            background-color: $c
+
+        @else
+
+            background-color: $colour
