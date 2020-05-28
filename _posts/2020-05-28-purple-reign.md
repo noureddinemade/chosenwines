@@ -1,6 +1,6 @@
 ---
 title: "Purple Reign"
-video: ""
+video: "9UfIcTvT9DE"
 type: "Purple"
 vintage: "2018"
 grape: "Sauvignon Blanc and Semillon"
