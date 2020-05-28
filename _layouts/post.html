@@ -12,7 +12,7 @@
 
     <main>
 
-        <section class="single -p-{{ imgClass }}">
+        <section class="single {% if imgClass == "purple" %} -p-misc {% else %} -p-{{ imgClass }} {% endif %}">
 
             <div class="title">
 

@@ -20,7 +20,7 @@ class: home
 
         <!-- Display each wine bottle -->
 
-        <a href="{{ post.url }}" class="item -b-{{ imgClass }}">
+        <a href="{{ post.url }}" class="item {% if imgClass == "purple" %} -b-misc {% else %} -b-{{ imgClass }} {% endif %}">
 
             <div class="rating -{{ post.rating }}"></div>
 
