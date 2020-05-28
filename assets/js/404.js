@@ -4,9 +4,10 @@ const link      = document.querySelector('a.randomEpisode');
 const reviews   = [
 
     'inara-pinot-gris',
-    'drink-the-sun'
-    // 'big-fine-girl-riesling',
-    // 'two-pairs',
+    'drink-the-sun',
+    'big-fine-girl-riesling',
+    'two-pairs',
+    'purple-reign'
 
     ];
 
