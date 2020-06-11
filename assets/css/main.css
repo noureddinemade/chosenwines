@@ -566,6 +566,10 @@ section {
       top: 0;
       left: 0;
       width: 100%; }
+    section .rating.-na:before {
+      content: 'block'; }
+    section .rating.-na:after {
+      content: 'block'; }
     section .rating.-half:after {
       content: 'star_half'; }
     section .rating.-one:after {
