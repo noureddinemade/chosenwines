@@ -223,6 +223,8 @@ section
 
                 display: block
 
+                padding: 0 5%
+
                 text-align: center
 
             a
@@ -470,6 +472,10 @@ section
 
                 overflow: hidden
 
+                +screen($md)
+
+                    display: none
+
                 // Children
 
                 img
@@ -499,6 +505,12 @@ section
 
                 +transform(translateY, 0)
                 +animation(bottleRotate, 1s, linear, infinite)
+
+                +screen($md)
+
+                    width: 100%
+
+                    margin: 0
 
                 // Children
 

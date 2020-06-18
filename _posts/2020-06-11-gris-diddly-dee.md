@@ -9,6 +9,7 @@ region: "Australia"
 rating: "na"
 pairings: [N/A]
 tags: [Natural,Unfiltered, Organic, Low Sulfites]
+permalink: :title:output_ext
 ---
 
 Firstly, if you haven&rsquo;t already seen the video for this wine go and watch it. You&rsquo;ll definetely get our honest reactions.
