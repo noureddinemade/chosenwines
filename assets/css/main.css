@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -69,7 +70,7 @@ main, header, footer {
   margin-left: auto;
   margin-right: auto; }
 
-section.single .title a.watchEpisode:after, section .rating {
+section.single .title a.watchEpisode:after {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -490,6 +491,8 @@ section {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 25px; } }
+    section.single .details .rating {
+      width: auto; }
     section.single .details .item:nth-child(2n + 1) h3 {
       color: #B273FF;
       border-color: #B273FF; }
@@ -557,47 +560,50 @@ section {
         object-fit: contain; }
   section .rating {
     position: relative;
-    display: block;
     width: 100%;
     height: 50px;
     font-size: 39.6px;
-    line-height: 1;
-    letter-spacing: -6px;
+    letter-spacing: 2px;
     color: black; }
     section .rating:before {
-      content: 'star_border star_border star_border star_border star_border';
+      content: '⭐️⭐️⭐️⭐⭐️';
       position: relative;
-      z-index: 2; }
-    section .rating:after {
-      position: absolute;
       z-index: 1;
-      top: 0;
+      opacity: .5;
+      webkit-filter: saturate(0%);
+      filter: saturate(0%); }
+    section .rating:after {
+      content: '⭐️⭐️⭐️⭐️⭐️';
+      position: absolute;
+      z-index: 2;
       left: 0;
-      width: 100%; }
+      width: 100%;
+      height: 100%;
+      overflow: hidden; }
     section .rating.-na:before {
-      content: 'block'; }
+      content: '🚫'; }
     section .rating.-na:after {
-      content: 'block'; }
+      content: ''; }
     section .rating.-half:after {
-      content: 'star_half'; }
+      width: 10%; }
     section .rating.-one:after {
-      content: 'star'; }
+      width: 20%; }
     section .rating.-onehalf:after {
-      content: 'star star_half'; }
+      width: 30%; }
     section .rating.-two:after {
-      content: 'star star'; }
+      width: 40%; }
     section .rating.-twohalf:after {
-      content: 'star star star_half'; }
+      width: 50%; }
     section .rating.-three:after {
-      content: 'star star star'; }
+      width: 60%; }
     section .rating.-threehalf:after {
-      content: 'star star star star_half'; }
+      width: 70%; }
     section .rating.-four:after {
-      content: 'star star star star'; }
+      width: 80%; }
     section .rating.-fourhalf:after {
-      content: 'star star star star star_half'; }
+      width: 90%; }
     section .rating.-five:after {
-      content: 'star star star star star'; }
+      width: 100%; }
 
 .-b-sparkling {
   background-color: #ffffdd; }

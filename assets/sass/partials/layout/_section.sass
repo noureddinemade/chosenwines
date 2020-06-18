@@ -421,6 +421,10 @@ section
 
             // Children
 
+            .rating
+
+                width: auto
+
             .item
 
                 // Pseudo
@@ -533,38 +537,41 @@ section
     .rating
 
         position: relative
-        display: block
 
         width: 100%
         height: 50px
 
         font-size: $fontBase * 1.8
-        line-height: 1
-
-        letter-spacing: -6px
+        letter-spacing: 2px
 
         color: $dark
-
-        @extend %icon
 
         // Pseudo
 
         &:before
 
-            content: 'star_border star_border star_border star_border star_border'
+            content: '⭐️⭐️⭐️⭐⭐️'
 
             position: relative
-            z-index: 2
+            z-index: 1
+
+            opacity: .5
+
+            +filter(saturate, 0%)
 
         &:after
 
-            position: absolute
-            z-index: 1
+            content: '⭐️⭐️⭐️⭐️⭐️'
 
-            top: 0
+            position: absolute
+            z-index: 2
+
             left: 0
 
             width: 100%
+            height: 100%
+
+            overflow: hidden
 
         // Classes
 
@@ -574,48 +581,48 @@ section
 
             &:before
 
-                content: 'block'
+                content: '🚫'
 
             &:after
 
-                content: 'block'
+                content: ''
 
         &.-half:after
 
-            content: 'star_half'
+            width: 10%
 
         &.-one:after
 
-            content: 'star'
+            width: 20%
 
         &.-onehalf:after
 
-            content: 'star star_half'
+            width: 30%
 
         &.-two:after
 
-            content: 'star star'
+            width: 40%
 
         &.-twohalf:after
 
-            content: 'star star star_half'
+            width: 50%
 
         &.-three:after
 
-            content: 'star star star'
+            width: 60%
 
         &.-threehalf:after
 
-            content: 'star star star star_half'
+            width: 70%
 
         &.-four:after
 
-            content: 'star star star star'
+            width: 80%
 
         &.-fourhalf:after
 
-            content: 'star star star star star_half'
+            width: 90%
 
         &.-five:after
 
-            content: 'star star star star star'
+            width: 100%
