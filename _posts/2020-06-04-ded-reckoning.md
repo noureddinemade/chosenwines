@@ -1,6 +1,6 @@
 ---
 title: "Ded Reckoning"
-video: ""
+video: "x2a6wQm9Ruc"
 type: "Sparkling"
 vintage: "2018"
 grape: "Chardonnay and Pinot Noir"
