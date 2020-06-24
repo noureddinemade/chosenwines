@@ -7,7 +7,7 @@ class: home
 
     <a href="/about/" class="item">
 
-        <h2>What is this about?</h2>
+        <h2>This new?</h2>
 
     </a>
 
@@ -18,7 +18,7 @@ class: home
         {% assign imgLink = post.title | remove: "." | remove: "," | remove: "'" | replace: "é", "e" | replace: " ", "-" %}
         {% assign imgClass = post.type | replace: "é", "e" | downcase %}
 
-        <!-- Display each wine bottle -->
+        <!-- Display each post as a wine bottle -->
 
         <a href="{{ post.url }}" class="item {% if imgClass == "purple" %} -b-misc {% else %} -b-{{ imgClass }} {% endif %}">
 
