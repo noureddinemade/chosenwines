@@ -11,23 +11,33 @@ section
 
     &.blocks
 
-        display: grid
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
-        grid-gap: $globalSpace / 4
+        // display: grid
+        // grid-template-columns: repeat(auto-fill, minmax(600px, 1fr))
+        // grid-gap: $globalSpace / 4
 
         // Responsive
 
-        +screen($xs2)
+        // +screen($xs2)
 
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+        //     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
 
         // Children
 
         a.item
 
+            display: flex
+            flex-direction: row
             position: relative
 
-            padding: 80px
+            width: 100%
+            height: 120px
+
+            margin-bottom: $globalSpace / 2 
+            padding: 0 2%
+
+            border: 3px solid $dark
+
+            +transition(background-color, .1s)
 
             // Responsive
 
@@ -37,164 +47,139 @@ section
 
             // Pseudo
 
-            &:first-child
+            // &:first-child
 
-                $g1: $a8
-                $g2: $a2
+            //     $g1: $a8
+            //     $g2: $a2
 
-                background-image: repeating-radial-gradient(circle at 0 0, $g1, $g1 10%, $g2, $g2 10% 20%)
+            //     background-image: repeating-radial-gradient(circle at 0 0, $g1, $g1 10%, $g2, $g2 10% 20%)
 
-                // Pseudo
+            //     // Pseudo
 
-                &:before
+            //     &:before
 
-                    border-color: $tertiary
+            //         border-color: $tertiary
 
-                &:after
+            //     &:after
 
-                    display: none
+            //         display: none
 
-                // Children
+            //     // Children
 
-                h2
+            //     h2
 
-                    color: $secondary !important
+            //         color: $secondary !important
 
-                    opacity: 1
+            //         opacity: 1
+
+            &:before, &:after
+                
+                content: ''
 
             &:before
 
-                content: ''
-
                 position: absolute
-                z-index: 0
+                z-index: -1
 
-                top: 0
-                left: 0
+                top: 10px
+                left: 10px
 
                 width: 100%
                 height: 100%
 
-                opacity: 0
-
-                border: 10px solid transparent
+                opacity: 1
 
                 @extend %boxSize
 
-                +transition(opacity, .1s)
-
-            &:after
-
-                $s: 30px
-
-                content: ''
-
-                position: absolute
-
-                bottom: 20px
-                left: 20px
-
-                width: $s
-                height: $s
+                +transition((top, left), (.1s, .1s))
 
             // States
 
             &:hover
 
+                background-color: $tertiary
+
                 // Pseudo
 
                 &:before
 
-                    opacity: .5
+                    top: -10px
+                    left: -10px
 
                 // Children
 
                 img
 
-                    +transform((translateY, scale, rotate), (-10px, 3.2, -6deg))
-
-                    // Classes
-
-                    &.shadow
-
-                        opacity: .2
-
-                        +transform((translateY, translateX, scale, rotate), (-50%, -30%, 1.6, 10deg))
+                    +transform((translateY, scale, rotate), (-10px, 2.6, -6deg))
 
             // Children
 
-            .rating
+            span.type, h2, p, .rating
+
+                margin-top: auto
+                margin-bottom: auto
+
+            span.type
 
                 position: absolute
-                z-index: 2
 
-                width: auto
+                top: 50%
+                right: 50px
 
-                top: 20px
-                right: 20px
+                width: 30px
+                height: 30px
 
-                color: $secondary
+                border-radius: 30px
 
-                transform-origin: 100% 0
+                border: 2px solid $dark
 
-                +transform(scale, .6)
+                +transform(translateY, -50%)
+
+            h2
+
+                position: relative
+                z-index: 0
+
+                padding-left: 120px
+
+                font-size: 3.4vmin !important
+                word-wrap: break-word
+
+                color: $dark
+
+            p
+
+                margin-left: 25px
+
+                font-size: $fontBase - 2px
+
+                color: $dark !important
+
+            .rating
+
+                font-size: 30px
+
+                margin-left: 25px
+
+                width: 160px
+                height: auto
 
             img
 
-                position: relative
+                position: absolute
                 z-index: 3
 
-                width: 100%
+                top: 0
+                left: 10px
+
+                width: auto
                 height: 100%
 
                 object-fit: contain
                 pointer-events: none
 
-                // +transition(transform, .2s)
+                +transition((transform, opacity), (.2s, .2s))
                 +transform(scale, 2)
-
-                // Classes
-
-                &.shadow
-
-                    position: absolute
-                    z-index: 2
-
-                    top: 0
-                    left: 0
-
-                    transform-origin: 0 0
-                    opacity: .6
-
-                    +transform((translateY, translateX, scale, rotate), (20px, 30px, .8, 10deg))
-
-            h2
-
-                position: absolute
-                z-index: 0
-
-                top: 50%
-                left: 5%
-
-                width: 90%
-
-                font-size: 5vmin !important
-                line-height: 1
-                word-wrap: break-word
-                text-align: center
-
-                opacity: .05
-
-                color: $dark
-
-                +transform(translateY, -50%)
-                +transition(font-size, .2s)
-
-                // Responsive
-
-                +screen($xs)
-
-                    font-size: 10vmin !important
 
     &.single
 
@@ -528,10 +513,6 @@ section
                     padding: 50px
 
                     object-fit: contain
-
-
-
-
     // Children
 
     .rating
@@ -543,6 +524,8 @@ section
 
         font-size: $fontBase * 1.8
         letter-spacing: 2px
+
+        text-shadow: 0 0 10px $tertiary
 
         color: $dark
 

@@ -6,9 +6,15 @@
 
         @if $label == white
 
-            $c: darken($colour, 3%)
+            $c: darken($colour, 5%)
 
             background-color: $c
+
+            // Pseudo
+
+            &:before
+
+                background-color: darken($c, 5%)
 
         @else
 
@@ -16,15 +22,17 @@
 
             background-color: $c
 
-        // Pseudo
+            // Pseudo
 
-        &:after
+            &:before
+
+                background-color: $colour
+
+        // Children
+
+        span.type
 
             background-color: $colour
-
-        &:before
-
-            border-color: $colour !important
 
     .-p-#{$label}
 

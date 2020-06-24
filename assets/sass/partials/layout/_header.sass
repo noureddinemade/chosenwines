@@ -50,39 +50,80 @@ header
             width: 100%
             height: auto
 
-
+            overflow: visible
 
             // Children
 
+            .chosen, .wines
+
+                stroke: $dark
+                stroke-width: 5px
+
+            .shadow
+
+                stroke: none
+                // fill: $dark !important
+
+                // opacity: .5
+
             .chosen
 
-                .-c, .-o, .-e
+                +animation(logoA, 5s, linear, infinite)
+
+                &.-c, &.-o, &.-e
 
                     fill: $primary
-                    stroke: $primary
 
-                    +animation(logoP, 1s, linear, infinite)
-
-                .-h, .-s, .-n
+                &.-h, &.-s, &.-n
 
                     fill: $secondary
-                    stroke: $secondary
 
+                &.-h
 
-                    +animation(logoS, 1s, linear, infinite)
+                    animation-delay: .2s
+
+                &.-o
+
+                    animation-delay: .4s
+
+                &.-s
+
+                    animation-delay: .6s
+
+                &.-e
+
+                    animation-delay: .8s
+
+                &.-n
+
+                    animation-delay: 1s
 
             .wines
 
-                .-w, .-n, .-s
+                +animation(logoB, 5s, linear, infinite)
 
-                    fill: $primary
-                    stroke: $primary
-
-                    +animation(logoP, 1s, linear, infinite)
-
-                .-i, .-e
+                &.-w, &.-n, &.-s
 
                     fill: $secondary
-                    stroke: $secondary
 
-                    +animation(logoS, 1s, linear, infinite)
+                &.-i, &.-e
+
+                    fill: $primary
+
+                &.-i
+
+                    animation-delay: .2s
+
+                &.-n
+
+                    animation-delay: .4s
+
+                &.-e
+
+                    animation-delay: .6s
+
+                &.-s
+
+                    animation-delay: .8s
+
+
