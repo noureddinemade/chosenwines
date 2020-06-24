@@ -1,6 +1,7 @@
 ---
 title: "Ded Reckoning"
-video: ""
+winery: "Obelisk"
+video: "x2a6wQm9Ruc"
 type: "Sparkling"
 vintage: "2018"
 grape: "Chardonnay and Pinot Noir"

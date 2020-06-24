@@ -1,5 +1,6 @@
 ---
 title: "Inara Pinot Gris"
+winery: "Helen & Joey Estate"
 video: "HxT062Ou1E8"
 type: "White"
 vintage: "2018"

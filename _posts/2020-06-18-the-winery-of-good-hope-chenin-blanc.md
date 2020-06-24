@@ -1,5 +1,6 @@
 ---
 title: "The Winery of Good Hope Chenin Blanc"
+winery: "The Winery of Good Hope"
 video: "XQ81ZB6VUJs"
 type: "White"
 vintage: "2018"

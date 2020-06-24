@@ -1,5 +1,6 @@
 ---
 title: "Gris Diddly Dee"
+winery: "Good Intentions Wine Co"
 video: "lzxaPjptd4c"
 type: "Rosé"
 vintage: "2018"
