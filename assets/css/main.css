@@ -69,20 +69,6 @@ main, header, footer {
   margin-left: auto;
   margin-right: auto; }
 
-section.single .title a.watchEpisode:after {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga'; }
-
 @media screen and (max-width: 1600px) {
   .hideXL {
     display: none; } }
@@ -391,15 +377,6 @@ section {
       @media screen and (max-width: 1024px) {
         section.single .title a:first-child {
           display: none; } }
-      section.single .title a.watchEpisode {
-        padding-right: 40px; }
-        section.single .title a.watchEpisode:after {
-          content: 'expand_more';
-          position: absolute;
-          right: 10px;
-          font-size: 26.4px; }
-        section.single .title a.watchEpisode.on:after {
-          content: 'expand_less'; }
   section.single .vid {
     position: relative;
     display: none;
