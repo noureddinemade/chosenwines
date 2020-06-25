@@ -349,10 +349,12 @@ section {
         content: ' • ';
         padding: 0 4px; }
     section.blocks a.item .rating {
-      font-size: 30px;
-      margin-left: 25px;
+      margin-left: auto;
+      margin-right: 150px;
       width: 160px;
       height: auto;
+      font-size: 30px;
+      text-align: right;
       -webkit-transform: translateY(-4px);
       -ms-transform: translateY(-4px);
       transform: translateY(-4px); }
@@ -385,7 +387,8 @@ section {
     section.single .title h1 {
       display: block;
       padding: 0 5%;
-      text-align: center; }
+      text-align: center;
+      text-transform: uppercase; }
     section.single .title a {
       padding: 12px 22px;
       font-size: 18.33333px;
@@ -760,17 +763,17 @@ h1, h2, h3 {
 
 h1 {
   font-family: "Arial", sans-serif;
-  font-size: 72px;
+  font-size: 64px;
   font-weight: 700; }
   @media screen and (max-width: 1024px) {
     h1 {
-      font-size: 62px; } }
+      font-size: 54px; } }
   @media screen and (max-width: 800px) {
     h1 {
-      font-size: 52px; } }
+      font-size: 44px; } }
   @media screen and (max-width: 640px) {
     h1 {
-      font-size: 32px; } }
+      font-size: 24px; } }
 
 h2 {
   font-size: 34px;
