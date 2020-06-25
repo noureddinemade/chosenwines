@@ -5,7 +5,7 @@
 
     <!-- Prepare image filename -->
 
-    {% assign imgLink = page.title | remove: "." | remove: "," | remove: "'" | replace: "é", "e" | replace: " ", "-" %}
+    {% assign imgLink = page.url | remove: ".html" %}
     {% assign imgClass = page.type | replace: "é", "e" | downcase %}
 
     {% include header.html %}
@@ -106,10 +106,14 @@
 
                 <div class="rotate -r-{{ imgClass }}">
 
-                    <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r1.png" src="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
-                    <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r2.png" src="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
-                    <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r3.png" src="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
-                    <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r4.png" src="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                    <div class="inner">
+
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r1.png" src="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r2.png" src="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r3.png" src="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r4.png" src="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+
+                    </div>
 
 
                 </div>

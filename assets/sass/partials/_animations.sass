@@ -41,13 +41,21 @@
 
     0%
         
+        fill: $primary
+
         +transform(translateY, 0)
 
     25%
         
         +transform(translateY, 30px)
 
+    49%
+
+        fill: $primary
+
     50%
+
+        fill: $secondary
 
         +transform(translateY, 0)
 
@@ -55,13 +63,21 @@
 
         +transform(translateY, 30px)
 
+    99%
+
+        fill: $secondary
+
     100%
+
+        fill: $primary
         
         +transform(translateY, 0)
 
 +keyframes(logoB)
 
     0%
+
+        fill: $secondary
         
         +transform(translateY, 0)
 
@@ -69,7 +85,13 @@
         
         +transform(translateY, -30px)
 
+    49%
+
+        fill: $secondary
+
     50%
+
+        fill: $primary
 
         +transform(translateY, 0)
 
@@ -77,51 +99,13 @@
 
         +transform(translateY, -30px)
 
-    100%
+    99%
         
-        +transform(translateY, 0)
-
-+keyframes(logoC)
-
-    0%
-        
-        +transform(translateY, 0)
-
-    25%
-        
-        +transform(translateY, 150px)
-
-    50%
-
-        +transform(translateY, 0)
-
-    75%
-
-        +transform(translateY, 150px)
+        fill: $primary
 
     100%
-        
-        +transform(translateY, 0)
 
-+keyframes(logoD)
-
-    0%
-        
-        +transform(translateY, 0)
-
-    25%
-        
-        +transform(translateY, -150px)
-
-    50%
-
-        +transform(translateY, 0)
-
-    75%
-
-        +transform(translateY, -150px)
-
-    100%
+        fill: $secondary
         
         +transform(translateY, 0)
 

@@ -11,17 +11,60 @@ section
 
     &.blocks
 
-        // display: grid
-        // grid-template-columns: repeat(auto-fill, minmax(600px, 1fr))
-        // grid-gap: $globalSpace / 4
-
-        // Responsive
-
-        // +screen($xs2)
-
-        //     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
-
         // Children
+
+        .group
+
+            +grid(2, 1fr, $globalSpace / 2)
+
+            // Children
+
+            a.item
+
+                // Classes
+
+                &.about
+                    
+                    background-image: repeating-linear-gradient(125deg, $a2, $a2 40px, $a8, $a8 40px 80px)
+
+                    box-shadow: 10px 10px 0 $a2
+
+                    // Psuedo
+
+                    &:before
+
+                        background-color: $a2
+
+                    // States
+
+                    &:hover
+                        
+                        box-shadow: -10px -10px 0 $a8
+
+                &.quiz
+                    
+                    background-image: repeating-linear-gradient(-125deg, $a4, $a4 40px, $a1, $a1 40px 80px)
+
+                    box-shadow: 10px 10px 0 $a4
+
+                    // Psuedo
+
+                    &:before
+
+                        background-color: $a4
+
+                    // States
+
+                    &:hover
+                        
+                        box-shadow: -10px -10px 0 $a1
+
+                // Children
+
+                h2
+
+                    margin: auto
+                    padding: 0
 
         a.item
 
@@ -37,61 +80,26 @@ section
 
             border: 3px solid $dark
 
-            +transition(background-color, .1s)
-
-            // Responsive
-
-            +screen($xs2)
-
-                padding: 50px
+            +transition((background-color, box-shadow), (.1s, .1s))
 
             // Pseudo
 
-            // &:first-child
-
-            //     $g1: $a8
-            //     $g2: $a2
-
-            //     background-image: repeating-radial-gradient(circle at 0 0, $g1, $g1 10%, $g2, $g2 10% 20%)
-
-            //     // Pseudo
-
-            //     &:before
-
-            //         border-color: $tertiary
-
-            //     &:after
-
-            //         display: none
-
-            //     // Children
-
-            //     h2
-
-            //         color: $secondary !important
-
-            //         opacity: 1
-
-            &:before, &:after
-                
-                content: ''
-
             &:before
 
-                position: absolute
-                z-index: -1
+                content: ''
 
-                top: 10px
-                left: 10px
+                position: absolute
+                z-index: 0
+
+                top: 0
+                left: 0
 
                 width: 100%
                 height: 100%
 
-                opacity: 1
+                opacity: 0
 
-                @extend %boxSize
-
-                +transition((top, left), (.1s, .1s))
+                +transition(opacity, .1s)
 
             // States
 
@@ -103,8 +111,7 @@ section
 
                 &:before
 
-                    top: -10px
-                    left: -10px
+                    opacity: 1
 
                 // Children
 
@@ -115,6 +122,8 @@ section
             // Children
 
             span.type, h2, p, .rating
+
+                z-index: 2
 
                 margin-top: auto
                 margin-bottom: auto
@@ -155,6 +164,24 @@ section
 
                 color: $dark !important
 
+                // Children
+
+                span
+
+                    // Pseudo
+
+                    &:first-child:before
+
+                        display: none
+                    
+                    &:before
+
+                        content: ' • '
+
+                        padding: 0 4px
+
+
+
             .rating
 
                 font-size: 30px
@@ -163,6 +190,8 @@ section
 
                 width: 160px
                 height: auto
+
+                +transform(translateY, -4px)
 
             img
 
@@ -216,10 +245,15 @@ section
 
                 padding: 12px 22px
 
-                background-color: $secondary
-                color: $light
+                font-size: $fontBase / 1.2
 
-                +transition(background-color, .1s)
+                background-color: $a2
+                color: $dark
+
+                border: 2px solid $dark
+                box-shadow: 5px 5px 0 $a2
+
+                +transition((box-shadow, background-color), (.1s, .1s))
 
                 // Responsive
 
@@ -235,6 +269,8 @@ section
 
                     background-color: $primary
 
+                    box-shadow: -5px -5px 0 $primary
+
                 // Pseudo
 
                 &:first-child
@@ -249,26 +285,21 @@ section
 
                 &.watchEpisode
 
-                    padding-right: 40px
-
                     // Pseudo
 
                     &:after
 
-                        content: 'expand_more'
+                        content: '⬎'
 
-                        position: absolute
-                        right: 10px
+                        padding-left: 10px
 
-                        font-size: $fontBase * 1.2
-
-                        @extend %icon
+                        font-size: $fontBase
 
                     // Classes
 
                     &.on:after
 
-                        content: 'expand_less'
+                        content: '⬏'
 
         .vid
 
@@ -353,6 +384,24 @@ section
                         overflow: hidden
 
                         text-align: center
+
+                    // Pseudo
+
+                    &:before
+
+                        content: ''
+
+                        position: absolute
+
+                        top: 20%
+                        left: 20%
+
+                        width: 60%
+                        height: 60%
+
+                        border: 3px solid $dark
+
+                        @extend %boxSize
 
                     // Children
 
@@ -444,11 +493,13 @@ section
 
             height: 500px
 
-            overflow: hidden
-
             margin-top: $globalSpace / 2
 
             // Children
+
+            .pattern, .rotate
+
+                border: 3px solid $dark
 
             .pattern
 
@@ -460,6 +511,8 @@ section
                 background-image: repeating-linear-gradient(22deg, $a4, $a4 100px, $a7, $a7 100px 200px)
 
                 overflow: hidden
+
+                box-shadow: 10px 10px 0 $a4
 
                 +screen($md)
 
@@ -486,14 +539,15 @@ section
             .rotate
 
                 width: 30%
-                height: 400%
+                height: 100%  
 
                 margin-left: $globalSpace / 3
 
                 background-color: $a8
 
-                +transform(translateY, 0)
-                +animation(bottleRotate, 1s, linear, infinite)
+                overflow: hidden
+
+                box-shadow: 10px 10px 0 $a8
 
                 +screen($md)
 
@@ -503,16 +557,28 @@ section
 
                 // Children
 
-                img
+                .inner
 
-                    display: block
+                    position: relative
 
-                    width: 100%
-                    height: 25%
+                    height: 400%
 
-                    padding: 50px
+                    +transform(translateY, 0)
+                    +animation(bottleRotate, 1s, linear, infinite)
 
-                    object-fit: contain
+                    // Children
+
+                    img
+
+                        display: block
+
+                        width: 100%
+                        height: 25%
+
+                        padding: 50px
+
+                        object-fit: contain
+    
     // Children
 
     .rating
@@ -525,26 +591,22 @@ section
         font-size: $fontBase * 1.8
         letter-spacing: 2px
 
-        text-shadow: 0 0 10px $tertiary
-
         color: $dark
 
         // Pseudo
 
         &:before
 
-            content: '⭐️⭐️⭐️⭐⭐️'
+            content: '★★★★★'
 
             position: relative
             z-index: 1
 
-            opacity: .5
-
-            +filter(saturate, 0%)
+            opacity: .2
 
         &:after
 
-            content: '⭐️⭐️⭐️⭐️⭐️'
+            content: '★★★★★'
 
             position: absolute
             z-index: 2
@@ -564,11 +626,11 @@ section
 
             &:before
 
-                content: '🚫'
+                content: '⦸'
 
             &:after
 
-                content: ''
+                content: '⦸'
 
         &.-half:after
 

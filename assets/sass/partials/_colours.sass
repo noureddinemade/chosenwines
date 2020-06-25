@@ -10,11 +10,19 @@
 
             background-color: $c
 
+            box-shadow: 10px 10px 0 darken($c, 5%)
+
             // Pseudo
 
             &:before
 
                 background-color: darken($c, 5%)
+
+            // States
+
+            &:hover
+
+                box-shadow: -10px -10px 0 darken($c, 5%)
 
         @else
 
@@ -22,11 +30,19 @@
 
             background-color: $c
 
+            box-shadow: 10px 10px 0 $colour
+
             // Pseudo
 
             &:before
 
                 background-color: $colour
+
+            // States
+
+            &:hover
+                
+                box-shadow: -10px -10px 0 $colour
 
         // Children
 
@@ -47,12 +63,24 @@
 
                 background-image: repeating-radial-gradient(circle at 0% 0%, $g1, $g1 50px, $g2, $g2 50px 100px)
 
+                // Psuedo
+
+                &:before
+
+                    box-shadow: 10px 10px 0 $g2
+
             @else
 
                 $g1: lighten($colour, 5%)
                 $g2: lighten($colour, 10%)
 
                 background-image: repeating-radial-gradient(circle at 0% 0%, $g1, $g1 50px, $g2, $g2 50px 100px)
+
+                // Psuedo
+
+                &:before
+
+                    box-shadow: 10px 10px 0 $colour
 
     .-r-#{$label}
 
