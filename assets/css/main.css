@@ -40,7 +40,7 @@ input, textarea, select {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
-section.single .group .col.-img:before {
+section.single .group .col.-img:before, section.single .quiz ol li a:before {
   box-sizing: border-box; }
 
 body {
@@ -302,16 +302,12 @@ section {
       margin-top: auto;
       margin-bottom: auto; }
     section.blocks a.item span.type {
-      position: absolute;
-      top: 50%;
-      right: 50px;
+      position: relative;
+      margin-left: 20px;
       width: 30px;
       height: 30px;
       border-radius: 30px;
       border: 2px solid black;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
       transition-property: width;
       transition-duration: 0.1s;
       transition-delay: 0s;
@@ -350,7 +346,6 @@ section {
         padding: 0 4px; }
     section.blocks a.item .rating {
       margin-left: auto;
-      margin-right: 150px;
       width: 160px;
       height: auto;
       font-size: 30px;
@@ -529,7 +524,7 @@ section {
     display: flex;
     height: 500px;
     margin-top: 50px; }
-    section.single .images .pattern, section.single .images .rotate {
+    section.single .images .pattern, section.single .images .rotate:before {
       border: 3px solid black; }
     section.single .images .pattern {
       width: 100%;
@@ -544,7 +539,7 @@ section {
       section.single .images .pattern img {
         width: 200%;
         height: 200%;
-        background-size: 8%;
+        background-size: 6%;
         background-position: 50% 50%;
         -webkit-transform: translateY(-50%) translateX(1%) scale(2);
         -ms-transform: translateY(-50%) translateX(1%) scale(2);
@@ -553,18 +548,38 @@ section {
           section.single .images .pattern img {
             display: none; } }
     section.single .images .rotate {
-      width: 30%;
+      position: relative;
+      width: 25%;
       height: 100%;
       margin-left: 33.33333px;
-      background-color: #FFFF90;
-      overflow: hidden;
-      box-shadow: 10px 10px 0 #FFFF90; }
+      overflow: hidden; }
       @media screen and (max-width: 1024px) {
         section.single .images .rotate {
           width: 100%;
           margin: 0; } }
+      section.single .images .rotate:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        height: 70%; }
+      section.single .images .rotate:nth-child(1):before {
+        background-color: #FFFF90;
+        box-shadow: 10px 10px 0 #FFFF90; }
+      section.single .images .rotate:nth-child(2):before {
+        background-color: #FFC466;
+        box-shadow: 10px 10px 0 #FFC466; }
+      section.single .images .rotate:nth-child(3):before {
+        background-color: #85FFFF;
+        box-shadow: 10px 10px 0 #85FFFF; }
+      section.single .images .rotate:nth-child(4):before {
+        background-color: #FF9F9F;
+        box-shadow: 10px 10px 0 #FF9F9F; }
       section.single .images .rotate .inner {
         position: relative;
+        z-index: 2;
         height: 400%;
         -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -585,8 +600,146 @@ section {
           display: block;
           width: 100%;
           height: 25%;
-          padding: 50px;
+          padding: 25px;
           object-fit: contain; }
+  section.single .quiz {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+    section.single .quiz .question, section.single .quiz .result {
+      position: relative;
+      padding: 50px;
+      background-color: white;
+      border: 2px solid black;
+      box-shadow: 10px 10px 0 white; }
+    section.single .quiz .result {
+      display: none;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }
+      section.single .quiz .result h3, section.single .quiz .result p {
+        margin: 0 0 33.33333px 0; }
+      section.single .quiz .result .btn {
+        display: inline-block; }
+    section.single .quiz p.qTitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 33.33333px;
+      font-size: 30px; }
+      section.single .quiz p.qTitle:after {
+        content: attr(data-progress);
+        font-size: 22px; }
+    section.single .quiz ol {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      counter-reset: answers; }
+      section.single .quiz ol li {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 80px;
+        margin: 25px 0;
+        counter-increment: answers; }
+        section.single .quiz ol li[data-order="0"] {
+          order: 0; }
+        section.single .quiz ol li[data-order="1"] {
+          order: 1; }
+        section.single .quiz ol li[data-order="2"] {
+          order: 2; }
+        section.single .quiz ol li[data-order="3"] {
+          order: 3; }
+        section.single .quiz ol li[data-order="4"] {
+          order: 4; }
+        section.single .quiz ol li[data-order="5"] {
+          order: 5; }
+        section.single .quiz ol li[data-order="6"] {
+          order: 6; }
+        section.single .quiz ol li[data-order="7"] {
+          order: 7; }
+        section.single .quiz ol li:nth-child(1) a:before {
+          background-color: #FFFF90; }
+        section.single .quiz ol li:nth-child(2) a:before {
+          background-color: #DEFF7E; }
+        section.single .quiz ol li:nth-child(3) a:before {
+          background-color: #FFC466; }
+        section.single .quiz ol li:nth-child(4) a:before {
+          background-color: #FF9F9F; }
+        section.single .quiz ol li:nth-child(5) a:before {
+          background-color: #FFA1D5; }
+        section.single .quiz ol li:nth-child(6) a:before {
+          background-color: #C19BFF; }
+        section.single .quiz ol li.-off {
+          opacity: .3; }
+        section.single .quiz ol li.-on {
+          opacity: 1; }
+          section.single .quiz ol li.-on:nth-child(1) a {
+            background-color: #ffffdd; }
+          section.single .quiz ol li.-on:nth-child(2) a {
+            background-color: #f2ffcb; }
+          section.single .quiz ol li.-on:nth-child(3) a {
+            background-color: #ffe2b3; }
+          section.single .quiz ol li.-on:nth-child(4) a {
+            background-color: #ffecec; }
+          section.single .quiz ol li.-on:nth-child(5) a {
+            background-color: #ffeef7; }
+          section.single .quiz ol li.-on:nth-child(6) a {
+            background-color: #f0e8ff; }
+        section.single .quiz ol li a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 0 100px;
+          background-color: white;
+          color: black;
+          border: 2px solid black;
+          line-height: 80px;
+          text-transform: none;
+          transition-property: opacity, background-color;
+          transition-duration: 0.1s, 0.1s;
+          transition-delay: 0s;
+          transition-timing-function: linear; }
+          section.single .quiz ol li a:before {
+            content: counter(answers, upper-alpha);
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 80px;
+            margin-right: 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 32px;
+            border: 2px solid black; }
+    section.single .quiz .btnGroup {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px; }
+    section.single .quiz a.btn {
+      margin-left: auto;
+      padding: 12px 22px;
+      font-size: 18.33333px;
+      background-color: #DEFF7E;
+      color: black;
+      border: 2px solid black;
+      box-shadow: 5px 5px 0 #DEFF7E;
+      transition-property: box-shadow, background-color;
+      transition-duration: 0.1s, 0.1s;
+      transition-delay: 0s;
+      transition-timing-function: linear; }
+      section.single .quiz a.btn:hover {
+        background-color: #FF99CC;
+        box-shadow: -5px -5px 0 #FF99CC; }
+      section.single .quiz a.btn.-disabled {
+        background-color: #e6e6e6;
+        color: #b3b3b3;
+        border-color: #b3b3b3;
+        box-shadow: 5px 5px 0 #e6e6e6;
+        cursor: not-allowed; }
   section .rating {
     position: relative;
     width: 100%;
@@ -647,9 +800,6 @@ section {
   .-p-sparkling .-img:before {
     box-shadow: 10px 10px 0 #FFFF90; }
 
-.-r-sparkling {
-  background-color: #FFFF90; }
-
 .-b-white {
   background-color: #f2f2f2;
   box-shadow: 10px 10px 0 #e6e6e6; }
@@ -664,9 +814,6 @@ section {
   background-image: repeating-radial-gradient(circle at 0% 0%, #ededed, #ededed 50px, #f7f7f7, #f7f7f7 50px 100px); }
   .-p-white .-img:before {
     box-shadow: 10px 10px 0 #f7f7f7; }
-
-.-r-white {
-  background-color: #f7f7f7; }
 
 .-b-red {
   background-color: #ffecec;
@@ -683,9 +830,6 @@ section {
   .-p-red .-img:before {
     box-shadow: 10px 10px 0 #FF9F9F; }
 
-.-r-red {
-  background-color: #FF9F9F; }
-
 .-b-rose {
   background-color: #ffeef7;
   box-shadow: 10px 10px 0 #FFA1D5; }
@@ -700,9 +844,6 @@ section {
   background-image: repeating-radial-gradient(circle at 0% 0%, #ffbbe0, #ffbbe0 50px, #ffd4ec, #ffd4ec 50px 100px); }
   .-p-rose .-img:before {
     box-shadow: 10px 10px 0 #FFA1D5; }
-
-.-r-rose {
-  background-color: #FFA1D5; }
 
 .-b-orange {
   background-color: #ffe2b3;
@@ -719,9 +860,6 @@ section {
   .-p-orange .-img:before {
     box-shadow: 10px 10px 0 #FFC466; }
 
-.-r-orange {
-  background-color: #FFC466; }
-
 .-b-sweet {
   background-color: #f0e8ff;
   box-shadow: 10px 10px 0 #C19BFF; }
@@ -737,9 +875,6 @@ section {
   .-p-sweet .-img:before {
     box-shadow: 10px 10px 0 #C19BFF; }
 
-.-r-sweet {
-  background-color: #C19BFF; }
-
 .-b-misc {
   background-color: #c9ffdb;
   box-shadow: 10px 10px 0 #7CFFA8; }
@@ -754,9 +889,6 @@ section {
   background-image: repeating-radial-gradient(circle at 0% 0%, #96ffb9, #96ffb9 50px, #afffca, #afffca 50px 100px); }
   .-p-misc .-img:before {
     box-shadow: 10px 10px 0 #7CFFA8; }
-
-.-r-misc {
-  background-color: #7CFFA8; }
 
 h1, h2, h3 {
   display: inline-block; }

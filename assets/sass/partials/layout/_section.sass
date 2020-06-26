@@ -142,10 +142,9 @@ section
 
             span.type
 
-                position: absolute
+                position: relative
 
-                top: 50%
-                right: 50px
+                margin-left: 20px
 
                 width: 30px
                 height: 30px
@@ -154,7 +153,6 @@ section
 
                 border: 2px solid $dark
 
-                +transform(translateY, -50%)
                 +transition(width, .1s)
 
                 // Pseudo
@@ -215,12 +213,9 @@ section
 
                         padding: 0 4px
 
-
-
             .rating
 
                 margin-left: auto
-                margin-right: 150px
 
                 width: 160px
                 height: auto
@@ -535,7 +530,7 @@ section
 
             // Children
 
-            .pattern, .rotate
+            .pattern, .rotate:before
 
                 border: 3px solid $dark
 
@@ -563,7 +558,7 @@ section
                     width: 200%
                     height: 200%
 
-                    background-size: 8%
+                    background-size: 6%
                     background-position: 50% 50%
 
                     +transform((translateY, translateX, scale), (-50%, 1%, 2))
@@ -576,16 +571,15 @@ section
 
             .rotate
 
-                width: 30%
+                position: relative
+
+                width: 25%
                 height: 100%  
 
                 margin-left: $globalSpace / 3
 
-                background-color: $a8
-
                 overflow: hidden
 
-                box-shadow: 10px 10px 0 $a8
 
                 +screen($md)
 
@@ -593,11 +587,47 @@ section
 
                     margin: 0
 
+                // Pseudo
+
+                &:before
+
+                    content: ''
+
+                    position: absolute
+                    z-index: 1
+
+                    top: 15%
+                    left: 15%
+
+                    width: 70%
+                    height: 70%
+
+                &:nth-child(1):before
+
+                    background-color: $a8
+                    box-shadow: 10px 10px 0 $a8
+
+                &:nth-child(2):before
+
+                    background-color: $a3
+                    box-shadow: 10px 10px 0 $a3
+
+                &:nth-child(3):before
+
+                    background-color: $a4
+                    box-shadow: 10px 10px 0 $a4
+                
+                &:nth-child(4):before
+
+                    background-color: $a6
+                    box-shadow: 10px 10px 0 $a6
+
                 // Children
 
                 .inner
 
                     position: relative
+                    z-index: 2
 
                     height: 400%
 
@@ -613,10 +643,304 @@ section
                         width: 100%
                         height: 25%
 
-                        padding: 50px
+                        padding: 25px
 
                         object-fit: contain
     
+        .quiz
+
+            position: relative
+            display: block
+
+            width: 80%
+
+            margin-left: auto
+            margin-right: auto
+
+            // Children
+
+            .question, .result
+
+                position: relative
+
+                padding: $globalSpace / 2
+
+                background-color: $light
+                border: 2px solid $dark
+
+                box-shadow: 10px 10px 0 $light
+
+            .result
+
+                display: none
+
+                width: 50%
+
+                margin-left: auto
+                margin-right: auto
+
+                text-align: center
+
+                // Children
+
+                h3, p
+
+                    margin: 0 0 $globalSpace / 3 0
+
+                .btn
+
+                    display: inline-block
+
+
+            p.qTitle
+
+                display: flex
+                justify-content: space-between
+                align-items: center
+
+                margin-bottom: $globalSpace / 3
+
+                font-size: $h3
+
+                // Pseudo
+
+                &:after
+
+                    content: attr(data-progress)
+
+                    font-size: $fontBase
+
+            ol
+
+                display: flex
+                flex-direction: column
+
+                list-style-type: none
+                counter-reset: answers
+                
+                // Children
+
+                li
+
+                    $s: 80px
+
+                    display: block
+                    position: relative
+
+                    width: 100%
+                    height: $s
+
+                    margin: $globalSpace / 4 0
+
+                    counter-increment: answers
+
+                    // Pseudo
+
+                    &:[data-order="0"]
+
+                        order: 0
+
+                    &:[data-order="1"]
+
+                        order: 1
+
+                    &:[data-order="2"]
+
+                        order: 2
+
+                    &:[data-order="3"]
+
+                        order: 3
+
+                    &:[data-order="4"]
+
+                        order: 4
+
+                    &:[data-order="5"]
+
+                        order: 5
+
+                    &:[data-order="6"]
+
+                        order: 6
+
+                    &:[data-order="7"]
+
+                        order: 7
+
+                    &:nth-child(1) a:before
+
+                        background-color: $a8
+
+                    &:nth-child(2) a:before
+
+                        background-color: $a2
+
+                    &:nth-child(3) a:before
+
+                        background-color: $a3
+
+                    &:nth-child(4) a:before
+
+                        background-color: $a6
+
+                    &:nth-child(5) a:before
+
+                        background-color: $a7
+
+                    &:nth-child(6) a:before
+
+                        background-color: $a5
+
+                    // Classes
+
+                    &.-off
+
+                        opacity: .3
+
+                    &.-on
+
+                        opacity: 1
+
+                        // Psuedo
+
+                        &:nth-child(1)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a8, 15%)
+
+                        &:nth-child(2)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a2, 15%)
+
+                        &:nth-child(3)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a3, 15%)
+
+                        &:nth-child(4)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a6, 15%)
+
+                        &:nth-child(5)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a7, 15%)
+
+                        &:nth-child(6)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a5, 15%)
+
+                    // Children
+
+                    a
+
+                        display: block
+
+                        width: 100%
+                        height: 100%
+
+                        padding: 0 $globalSpace
+
+                        background-color: $light
+                        color: $dark
+                        border: 2px solid $dark
+
+                        line-height: $s
+                        text-transform: none
+
+                        +transition((opacity, background-color), (.1s, .1s))
+
+                        // Pseudo
+
+                        &:before
+
+                            content: counter(answers, upper-alpha)
+
+                            position: absolute
+
+                            top: 0
+                            left: 0
+
+                            height: 100%
+                            width: $s
+
+                            margin-right: 25px
+
+                            text-align: center
+                            font-weight: 600
+                            font-size: $fontBase + 10px
+
+                            border: 2px solid $dark
+
+                            @extend %boxSize
+
+            .btnGroup
+
+                display: flex
+                justify-content: space-between
+
+                margin-top: $globalSpace / 2
+
+            a.btn
+
+                margin-left: auto
+                padding: 12px 22px
+
+                font-size: $fontBase / 1.2
+
+                background-color: $a2
+                color: $dark
+
+                border: 2px solid $dark
+                box-shadow: 5px 5px 0 $a2
+
+                +transition((box-shadow, background-color), (.1s, .1s))
+
+                // States
+
+                &:hover
+
+                    background-color: $primary
+
+                    box-shadow: -5px -5px 0 $primary
+
+                // Classes
+
+                &.-disabled
+
+                    $c1: darken($light, 10%)
+                    $c2: darken($c1, 20%)
+
+                    background-color: $c1
+                    color: $c2
+                    border-color: $c2
+
+                    box-shadow: 5px 5px 0 $c1
+
+                    cursor: not-allowed
+
     // Children
 
     .rating

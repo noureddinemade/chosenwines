@@ -96,15 +96,9 @@
 
             <div class="images">
 
-                <div class="pattern">
-
-                    <img src="/assets/img/blank.png" alt="{{ page.title }}" style="background-image: url('/assets/img/wines/{{ imgLink }}@2x.png');" title="{{ page.title }}">
-
-                </div>
-
                 {% unless page.rotate == "0" %}
 
-                <div class="rotate -r-{{ imgClass }}">
+                <div class="rotate">
 
                     <div class="inner">
 
@@ -115,6 +109,44 @@
 
                     </div>
 
+                </div>
+
+                <div class="rotate">
+
+                    <div class="inner">
+
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r2.png" src="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r3.png" src="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r4.png" src="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r1.png" src="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+
+                    </div>
+
+                </div>
+
+                <div class="rotate">
+
+                    <div class="inner">
+
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r3.png" src="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r4.png" src="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r1.png" src="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r2.png" src="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+
+                    </div>
+
+                </div>
+
+                <div class="rotate">
+
+                    <div class="inner">
+
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r4.png" src="/assets/img/wines/rotate/{{ imgLink }}-r4@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r1.png" src="/assets/img/wines/rotate/{{ imgLink }}-r1@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r2.png" src="/assets/img/wines/rotate/{{ imgLink }}-r2@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+                        <img srcset="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png 2x, /assets/img/wines/rotate/{{ imgLink }}-r3.png" src="/assets/img/wines/rotate/{{ imgLink }}-r3@2x.png" alt="{{ page.title }}" title="{{ page.title }}">
+
+                    </div>
 
                 </div>
 
