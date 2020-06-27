@@ -5,7 +5,7 @@ header
     position: relative
     z-index: 20
 
-    margin-bottom: $globalSpace
+    margin-bottom: $globalSpace / 2
 
     text-align: center
 
@@ -29,17 +29,17 @@ header
         display: inline-block
         position: relative
 
-        width: 20%
+        width: 400px
 
         // Responsive
 
         +screen($md)
 
-            width: 50%
+            width: 280px
 
         +screen($xs)
 
-            width: 80%
+            width: 200px
 
         // Children
 
@@ -57,7 +57,7 @@ header
             .chosen, .wines
 
                 stroke: $dark
-                stroke-width: 5px
+                stroke-width: 6px
 
             .shadow
 

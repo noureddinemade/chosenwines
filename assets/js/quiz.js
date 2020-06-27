@@ -3,7 +3,7 @@ const questions = [
     {
         id: 0,
         question: 'What would you prefer to do on a Saturday night?',
-        score: 1,
+        score: 3,
         answers: [
             {
                 title: 'Partying',
@@ -99,7 +99,7 @@ const questions = [
     {
         id: 3,
         question: 'What is your go to coffee shop order?',
-        score: 1,
+        score: 1.5,
         answers: [
             {
                 title: 'Anything I can make Irish',
@@ -279,6 +279,7 @@ const categories = [
 const quiz              = document.querySelector('.quiz');
 const result            = quiz.querySelector('.result');
 const currentQ          = quiz.querySelector('.question');
+const progress          = quiz.querySelector('.progress');
 
 const btnNext           = quiz.querySelector('.btn.next');
 const btnPrev           = quiz.querySelector('.btn.prev');
@@ -296,27 +297,52 @@ let currentChoice;
 
 //
 
+const shuffleQs = (array) => {
+
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+        
+    }
+
+    return array;
+}
+
 const setQuestion = (id) => {
 
     let q = questions[id];
-    let a = q.answers;
+    let a = shuffleQs(q.answers);
 
     currentQAnswers.innerHTML = '';
 
     currentQ.setAttribute('data-question', q.id);
-    currentQTitle.setAttribute('data-progress', `${id + 1} / ${questions.length}`);
+    progress.setAttribute('data-step', `${id + 1}`);
+    progress.setAttribute('data-total', `${questions.length}`);
     currentQTitle.innerHTML = q.question;
 
     a.forEach(answer => {
 
-        let o = Math.floor(Math.random() * 7);
-
         const li = document.createElement('li');
 
-        li.setAttribute('data-order', o);
         li.innerHTML = `<a class="choice" data-result="${answer.id}">${answer.title}</a>`;
 
         currentQAnswers.append(li);
+
+        setTimeout(() => {
+
+            li.classList.add('-on');
+
+        }, 100);
 
     });
 
@@ -341,7 +367,7 @@ const addScore = (q,a) => {
 const nextQuestion = (q,a) => {
 
     addScore(q,a)
-    setQuestion(q);
+    setQuestion(q + 1);
     countQuestions();
 
     currentQ.scrollIntoView();
@@ -375,12 +401,20 @@ const finishQuiz = () => {
 
     let grape = categories[0];
 
-    currentQ.style.display = 'none';
+    currentQ.classList.add('-off');
     btnFinish.style.display = 'none';
-    result.style.display = 'block';
 
-    resultTitle.innerHTML   = grape.title;
-    resultDesc.innerHTML    = grape.message;
+    result.style.display = 'block';
+    resultTitle.innerHTML = grape.title;
+    resultDesc.innerHTML = grape.message;
+
+    setTimeout(() => {
+
+        currentQ.style.display = 'none';
+        progress.style.display = 'none';
+        result.classList.add('-on');
+
+    }, 200);
 
 };
 
@@ -402,12 +436,12 @@ document.addEventListener('click', function(e) {
         choices.forEach(choice => {
 
             choice.classList.add('-off');
-            choice.classList.remove('-on');
+            choice.classList.remove('-active');
 
         });
 
         current.parentNode.classList.remove('-off');
-        current.parentNode.classList.add('-on');
+        current.parentNode.classList.add('-active');
         btnNext.classList.remove('-disabled');
         btnFinish.classList.remove('-disabled');
 
@@ -421,11 +455,9 @@ btnNext.addEventListener('click', function() {
 
     if (!this.classList.contains('-disabled')) {
 
-        let q = +currentQ.getAttribute('data-question') + 1;
+        let q = +currentQ.getAttribute('data-question');
 
         nextQuestion(q,currentChoice);
-
-        console.log(categories);
 
     }
 

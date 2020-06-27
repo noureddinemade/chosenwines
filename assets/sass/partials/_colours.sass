@@ -12,6 +12,12 @@
 
             box-shadow: 10px 10px 0 darken($c, 5%)
 
+            // Responsive
+
+            +screen($xs)
+
+                box-shadow: 5px 5px 0 darken($c, 5%)
+
             // Pseudo
 
             &:before
@@ -31,6 +37,12 @@
             background-color: $c
 
             box-shadow: 10px 10px 0 $colour
+
+            // Responsive
+
+            +screen($xs)
+
+                box-shadow: 5px 5px 0 $colour
 
             // Pseudo
 

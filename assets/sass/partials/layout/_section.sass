@@ -17,9 +17,17 @@ section
 
             +grid(2, 1fr, $globalSpace / 2)
 
+            // responsive
+
+            +screen($md)
+
+                +grid(1, 1fr, 0)
+
             // Children
 
             a.item
+
+                text-align: center
 
                 // Classes
 
@@ -28,6 +36,12 @@ section
                     background-image: repeating-linear-gradient(125deg, $a2, $a2 40px, $a8, $a8 40px 80px)
 
                     box-shadow: 10px 10px 0 $a2
+
+                    // Responsive
+
+                    +screen($xs)
+
+                        box-shadow: 5px 5px 0 $a2
 
                     // Psuedo
 
@@ -47,11 +61,39 @@ section
 
                     box-shadow: 10px 10px 0 $a4
 
+                    // Responsive
+
+                    +screen($xs)
+
+                        box-shadow: 5px 5px 0 $a4
+
                     // Psuedo
 
                     &:before
 
                         background-color: $a4
+
+                    &:after
+
+                        content: 'Quiz'
+
+                        position: absolute
+
+                        top: -3px
+                        right: -3px
+
+                        padding: 2px 10px
+
+                        background-color: $a8
+
+                        font-size: $fontBase / 1.4
+                        font-weight: 600
+
+                        color: $dark
+
+                        border: $borderW solid $dark
+
+                        @extend %boxSize
 
                     // States
 
@@ -78,9 +120,24 @@ section
             margin-bottom: $globalSpace / 2 
             padding: 0 2%
 
-            border: 3px solid $dark
+            border: $borderW solid $dark
 
             +transition((background-color, box-shadow), (.1s, .1s))
+
+            // Responsive
+
+            +screen($md)
+
+                height: 100px
+
+                margin-bottom: $globalSpace / 4
+
+            +screen($xs)
+
+                flex-direction: column
+
+                height: 80px
+                padding: 10px 2%
 
             // Pseudo
 
@@ -151,9 +208,15 @@ section
 
                 border-radius: 30px
 
-                border: 2px solid $dark
+                border: $borderW solid $dark
 
                 +transition(width, .1s)
+
+                // Responsive
+
+                +screen($md)
+
+                    display: none
 
                 // Pseudo
 
@@ -189,6 +252,14 @@ section
 
                 color: $dark
 
+                // Responsive
+
+                +screen($xs)
+
+                    padding-left: 70px
+
+                    font-size: 5vmin !important
+
             p
 
                 margin-left: 25px
@@ -196,6 +267,12 @@ section
                 font-size: $fontBase - 2px
 
                 color: $dark !important
+
+                // Responsive
+
+                +screen($md)
+
+                    display: none
 
                 // Children
 
@@ -225,6 +302,25 @@ section
 
                 +transform(translateY, -4px)
 
+                // Responsive
+
+                +screen($md)
+
+                    width: 110px
+
+                    font-size: 20px
+
+                    +transform(translateY, 0)
+
+                +screen($xs)
+
+                    width: 90px
+
+                    margin-left: 70px
+
+                    font-size: 16px
+                    text-align: left
+
             img
 
                 position: absolute
@@ -241,6 +337,14 @@ section
 
                 +transition((transform, opacity), (.2s, .2s))
                 +transform(scale, 2)
+
+                // Responsive
+
+                +screen($xs)
+
+                    left: 0
+
+                    +transform(scale, 1.5)
 
     &.single
 
@@ -283,7 +387,7 @@ section
                 background-color: $a2
                 color: $dark
 
-                border: 2px solid $dark
+                border: $borderW solid $dark
                 box-shadow: 5px 5px 0 $a2
 
                 +transition((box-shadow, background-color), (.1s, .1s))
@@ -432,7 +536,7 @@ section
                         width: 60%
                         height: 60%
 
-                        border: 3px solid $dark
+                        border: $borderW solid $dark
 
                         @extend %boxSize
 
@@ -520,7 +624,7 @@ section
 
             ul
 
-        .images
+        .images 
 
             display: flex
 
@@ -529,45 +633,6 @@ section
             margin-top: $globalSpace / 2
 
             // Children
-
-            .pattern, .rotate:before
-
-                border: 3px solid $dark
-
-            .pattern
-
-                width: 100%
-                height: 100%
-
-                margin-right: $globalSpace / 3
-
-                background-image: repeating-linear-gradient(22deg, $a4, $a4 100px, $a7, $a7 100px 200px)
-
-                overflow: hidden
-
-                box-shadow: 10px 10px 0 $a4
-
-                +screen($md)
-
-                    display: none
-
-                // Children
-
-                img
-
-                    width: 200%
-                    height: 200%
-
-                    background-size: 6%
-                    background-position: 50% 50%
-
-                    +transform((translateY, translateX, scale), (-50%, 1%, 2))
-
-                    // Responsive
-
-                    +screen($sm)
-
-                        display: none
 
             .rotate
 
@@ -602,25 +667,61 @@ section
                     width: 70%
                     height: 70%
 
-                &:nth-child(1):before
+                    border: $borderW solid $dark
 
-                    background-color: $a8
-                    box-shadow: 10px 10px 0 $a8
+                &:nth-child(1)
 
-                &:nth-child(2):before
+                    // Pseudo
+                    
+                    &:before
 
-                    background-color: $a3
-                    box-shadow: 10px 10px 0 $a3
+                        background-color: $a8
+                        box-shadow: 10px 10px 0 $a8
 
-                &:nth-child(3):before
+                &:nth-child(2)
 
-                    background-color: $a4
-                    box-shadow: 10px 10px 0 $a4
+                    // Responsive
+
+                    +screen($sm)
+
+                        display: none
+
+                    // Pseudo
+                    
+                    &:before
+
+                        background-color: $a3
+                        box-shadow: 10px 10px 0 $a3
+
+                &:nth-child(3)
+
+                    // Responsive
+
+                    +screen($sm)
+
+                        display: none
+
+                    // Pseudo
+                    
+                    &:before
+
+                        background-color: $a4
+                        box-shadow: 10px 10px 0 $a4
                 
-                &:nth-child(4):before
+                &:nth-child(4)
 
-                    background-color: $a6
-                    box-shadow: 10px 10px 0 $a6
+                    // Responsive
+
+                    +screen($sm)
+
+                        display: none
+
+                    // Pseudo
+                    
+                    &:before
+
+                        background-color: $a6
+                        box-shadow: 10px 10px 0 $a6
 
                 // Children
 
@@ -646,16 +747,20 @@ section
                         padding: 25px
 
                         object-fit: contain
-    
+
+    &.quizContainer
+
+        // Children
+
         .quiz
 
             position: relative
             display: block
 
-            width: 80%
-
             margin-left: auto
             margin-right: auto
+
+            +maxWidth($md)
 
             // Children
 
@@ -663,18 +768,38 @@ section
 
                 position: relative
 
-                padding: $globalSpace / 2
-
                 background-color: $light
-                border: 2px solid $dark
+                border: $borderW solid $dark
 
                 box-shadow: 10px 10px 0 $light
+
+                +transition((opacity, visibility), (.2s, .2s))
+
+                @extend %padding
+
+                // Classes
+
+                &.-off
+                    
+                    opacity: 0
+                    visibility: hidden
+
+                &.-on
+                    
+                    opacity: 1
+                    visibility: visible
+                    
+                    // Children
+
+                    h3, p, .btn
+
+                        opacity: 1
+
+                        +transform(translateY, 0px)
 
             .result
 
                 display: none
-
-                width: 50%
 
                 margin-left: auto
                 margin-right: auto
@@ -682,6 +807,13 @@ section
                 text-align: center
 
                 // Children
+
+                h3, p, .btn
+
+                    opacity: 0
+
+                    +transform(translateY, -10px)
+                    +transition((opacity, transform), (.2s, .2s), (.5s, .5s))
 
                 h3, p
 
@@ -691,7 +823,50 @@ section
 
                     display: inline-block
 
+            .progress
 
+                $s: 60px
+
+                display: block
+                position: absolute
+                z-index: 2
+
+                top: 0
+                left: 50%
+
+                width: auto
+                height: $s
+
+                padding: 0 20px
+            
+                line-height: $s
+
+                background-color: $a2
+                border: $borderW solid $dark
+
+                +transform((translateX, translateY), (-50%, -50%))
+
+                // Responsive
+
+                +screen($sm)
+
+                    height: $s / 1.5
+
+                    padding: 0 10px
+
+                    font-size: $fontBase / 1.2
+                    line-height: $s / 1.5
+
+                // Psudeo
+
+                &:before
+
+                    content: attr(data-step)
+
+                &:after
+
+                    content: attr(data-total)
+                
             p.qTitle
 
                 display: flex
@@ -699,16 +874,17 @@ section
                 align-items: center
 
                 margin-bottom: $globalSpace / 3
+                padding-bottom: 10px
 
                 font-size: $h3
 
-                // Pseudo
+                border-bottom: 4px solid $dark
 
-                &:after
+                // Responsive
 
-                    content: attr(data-progress)
+                +screen($md)
 
-                    font-size: $fontBase
+                    font-size: $h3 - 4px
 
             ol
 
@@ -722,85 +898,103 @@ section
 
                 li
 
-                    $s: 80px
-
                     display: block
                     position: relative
 
                     width: 100%
-                    height: $s
+                    height: auto
 
-                    margin: $globalSpace / 4 0
+                    margin: $globalSpace / 10 0
 
                     counter-increment: answers
 
+                    opacity: 0
+
+                    +transition((transform, opacity),(.1s, .1s))
+                    +transform(translateY, -10px)
+
                     // Pseudo
 
-                    &:[data-order="0"]
+                    &:nth-child(1)
+                        
+                        // Children
 
-                        order: 0
+                        a:before
 
-                    &:[data-order="1"]
+                            background-color: $a8
 
-                        order: 1
+                    &:nth-child(2)
 
-                    &:[data-order="2"]
+                        -webkit-transition-delay: .1s
+                        transition-delay: .1s
+                        
+                        // Children
 
-                        order: 2
+                        a:before
 
-                    &:[data-order="3"]
+                            background-color: $a2
 
-                        order: 3
+                    &:nth-child(3)
 
-                    &:[data-order="4"]
+                        -webkit-transition-delay: .2s
+                        transition-delay: .2s
+                        
+                        // Children
 
-                        order: 4
+                        a:before
 
-                    &:[data-order="5"]
+                            background-color: $a3
 
-                        order: 5
+                    &:nth-child(4)
 
-                    &:[data-order="6"]
+                        -webkit-transition-delay: .3s
+                        transition-delay: .3s
+                        
+                        // Children
 
-                        order: 6
+                        a:before
 
-                    &:[data-order="7"]
+                            background-color: $a6
 
-                        order: 7
+                    &:nth-child(5)
 
-                    &:nth-child(1) a:before
+                        -webkit-transition-delay: .4s
+                        transition-delay: .4s
+                        
+                        // Children
 
-                        background-color: $a8
+                        a:before
 
-                    &:nth-child(2) a:before
+                            background-color: $a7
 
-                        background-color: $a2
+                    &:nth-child(6)
 
-                    &:nth-child(3) a:before
+                        -webkit-transition-delay: .5s
+                        transition-delay: .5s
+                        
+                        // Children
 
-                        background-color: $a3
+                        a:before
 
-                    &:nth-child(4) a:before
-
-                        background-color: $a6
-
-                    &:nth-child(5) a:before
-
-                        background-color: $a7
-
-                    &:nth-child(6) a:before
-
-                        background-color: $a5
+                            background-color: $a5
 
                     // Classes
-
-                    &.-off
-
-                        opacity: .3
 
                     &.-on
 
                         opacity: 1
+
+                        +transform(translateY, 0px)
+
+                    &.-off
+
+                        // Children
+
+                        a
+
+                            opacity: .3
+
+                    &.-selected
 
                         // Psuedo
 
@@ -852,25 +1046,38 @@ section
 
                                 background-color: lighten($a5, 15%)
 
+                        // Children
+
+                        a
+
+                            opacity: 1
+
                     // Children
 
                     a
 
-                        display: block
+                        display: flex
+                        align-items: center
 
                         width: 100%
                         height: 100%
 
-                        padding: 0 $globalSpace
+                        margin: auto 0
+                        padding: 10px $globalSpace / 1.4
 
                         background-color: $light
                         color: $dark
-                        border: 2px solid $dark
+                        border: $borderW solid $dark
 
-                        line-height: $s
                         text-transform: none
 
                         +transition((opacity, background-color), (.1s, .1s))
+
+                        // Responsive
+
+                        +screen($md)
+
+                            font-size: $fontBase / 1.2
 
                         // Pseudo
 
@@ -878,13 +1085,16 @@ section
 
                             content: counter(answers, upper-alpha)
 
+                            display: flex
                             position: absolute
+                            align-items: center
+                            justify-content: center
 
                             top: 0
                             left: 0
 
                             height: 100%
-                            width: $s
+                            width: 60px
 
                             margin-right: 25px
 
@@ -892,7 +1102,7 @@ section
                             font-weight: 600
                             font-size: $fontBase + 10px
 
-                            border: 2px solid $dark
+                            border: $borderW solid $dark
 
                             @extend %boxSize
 
@@ -909,14 +1119,21 @@ section
                 padding: 12px 22px
 
                 font-size: $fontBase / 1.2
+                text-align: center
 
                 background-color: $a2
                 color: $dark
 
-                border: 2px solid $dark
+                border: $borderW solid $dark
                 box-shadow: 5px 5px 0 $a2
 
                 +transition((box-shadow, background-color), (.1s, .1s))
+
+                // Responsive
+
+                +screen($md)
+
+                    width: 100%
 
                 // States
 
@@ -940,6 +1157,7 @@ section
                     box-shadow: 5px 5px 0 $c1
 
                     cursor: not-allowed
+        
 
     // Children
 

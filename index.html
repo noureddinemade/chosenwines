@@ -38,13 +38,13 @@ class: home
 
             <p>
                 {% unless post.winery == "" %}
-                    <span>{{ post.winery }}</span>
+                    <span class="winery">{{ post.winery }}</span>
                 {% endunless %}
                 {% unless post.vintage == "" %}
-                    <span>{{ post.vintage }}</span>
+                    <span class="vintage">{{ post.vintage }}</span>
                 {% endunless %}
                 {% unless post.region == "" %}
-                    <span>{{ post.region }}</span>
+                    <span class="region">{{ post.region }}</span>
                 {% endunless %}
             </p>
 
