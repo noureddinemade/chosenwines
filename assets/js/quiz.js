@@ -6,27 +6,27 @@ const questions = [
         score: 3,
         answers: [
             {
-                title: 'Partying',
+                title: 'Party all night long!',
                 id: 0
             },
             {
-                title: 'At a bar or restaurant',
+                title: 'Hang out at a bar or restaurant',
                 id: 1
             },
             {
-                title: 'Escape room',
+                title: 'Do an escape room',
                 id: 2
             },
             {
-                title: 'Watching YouTube videos',
+                title: 'Watch some YouTube videos',
                 id: 3
             },
             {
-                title: 'At the theatre',
+                title: 'View an exhibition at an art gallery',
                 id: 4
             },
             {
-                title: 'Curled up with a book',
+                title: 'Curl up with a book',
                 id: 5
             },
         ]
@@ -58,7 +58,7 @@ const questions = [
                 id: 4
             },
             {
-                title: 'Artist or however I can Express myself',
+                title: 'Experimental artist',
                 id: 5
             },
         ]
@@ -66,19 +66,19 @@ const questions = [
 
     {
         id: 2,
-        question: 'If you were a candy what would you be?',
+        question: 'If you were a candy, what would you be?',
         score: 1,
         answers: [
             {
-                title: 'Erotic gummies',
+                title: 'Erotic gummy',
                 id: 0
             },
             {
-                title: 'Jelly beans',
+                title: 'Jelly bean',
                 id: 1
             },
             {
-                title: 'Flying saucers',
+                title: 'Flying saucer',
                 id: 2
             },
             {
@@ -86,7 +86,7 @@ const questions = [
                 id: 3
             },
             {
-                title: 'Chocolate truffles',
+                title: 'Chocolate truffle',
                 id: 4
             },
             {
@@ -130,7 +130,7 @@ const questions = [
 
     {
         id: 4,
-        question: 'Which scoop of ice cream do you prefer? ',
+        question: 'Which scoop of ice cream would you go for? ',
         score: 1,
         answers: [
             {
@@ -166,7 +166,7 @@ const questions = [
         score: 1,
         answers: [
             {
-                title: 'Never getting a hangover',
+                title: 'No hangovers, EVER!',
                 id: 0
             },
             {
@@ -182,7 +182,7 @@ const questions = [
                 id: 3
             },
             {
-                title: 'To be able to summon any book ever written',
+                title: 'Summon any book ever written',
                 id: 4
             },
             {

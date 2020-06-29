@@ -832,7 +832,7 @@ section
                 z-index: 2
 
                 top: 0
-                left: 50%
+                right: 0
 
                 width: auto
                 height: $s
@@ -844,7 +844,7 @@ section
                 background-color: $a2
                 border: $borderW solid $dark
 
-                +transform((translateX, translateY), (-50%, -50%))
+                @extend %boxSize
 
                 // Responsive
 
@@ -885,6 +885,10 @@ section
                 +screen($md)
 
                     font-size: $h3 - 4px
+
+                +screen($sm)
+
+                    padding-top: 20px
 
             ol
 
