@@ -65,7 +65,7 @@ main, header, footer {
     main, header, footer {
       width: 100%; } }
 
-main, header, footer {
+main, header, footer, section.quizContainer .quiz .result img {
   margin-left: auto;
   margin-right: auto; }
 
@@ -389,10 +389,10 @@ section {
         padding: 0 4px; }
     section.blocks a.item .rating {
       margin-left: auto;
-      width: 160px;
+      width: auto;
       height: auto;
       font-size: 30px;
-      text-align: right;
+      text-align: left;
       -webkit-transform: translateY(-4px);
       -ms-transform: translateY(-4px);
       transform: translateY(-4px); }
@@ -405,7 +405,7 @@ section {
           transform: translateY(0); } }
       @media screen and (max-width: 640px) {
         section.blocks a.item .rating {
-          width: 90px;
+          width: 102px;
           margin-left: 70px;
           font-size: 16px;
           text-align: left; } }
@@ -676,17 +676,21 @@ section {
       section.quizContainer .quiz .question.-on, section.quizContainer .quiz .result.-on {
         opacity: 1;
         visibility: visible; }
-        section.quizContainer .quiz .question.-on h3, section.quizContainer .quiz .question.-on p, section.quizContainer .quiz .question.-on .btn, section.quizContainer .quiz .result.-on h3, section.quizContainer .quiz .result.-on p, section.quizContainer .quiz .result.-on .btn {
+        section.quizContainer .quiz .question.-on h3, section.quizContainer .quiz .question.-on p, section.quizContainer .quiz .question.-on .btn, section.quizContainer .quiz .question.-on img, section.quizContainer .quiz .result.-on h3, section.quizContainer .quiz .result.-on p, section.quizContainer .quiz .result.-on .btn, section.quizContainer .quiz .result.-on img {
           opacity: 1;
           -webkit-transform: translateY(0px);
           -ms-transform: translateY(0px);
           transform: translateY(0px); }
     section.quizContainer .quiz .result {
       display: none;
+      width: 60%;
       margin-left: auto;
       margin-right: auto;
       text-align: center; }
-      section.quizContainer .quiz .result h3, section.quizContainer .quiz .result p, section.quizContainer .quiz .result .btn {
+      @media screen and (max-width: 1024px) {
+        section.quizContainer .quiz .result {
+          width: 100%; } }
+      section.quizContainer .quiz .result h3, section.quizContainer .quiz .result p, section.quizContainer .quiz .result .btn, section.quizContainer .quiz .result img {
         opacity: 0;
         -webkit-transform: translateY(-10px);
         -ms-transform: translateY(-10px);
@@ -696,9 +700,14 @@ section {
         transition-delay: 0.5s, 0.5s;
         transition-timing-function: linear; }
       section.quizContainer .quiz .result h3, section.quizContainer .quiz .result p {
-        margin: 0 0 33.33333px 0; }
+        margin: 0;
+        margin-bottom: 25px; }
       section.quizContainer .quiz .result .btn {
         display: inline-block; }
+      section.quizContainer .quiz .result img {
+        display: block;
+        width: 400px;
+        margin-bottom: 25px; }
     section.quizContainer .quiz .progress {
       display: block;
       position: absolute;
@@ -878,7 +887,6 @@ section {
       z-index: 1;
       opacity: .2; }
     section .rating:after {
-      content: '★★★★★';
       position: absolute;
       z-index: 2;
       left: 0;
@@ -890,25 +898,30 @@ section {
     section .rating.-na:after {
       content: '⦸'; }
     section .rating.-half:after {
+      content: '★';
       width: 10%; }
     section .rating.-one:after {
-      width: 20%; }
+      content: '★'; }
     section .rating.-onehalf:after {
+      content: '★★';
       width: 30%; }
     section .rating.-two:after {
-      width: 40%; }
+      content: '★★'; }
     section .rating.-twohalf:after {
+      content: '★★★';
       width: 50%; }
     section .rating.-three:after {
-      width: 60%; }
+      content: '★★★'; }
     section .rating.-threehalf:after {
+      content: '★★★★';
       width: 70%; }
     section .rating.-four:after {
-      width: 80%; }
+      content: '★★★★'; }
     section .rating.-fourhalf:after {
+      content: '★★★★★';
       width: 90%; }
     section .rating.-five:after {
-      width: 100%; }
+      content: '★★★★★'; }
 
 .-b-sparkling {
   background-color: #ffffdd;

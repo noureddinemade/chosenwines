@@ -294,11 +294,11 @@ section
 
                 margin-left: auto
 
-                width: 160px
+                width: auto
                 height: auto
 
                 font-size: 30px
-                text-align: right
+                text-align: left
 
                 +transform(translateY, -4px)
 
@@ -314,7 +314,7 @@ section
 
                 +screen($xs)
 
-                    width: 90px
+                    width: 102px
 
                     margin-left: 70px
 
@@ -774,7 +774,7 @@ section
                 box-shadow: 10px 10px 0 $light
 
                 +transition((opacity, visibility), (.2s, .2s))
-
+                
                 @extend %padding
 
                 // Classes
@@ -791,7 +791,7 @@ section
                     
                     // Children
 
-                    h3, p, .btn
+                    h3, p, .btn, img
 
                         opacity: 1
 
@@ -801,14 +801,22 @@ section
 
                 display: none
 
+                width: 60%
+
                 margin-left: auto
                 margin-right: auto
 
                 text-align: center
 
+                // Responsive
+
+                +screen($md)
+
+                    width: 100%
+
                 // Children
 
-                h3, p, .btn
+                h3, p, .btn, img
 
                     opacity: 0
 
@@ -817,11 +825,22 @@ section
 
                 h3, p
 
-                    margin: 0 0 $globalSpace / 3 0
+                    margin: 0
+                    margin-bottom: $globalSpace / 4
 
                 .btn
 
                     display: inline-block
+
+                img
+
+                    display: block
+
+                    width: 400px
+
+                    margin-bottom: $globalSpace / 4
+
+                    @extend %center
 
             .progress
 
@@ -1190,8 +1209,6 @@ section
 
         &:after
 
-            content: '★★★★★'
-
             position: absolute
             z-index: 2
 
@@ -1218,40 +1235,50 @@ section
 
         &.-half:after
 
+            content: '★'
+
             width: 10%
 
         &.-one:after
 
-            width: 20%
+            content: '★'
 
         &.-onehalf:after
+
+            content: '★★'
 
             width: 30%
 
         &.-two:after
 
-            width: 40%
+            content: '★★'
 
         &.-twohalf:after
+
+            content: '★★★'
 
             width: 50%
 
         &.-three:after
 
-            width: 60%
+            content: '★★★'
 
         &.-threehalf:after
+
+            content: '★★★★'
 
             width: 70%
 
         &.-four:after
 
-            width: 80%
+            content: '★★★★'
 
         &.-fourhalf:after
+
+            content: '★★★★★'
 
             width: 90%
 
         &.-five:after
 
-            width: 100%
+            content: '★★★★★'

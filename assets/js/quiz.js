@@ -399,7 +399,8 @@ const finishQuiz = () => {
 
     categories.sort((a,b) => b.score - a.score);
 
-    let grape = categories[0];
+    let grape   = categories[0];
+    let img     = grape.title.replace(' ', '-');
 
     currentQ.classList.add('-off');
     btnFinish.style.display = 'none';
@@ -407,6 +408,7 @@ const finishQuiz = () => {
     result.style.display = 'block';
     resultTitle.innerHTML = grape.title;
     resultDesc.innerHTML = grape.message;
+    resultImg.setAttribute('src', `assets/img/Grapeeps/${img}.png`);
 
     setTimeout(() => {
 
