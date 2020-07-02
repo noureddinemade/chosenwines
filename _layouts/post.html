@@ -5,7 +5,11 @@
 
     <!-- Prepare image filename -->
 
-    {% assign imgLink = page.url | remove: ".html" %}
+    {% assign linkRemove = page.url | remove: "/" | remove: ".html" %}
+    {% assign linkSplit = linkRemove | split: "-" %}
+    {% capture linkCapitilise %}{% for link in linkSplit %} {{ link | capitalize }}{% endfor %}{% endcapture %}
+    {% assign linkJoin = linkCapitilise | replace: " ", "-" %}
+    {% assign imgLink = linkJoin | replace_first: "-", "" %}
     {% assign imgClass = page.type | replace: "é", "e" | downcase %}
 
     {% include header.html %}
