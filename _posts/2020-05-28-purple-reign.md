@@ -4,8 +4,8 @@ winery: ""
 video: "9UfIcTvT9DE"
 type: "Purple"
 vintage: "2018"
-grape: "Sauvignon Blanc and Semillon"
-abv: "12% Alchohol"
+grape: [Sauvignon Blanc, Semillon]
+abv: "12"
 region: "Australia"
 rating: "threehalf"
 pairings: [Chips and dip, Salad]
@@ -21,5 +21,5 @@ On the palate the freshness and bell pepper is at the fore, again with a  small 
 
 For us, the vegetal presence was a little too much to drink on it&rsquo;s own which is why we gave it three and a half. But you could definetely enjoy it in the sun with some chips and dip whilst catching up with friends - it does make a great talking point.
 
-We would still recommend trying this as it&rsquo;s a super fun wine, they also do a sparkling wine and I think there might be more to come. Hopefully this isn&rsquo;t the last we see of Purple Reign. To get your own go direct to <a href="https://purplereign.com.au/" target="_blank">their website</a> as you can see a list of stockist across Australia and get more information about Purple Reign.
+We would still recommend trying this as it&rsquo;s a super fun wine, they also do a sparkling wine and I think there might be more to come. Hopefully this isn&rsquo;t the last we see of Purple Reign. To get your own go direct to <a href="https://purplereign.com.au/" target="_blank" title="Purple Reign">their website</a> as you can see a list of stockist across Australia and get more information about Purple Reign.
 

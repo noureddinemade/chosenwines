@@ -4,8 +4,8 @@ winery: "The Winery of Good Hope"
 video: "XQ81ZB6VUJs"
 type: "White"
 vintage: "2018"
-grape: "Chenin Blanc"
-abv: "12.5% Alcohol"
+grape: [Chenin Blanc]
+abv: "12.5"
 region: "South Africa"
 rating: "four"
 pairings: [Tacos, Roast chicken]
@@ -23,6 +23,6 @@ The wine itself is dry, with a high acidity and medium body. The aromas that you
 
 We certainly had no complaints drinking this wine - it is what you would easily describe as a crowd pleaser. We could easily drink this on it&rsquo;s own but can also see this going well with a roast chicken, like we&rsquo;ve said before high acidity wines can really go well with the salty and fatty roast potatoes. Alternatively, it would cut through a mild salsa very well, so if you were having tacos with grated cheddar on top the wine would compliment those flavours very well. Anything too spicy won&rsquo;t work as it would heighten the acidity making it too unpleasent to drink.
 
-To get more information take a peak <a href="https://www.thewineryofgoodhope.com/wines/" title="The Winery of Good Hope">at their website.</a> Unfortunately the 2018 vintage has gone but their 2019 is already to buy along with all their other wines.
+To get more information take a peak <a href="https://www.thewineryofgoodhope.com/wines/" title="The Winery of Good Hope" target="_blank">at their website.</a> Unfortunately the 2018 vintage has gone but their 2019 is already to buy along with all their other wines.
 
-We recieved this wine as part of our subscription to Good Pair Days which is a really great wine subscription which tailors wine to your tastes through a really in depth quiz but if you&rsquo;re interested, we have a <a href="https://www.goodpairdays.com/invite/PIE123918">referal link</a> which will get you a $38 bottle of wine in your first box. We are not sponsored by Good Pair Days to say this, we just really think it&rsquo;s a good way to try new wine!
+We recieved this wine as part of our subscription to Good Pair Days which is a really great wine subscription which tailors wine to your tastes through a really in depth quiz but if you&rsquo;re interested, we have a <a href="https://www.goodpairdays.com/invite/PIE123918" title="Good Pair Days" target="_blank">referal link</a> which will get you a $38 bottle of wine in your first box. We are not sponsored by Good Pair Days to say this, we just really think it&rsquo;s a good way to try new wine!

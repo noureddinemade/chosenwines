@@ -4,8 +4,8 @@ winery: "Big Easy Radio"
 video: "Eqd5ZbOcess"
 type: "Rosé"
 vintage: "2019"
-grape: "Grenache and Mataro"
-abv: "13% Alchohol"
+grape: [Grenache, Mataro]
+abv: "13"
 region: "Australia"
 rating: "four"
 pairings: [Light fish dishes, Salad, Poolside drinking]

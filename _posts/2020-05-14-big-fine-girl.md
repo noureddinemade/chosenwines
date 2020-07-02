@@ -4,8 +4,8 @@ winery: "Jeanneret"
 video: "Pg3TPaOBP-c"
 type: "White"
 vintage: "2019"
-grape: "Riesling"
-abv: "13% Alchohol"
+grape: [Riesling]
+abv: "13"
 region: "Australia"
 rating: "four"
 pairings: [Fish and chips, Halloumi]
@@ -24,6 +24,6 @@ On the nose it is very pronounced and aromatic, which is typical of the Riesling
 
 This is not a wine we could not see ourselves drinking without food, and like with other acidic wine you would need to pair it with something salty and fatty. We tried it with halloumi and it was a treat but we can also see fish and chips being a really good option.
 
-Jeanneret has given a lot of information about the wine on the label which we think is a really cool feature, this information which is also <a href="https://www.jeanneretwines.com/products/24527-jeanneret-big-fine-girl-riesling/" target="_blank">on their website</a>
+Jeanneret has given a lot of information about the wine on the label which we think is a really cool feature, this information which is also <a href="https://www.jeanneretwines.com/products/24527-jeanneret-big-fine-girl-riesling/" target="_blank" title="Jeanneret Wines">on their website</a>
 
-We recieved this wine as part of our subscription to Good Pair Days which is a really great wine subscription which tailors wine to your tastes through a really in depth quiz (not sponsored!) but if you&rsquo;re interested, we have a <a href="https://www.goodpairdays.com/invite/PIE123918" target="_blank"> referal link</a> which will get you a $38 bottle of wine in your first box!
+We recieved this wine as part of our subscription to Good Pair Days which is a really great wine subscription which tailors wine to your tastes through a really in depth quiz (not sponsored!) but if you&rsquo;re interested, we have a <a href="https://www.goodpairdays.com/invite/PIE123918" target="_blank" title="Good Pair Days"> referal link</a> which will get you a $38 bottle of wine in your first box!

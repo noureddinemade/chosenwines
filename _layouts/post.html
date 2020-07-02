@@ -50,13 +50,19 @@
 
                     <h3>Wine details</h3>
 
-                    <ul>
-                        <li>{{ page.winery }}</li>
-                        <li>{{ page.type }}</li>
-                        <li>{{ page.vintage }}</li>
-                        <li>{{ page.grape }}</li>
-                        <li>{{ page.abv }}</li>
-                        <li>{{ page.region }}</li>
+                    <ul class="wineInfo">
+                        <li class="winery">{{ page.winery }}</li>
+                        <li class="type">{{ page.type }}</li>
+                        <li class="vintage">{{ page.vintage }}</li>
+                        <li class="region">{{ page.region }}</li>
+                        <li class="abv">{{ page.abv }}</li>
+                        <li class="grapes">
+                            <ul class="tags">
+                            {% for grape in page.grape %}
+                            <li>{{ grape }}</li>
+                            {% endfor %}
+                            </ul>
+                        </li>
                     </ul>
 
                 </div>
@@ -72,7 +78,7 @@
 
                     <h3>Food pairings</h3>
 
-                    <ul>
+                    <ul class="tags">
                         {% for pairing in page.pairings %}
                         <li>{{ pairing }}</li>
                         {% endfor %}

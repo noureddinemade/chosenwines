@@ -4,8 +4,8 @@ winery: "Two Pairs"
 video: "dijmtSTaz08"
 type: "Red"
 vintage: "2019"
-grape: "Grenache"
-abv: "14.5% Alchohol"
+grape: [Grenache]
+abv: "14.5"
 region: "Australia"
 rating: "fourhalf"
 pairings: [Cheese board, Sunday roast]

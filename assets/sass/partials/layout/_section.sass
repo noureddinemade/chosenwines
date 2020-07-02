@@ -108,6 +108,16 @@ section
                     margin: auto
                     padding: 0
 
+                    // Responsive
+
+                    +screen($xs2)
+
+                        display: block
+
+                        padding: 0 20%
+
+                        font-size: 5vmin !important
+
         a.item
 
             display: flex
@@ -134,9 +144,7 @@ section
 
             +screen($xs)
 
-                flex-direction: column
-
-                height: 80px
+                height: auto
                 padding: 10px 2%
 
             // Pseudo
@@ -197,6 +205,12 @@ section
                 margin-top: auto
                 margin-bottom: auto
 
+                // Responsive
+
+                +screen($xs2)
+
+                    display: none
+
             span.type
 
                 position: relative
@@ -252,14 +266,6 @@ section
 
                 color: $dark
 
-                // Responsive
-
-                +screen($xs)
-
-                    padding-left: 70px
-
-                    font-size: 5vmin !important
-
             p
 
                 margin-left: 25px
@@ -312,15 +318,6 @@ section
 
                     +transform(translateY, 0)
 
-                +screen($xs)
-
-                    width: 102px
-
-                    margin-left: 70px
-
-                    font-size: 16px
-                    text-align: left
-
             img
 
                 position: absolute
@@ -340,11 +337,16 @@ section
 
                 // Responsive
 
-                +screen($xs)
+                +screen($xs2)
 
-                    left: 0
+                    position: relative
 
-                    +transform(scale, 1.5)
+                    top: auto
+                    left: auto
+
+                    width: 100%
+
+                    +transform(scale, 1)
 
     &.single
 
@@ -429,7 +431,7 @@ section
                         content: '⬎'
 
                         padding-left: 10px
-
+   
                         font-size: $fontBase
 
                     // Classes
@@ -621,8 +623,6 @@ section
                 border-bottom: 3px solid $primary
 
                 color: $primary
-
-            ul
 
         .images 
 

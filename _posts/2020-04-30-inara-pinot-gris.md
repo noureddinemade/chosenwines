@@ -4,8 +4,8 @@ winery: "Helen & Joey Estate"
 video: "HxT062Ou1E8"
 type: "White"
 vintage: "2018"
-grape: "Pinot Gris"
-abv: "13.5% Alchohol"
+grape: [Pinot Gris]
+abv: "13.5"
 region: "Australia"
 rating: "threehalf"
 pairings: [Roast potatoes, Korean fried chicken]

@@ -4,8 +4,8 @@ winery: "Good Intentions Wine Co"
 video: "lzxaPjptd4c"
 type: "Rosé"
 vintage: "2018"
-grape: "Pinot gris and Pinot noir"
-abv: "11% Alchohol"
+grape: [Pinot gris, Pinot noir]
+abv: "11"
 region: "Australia"
 rating: "na"
 pairings: [N/A]

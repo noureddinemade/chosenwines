@@ -282,6 +282,11 @@ section {
       section.blocks .group a.item h2 {
         margin: auto;
         padding: 0; }
+        @media screen and (max-width: 480px) {
+          section.blocks .group a.item h2 {
+            display: block;
+            padding: 0 20%;
+            font-size: 5vmin !important; } }
   section.blocks a.item {
     display: flex;
     flex-direction: row;
@@ -301,8 +306,7 @@ section {
         margin-bottom: 25px; } }
     @media screen and (max-width: 640px) {
       section.blocks a.item {
-        flex-direction: column;
-        height: 80px;
+        height: auto;
         padding: 10px 2%; } }
     section.blocks a.item:before {
       content: '';
@@ -334,6 +338,9 @@ section {
       z-index: 2;
       margin-top: auto;
       margin-bottom: auto; }
+      @media screen and (max-width: 480px) {
+        section.blocks a.item span.type, section.blocks a.item h2, section.blocks a.item p, section.blocks a.item .rating {
+          display: none; } }
     section.blocks a.item span.type {
       position: relative;
       margin-left: 20px;
@@ -371,10 +378,6 @@ section {
       font-size: 3.4vmin !important;
       word-wrap: break-word;
       color: black; }
-      @media screen and (max-width: 640px) {
-        section.blocks a.item h2 {
-          padding-left: 70px;
-          font-size: 5vmin !important; } }
     section.blocks a.item p {
       margin-left: 25px;
       font-size: 20px;
@@ -403,12 +406,6 @@ section {
           -webkit-transform: translateY(0);
           -ms-transform: translateY(0);
           transform: translateY(0); } }
-      @media screen and (max-width: 640px) {
-        section.blocks a.item .rating {
-          width: 102px;
-          margin-left: 70px;
-          font-size: 16px;
-          text-align: left; } }
     section.blocks a.item img {
       position: absolute;
       z-index: 3;
@@ -425,12 +422,15 @@ section {
       -webkit-transform: scale(2);
       -ms-transform: scale(2);
       transform: scale(2); }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 480px) {
         section.blocks a.item img {
-          left: 0;
-          -webkit-transform: scale(1.5);
-          -ms-transform: scale(1.5);
-          transform: scale(1.5); } }
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+          transform: scale(1); } }
   section.single .title {
     display: flex;
     justify-content: space-between;
@@ -1140,7 +1140,10 @@ ul.tags li {
   ul.tags li:nth-last-child(2):after {
     content: ' and '; }
   ul.tags li:last-child:after {
-    content: '.'; }
+    content: ''; }
+
+ul.wineInfo li.abv:after {
+  content: '% Alcohol'; }
 
 @-webkit-keyframes logoA {
   0% {

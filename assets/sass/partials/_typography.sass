@@ -170,10 +170,28 @@ ul
 
             &:last-child:after
 
-                content: '.'
+                content: ''
 
-    // Children
+    &.wineInfo
 
-    li
+        // Children
+
+        li
+
+            // Classes
+
+            &.winery
+            &.type
+            &.vintage
+            &.region
+            &.grapes
+
+            &.abv
+
+                // Pseudo
+                
+                &:after
+
+                    content: '% Alcohol'
 
 blockquote
