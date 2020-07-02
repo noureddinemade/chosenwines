@@ -467,9 +467,12 @@ section {
       @media screen and (max-width: 1024px) {
         section.single .title a:first-child {
           display: none; } }
+      section.single .title a.randomEpisode:after, section.single .title a.watchEpisode:after {
+        padding-left: 10px; }
+      section.single .title a.randomEpisode:after {
+        content: '↻'; }
       section.single .title a.watchEpisode:after {
         content: '⬎';
-        padding-left: 10px;
         font-size: 22px; }
       section.single .title a.watchEpisode.on:after {
         content: '⬏'; }
