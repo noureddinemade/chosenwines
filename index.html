@@ -5,30 +5,52 @@ class: home
 
 <section class="blocks">
 
-    <a href="/about/" class="item">
+    <div class="group">
 
-        <h2>What is this about?</h2>
+        <a href="what-is-this-about.html" class="item about">
 
-    </a>
+            <h2>What is this about?</h2>
+    
+        </a>
+
+        <a href="/quiz/" class="item quiz">
+
+            <h2>What wine grape are you?</h2>
+    
+        </a>
+
+    </div>
 
     {% for post in site.posts %}
 
         <!-- Prepare image filename -->
 
-        {% assign imgLink = post.title | remove: "." | remove: "," | remove: "'" | replace: "é", "e" | replace: " ", "-" %}
+        {% assign imgLink = post.url | remove: ".html" %}
         {% assign imgClass = post.type | replace: "é", "e" | downcase %}
 
-        <!-- Display each wine bottle -->
+        <!-- Display each post as a wine bottle -->
 
-        <a href="{{ post.url }}" class="item {% if imgClass == "purple" %} -b-misc {% else %} -b-{{ imgClass }} {% endif %}">
-
-            <div class="rating -{{ post.rating }}"></div>
+        <a href="{{ post.url }}" class="item {% if imgClass == "purple" %} -b-misc {% else %} -b-{{ imgClass }} {% endif %}" data-type="{{ imgClass }}">
 
             <img srcset="/assets/img/wines/{{ imgLink }}@2x.png 2x, /assets/img/wines/{{ imgLink }}.png" src="/assets/img/wines/{{ imgLink }}@2x.png.png" alt="{{ post.title }}">
 
-            <img srcset="/assets/img/wines/{{ imgLink }}-shadow@2x.png 2x, /assets/img/wines/{{ imgLink }}-shadow.png" src="/assets/img/wines/{{ imgLink }}-shadow@2x.png.png" class="shadow">
-
             <h2>{{ post.title }}</h2>
+
+            <p>
+                {% unless post.winery == "" %}
+                    <span class="winery">{{ post.winery }}</span>
+                {% endunless %}
+                {% unless post.vintage == "" %}
+                    <span class="vintage">{{ post.vintage }}</span>
+                {% endunless %}
+                {% unless post.region == "" %}
+                    <span class="region">{{ post.region }}</span>
+                {% endunless %}
+            </p>
+
+            <div class="rating -{{ post.rating }}"></div>
+
+            <span class="type" data-type="{{ post.type }}"></span>
 
         </a>
 

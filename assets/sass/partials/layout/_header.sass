@@ -5,7 +5,7 @@ header
     position: relative
     z-index: 20
 
-    margin-bottom: $globalSpace
+    margin-bottom: $globalSpace / 2
 
     text-align: center
 
@@ -29,17 +29,17 @@ header
         display: inline-block
         position: relative
 
-        width: 20%
+        width: 400px
 
         // Responsive
 
         +screen($md)
 
-            width: 50%
+            width: 280px
 
         +screen($xs)
 
-            width: 80%
+            width: 200px
 
         // Children
 
@@ -50,39 +50,72 @@ header
             width: 100%
             height: auto
 
-
+            overflow: visible
 
             // Children
 
+            .chosen, .wines
+
+                stroke: $dark
+                stroke-width: 6px
+
+            .shadow
+
+                stroke: none
+                // fill: $dark !important
+
+                opacity: .9
+
             .chosen
 
-                .-c, .-o, .-e
+                fill: $primary
 
-                    fill: $primary
-                    stroke: $primary
+                +animation(logoA, 5s, linear, infinite)
 
-                    +animation(logoP, 1s, linear, infinite)
+                // Classes
 
-                .-h, .-s, .-n
+                &.-h
 
-                    fill: $secondary
-                    stroke: $secondary
+                    animation-delay: .2s
 
+                &.-o
 
-                    +animation(logoS, 1s, linear, infinite)
+                    animation-delay: .4s
+
+                &.-s
+
+                    animation-delay: .6s
+
+                &.-e
+
+                    animation-delay: .8s
+
+                &.-n
+
+                    animation-delay: 1s
 
             .wines
 
-                .-w, .-n, .-s
+                fill: $secondary
 
-                    fill: $primary
-                    stroke: $primary
+                +animation(logoB, 5s, linear, infinite)
 
-                    +animation(logoP, 1s, linear, infinite)
+                // Classes
 
-                .-i, .-e
+                &.-i
 
-                    fill: $secondary
-                    stroke: $secondary
+                    animation-delay: .2s
 
-                    +animation(logoS, 1s, linear, infinite)
+                &.-n
+
+                    animation-delay: .4s
+
+                &.-e
+
+                    animation-delay: .6s
+
+                &.-s
+
+                    animation-delay: .8s
+
+

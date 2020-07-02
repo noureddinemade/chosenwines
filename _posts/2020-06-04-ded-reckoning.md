@@ -1,5 +1,6 @@
 ---
 title: "Ded Reckoning"
+winery: "Obelisk"
 video: "x2a6wQm9Ruc"
 type: "Sparkling"
 vintage: "2018"

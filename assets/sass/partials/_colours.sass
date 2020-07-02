@@ -6,9 +6,29 @@
 
         @if $label == white
 
-            $c: darken($colour, 3%)
+            $c: darken($colour, 5%)
 
             background-color: $c
+
+            box-shadow: 10px 10px 0 darken($c, 5%)
+
+            // Responsive
+
+            +screen($xs)
+
+                box-shadow: 5px 5px 0 darken($c, 5%)
+
+            // Pseudo
+
+            &:before
+
+                background-color: darken($c, 5%)
+
+            // States
+
+            &:hover
+
+                box-shadow: -10px -10px 0 darken($c, 5%)
 
         @else
 
@@ -16,15 +36,31 @@
 
             background-color: $c
 
-        // Pseudo
+            box-shadow: 10px 10px 0 $colour
 
-        &:after
+            // Responsive
+
+            +screen($xs)
+
+                box-shadow: 5px 5px 0 $colour
+
+            // Pseudo
+
+            &:before
+
+                background-color: $colour
+
+            // States
+
+            &:hover
+                
+                box-shadow: -10px -10px 0 $colour
+
+        // Children
+
+        span.type
 
             background-color: $colour
-
-        &:before
-
-            border-color: $colour !important
 
     .-p-#{$label}
 
@@ -39,6 +75,12 @@
 
                 background-image: repeating-radial-gradient(circle at 0% 0%, $g1, $g1 50px, $g2, $g2 50px 100px)
 
+                // Psuedo
+
+                &:before
+
+                    box-shadow: 10px 10px 0 $g2
+
             @else
 
                 $g1: lighten($colour, 5%)
@@ -46,14 +88,8 @@
 
                 background-image: repeating-radial-gradient(circle at 0% 0%, $g1, $g1 50px, $g2, $g2 50px 100px)
 
-    .-r-#{$label}
+                // Psuedo
 
-        @if $label == white
+                &:before
 
-            $c: darken($colour, 3%)
-
-            background-color: $c
-
-        @else
-
-            background-color: $colour
+                    box-shadow: 10px 10px 0 $colour

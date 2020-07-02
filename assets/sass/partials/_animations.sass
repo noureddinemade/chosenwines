@@ -1,49 +1,76 @@
 // Animations
-
-+keyframes(logoP)
+    
++keyframes(logoA)
 
     0%
-
+        
         fill: $primary
-        stroke: $primary
+
+        +transform(translateY, 0)
+
+    25%
+        
+        +transform(translateY, 30px)
 
     49%
 
         fill: $primary
-        stroke: $primary
 
     50%
 
         fill: $secondary
-        stroke: $secondary
 
+        +transform(translateY, 0)
+
+    75%
+
+        +transform(translateY, 30px)
+
+    99%
+
+        fill: $secondary
 
     100%
 
-        fill: $secondary
-        stroke: $secondary
+        fill: $primary
+        
+        +transform(translateY, 0)
 
-+keyframes(logoS)
++keyframes(logoB)
 
     0%
 
         fill: $secondary
-        stroke: $secondary
+        
+        +transform(translateY, 0)
+
+    25%
+        
+        +transform(translateY, -30px)
 
     49%
 
         fill: $secondary
-        stroke: $secondary
 
     50%
 
         fill: $primary
-        stroke: $primary
+
+        +transform(translateY, 0)
+
+    75%
+
+        +transform(translateY, -30px)
+
+    99%
+        
+        fill: $primary
 
     100%
 
-        fill: $primary
-        stroke: $primary
+        fill: $secondary
+        
+        +transform(translateY, 0)
 
 +keyframes(bottleMove)
 

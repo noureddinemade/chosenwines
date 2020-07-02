@@ -1,5 +1,6 @@
 ---
-title: "Two Pairs Grenache"
+title: "Grenache"
+winery: "Two Pairs"
 video: "dijmtSTaz08"
 type: "Red"
 vintage: "2019"

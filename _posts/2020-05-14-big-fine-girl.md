@@ -1,5 +1,6 @@
 ---
 title: "Big Fine Girl"
+winery: "Jeanneret"
 video: "Pg3TPaOBP-c"
 type: "White"
 vintage: "2019"

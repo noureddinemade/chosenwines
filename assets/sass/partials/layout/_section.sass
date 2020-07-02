@@ -11,56 +11,135 @@ section
 
     &.blocks
 
-        display: grid
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
-        grid-gap: $globalSpace / 4
-
-        // Responsive
-
-        +screen($xs2)
-
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
-
         // Children
 
-        a.item
+        .group
 
-            position: relative
+            +grid(2, 1fr, $globalSpace / 2)
 
-            padding: 80px
+            // responsive
 
-            // Responsive
+            +screen($md)
 
-            +screen($xs2)
+                +grid(1, 1fr, 0)
 
-                padding: 50px
+            // Children
 
-            // Pseudo
+            a.item
 
-            &:first-child
+                text-align: center
 
-                $g1: $a8
-                $g2: $a2
+                // Classes
 
-                background-image: repeating-radial-gradient(circle at 0 0, $g1, $g1 10%, $g2, $g2 10% 20%)
+                &.about
+                    
+                    background-image: repeating-linear-gradient(125deg, $a2, $a2 40px, $a8, $a8 40px 80px)
 
-                // Pseudo
+                    box-shadow: 10px 10px 0 $a2
 
-                &:before
+                    // Responsive
 
-                    border-color: $tertiary
+                    +screen($xs)
 
-                &:after
+                        box-shadow: 5px 5px 0 $a2
 
-                    display: none
+                    // Psuedo
+
+                    &:before
+
+                        background-color: $a2
+
+                    // States
+
+                    &:hover
+                        
+                        box-shadow: -10px -10px 0 $a8
+
+                &.quiz
+                    
+                    background-image: repeating-linear-gradient(-125deg, $a4, $a4 40px, $a1, $a1 40px 80px)
+
+                    box-shadow: 10px 10px 0 $a4
+
+                    // Responsive
+
+                    +screen($xs)
+
+                        box-shadow: 5px 5px 0 $a4
+
+                    // Psuedo
+
+                    &:before
+
+                        background-color: $a4
+
+                    &:after
+
+                        content: 'Quiz'
+
+                        position: absolute
+
+                        top: -3px
+                        right: -3px
+
+                        padding: 2px 10px
+
+                        background-color: $a8
+
+                        font-size: $fontBase / 1.4
+                        font-weight: 600
+
+                        color: $dark
+
+                        border: $borderW solid $dark
+
+                        @extend %boxSize
+
+                    // States
+
+                    &:hover
+                        
+                        box-shadow: -10px -10px 0 $a1
 
                 // Children
 
                 h2
 
-                    color: $secondary !important
+                    margin: auto
+                    padding: 0
 
-                    opacity: 1
+        a.item
+
+            display: flex
+            flex-direction: row
+            position: relative
+
+            width: 100%
+            height: 120px
+
+            margin-bottom: $globalSpace / 2 
+            padding: 0 2%
+
+            border: $borderW solid $dark
+
+            +transition((background-color, box-shadow), (.1s, .1s))
+
+            // Responsive
+
+            +screen($md)
+
+                height: 100px
+
+                margin-bottom: $globalSpace / 4
+
+            +screen($xs)
+
+                flex-direction: column
+
+                height: 80px
+                padding: 10px 2%
+
+            // Pseudo
 
             &:before
 
@@ -77,124 +156,195 @@ section
 
                 opacity: 0
 
-                border: 10px solid transparent
-
-                @extend %boxSize
-
                 +transition(opacity, .1s)
-
-            &:after
-
-                $s: 30px
-
-                content: ''
-
-                position: absolute
-
-                bottom: 20px
-                left: 20px
-
-                width: $s
-                height: $s
 
             // States
 
             &:hover
 
+                background-color: $tertiary
+
                 // Pseudo
 
                 &:before
 
-                    opacity: .5
+                    opacity: 1
 
                 // Children
 
+                span.type
+
+                    width: 120px
+                    
+                    // Pseudo
+
+                    &:before
+
+                        opacity: 1
+
+                        transition-delay: .2s
+
                 img
 
-                    +transform((translateY, scale, rotate), (-10px, 3.2, -6deg))
-
-                    // Classes
-
-                    &.shadow
-
-                        opacity: .2
-
-                        +transform((translateY, translateX, scale, rotate), (-50%, -30%, 1.6, 10deg))
+                    +transform((translateY, scale, rotate), (-10px, 2.6, -6deg))
 
             // Children
 
-            .rating
+            span.type, h2, p, .rating
 
-                position: absolute
                 z-index: 2
 
-                width: auto
+                margin-top: auto
+                margin-bottom: auto
 
-                top: 20px
-                right: 20px
-
-                color: $secondary
-
-                transform-origin: 100% 0
-
-                +transform(scale, .6)
-
-            img
+            span.type
 
                 position: relative
-                z-index: 3
 
-                width: 100%
-                height: 100%
+                margin-left: 20px
 
-                object-fit: contain
-                pointer-events: none
+                width: 30px
+                height: 30px
 
-                // +transition(transform, .2s)
-                +transform(scale, 2)
+                border-radius: 30px
 
-                // Classes
+                border: $borderW solid $dark
 
-                &.shadow
+                +transition(width, .1s)
+
+                // Responsive
+
+                +screen($md)
+
+                    display: none
+
+                // Pseudo
+
+                &:before
+
+                    content: attr(data-type)
 
                     position: absolute
-                    z-index: 2
 
-                    top: 0
-                    left: 0
+                    top: 50%
+                    left: 50%
 
-                    transform-origin: 0 0
-                    opacity: .6
+                    color: $dark
+                    
+                    opacity: 0
 
-                    +transform((translateY, translateX, scale, rotate), (20px, 30px, .8, 10deg))
+                    font-size: $fontBase / 1.5
+
+                    pointer-events: none
+
+                    +transform((translateX, translateY), (-50%, -50%))
+                    +transition(opacity, .1s, 0s)
 
             h2
 
-                position: absolute
+                position: relative
                 z-index: 0
 
-                top: 50%
-                left: 5%
+                padding-left: 120px
 
-                width: 90%
-
-                font-size: 5vmin !important
-                line-height: 1
+                font-size: 3.4vmin !important
                 word-wrap: break-word
-                text-align: center
-
-                opacity: .05
 
                 color: $dark
-
-                +transform(translateY, -50%)
-                +transition(font-size, .2s)
 
                 // Responsive
 
                 +screen($xs)
 
-                    font-size: 10vmin !important
+                    padding-left: 70px
+
+                    font-size: 5vmin !important
+
+            p
+
+                margin-left: 25px
+
+                font-size: $fontBase - 2px
+
+                color: $dark !important
+
+                // Responsive
+
+                +screen($md)
+
+                    display: none
+
+                // Children
+
+                span
+
+                    // Pseudo
+
+                    &:first-child:before
+
+                        display: none
+                    
+                    &:before
+
+                        content: ' • '
+
+                        padding: 0 4px
+
+            .rating
+
+                margin-left: auto
+
+                width: auto
+                height: auto
+
+                font-size: 30px
+                text-align: left
+
+                +transform(translateY, -4px)
+
+                // Responsive
+
+                +screen($md)
+
+                    width: 110px
+
+                    font-size: 20px
+
+                    +transform(translateY, 0)
+
+                +screen($xs)
+
+                    width: 102px
+
+                    margin-left: 70px
+
+                    font-size: 16px
+                    text-align: left
+
+            img
+
+                position: absolute
+                z-index: 3
+
+                top: 0
+                left: 10px
+
+                width: auto
+                height: 100%
+
+                object-fit: contain
+                pointer-events: none
+
+                +transition((transform, opacity), (.2s, .2s))
+                +transform(scale, 2)
+
+                // Responsive
+
+                +screen($xs)
+
+                    left: 0
+
+                    +transform(scale, 1.5)
 
     &.single
 
@@ -226,15 +376,21 @@ section
                 padding: 0 5%
 
                 text-align: center
+                text-transform: uppercase
 
             a
 
                 padding: 12px 22px
 
-                background-color: $secondary
-                color: $light
+                font-size: $fontBase / 1.2
 
-                +transition(background-color, .1s)
+                background-color: $a2
+                color: $dark
+
+                border: $borderW solid $dark
+                box-shadow: 5px 5px 0 $a2
+
+                +transition((box-shadow, background-color), (.1s, .1s))
 
                 // Responsive
 
@@ -250,6 +406,8 @@ section
 
                     background-color: $primary
 
+                    box-shadow: -5px -5px 0 $primary
+
                 // Pseudo
 
                 &:first-child
@@ -259,6 +417,26 @@ section
                     +screen($md)
 
                         display: none
+
+                // Classes
+
+                &.watchEpisode
+
+                    // Pseudo
+
+                    &:after
+
+                        content: '⬎'
+
+                        padding-left: 10px
+
+                        font-size: $fontBase
+
+                    // Classes
+
+                    &.on:after
+
+                        content: '⬏'
 
         .vid
 
@@ -344,6 +522,24 @@ section
 
                         text-align: center
 
+                    // Pseudo
+
+                    &:before
+
+                        content: ''
+
+                        position: absolute
+
+                        top: 20%
+                        left: 20%
+
+                        width: 60%
+                        height: 60%
+
+                        border: $borderW solid $dark
+
+                        @extend %boxSize
+
                     // Children
 
                     img
@@ -428,62 +624,27 @@ section
 
             ul
 
-        .images
+        .images 
 
             display: flex
 
             height: 500px
 
-            overflow: hidden
-
             margin-top: $globalSpace / 2
 
             // Children
 
-            .pattern
-
-                width: 100%
-                height: 100%
-
-                margin-right: $globalSpace / 3
-
-                background-image: repeating-linear-gradient(22deg, $a4, $a4 100px, $a7, $a7 100px 200px)
-
-                overflow: hidden
-
-                +screen($md)
-
-                    display: none
-
-                // Children
-
-                img
-
-                    width: 200%
-                    height: 200%
-
-                    background-size: 8%
-                    background-position: 50% 50%
-
-                    +transform((translateY, translateX, scale), (-50%, 1%, 2))
-
-                    // Responsive
-
-                    +screen($sm)
-
-                        display: none
-
             .rotate
 
-                width: 30%
-                height: 400%
+                position: relative
+
+                width: 25%
+                height: 100%  
 
                 margin-left: $globalSpace / 3
 
-                background-color: $a8
+                overflow: hidden
 
-                +transform(translateY, 0)
-                +animation(bottleRotate, 1s, linear, infinite)
 
                 +screen($md)
 
@@ -491,21 +652,535 @@ section
 
                     margin: 0
 
+                // Pseudo
+
+                &:before
+
+                    content: ''
+
+                    position: absolute
+                    z-index: 1
+
+                    top: 15%
+                    left: 15%
+
+                    width: 70%
+                    height: 70%
+
+                    border: $borderW solid $dark
+
+                &:nth-child(1)
+
+                    // Pseudo
+                    
+                    &:before
+
+                        background-color: $a8
+                        box-shadow: 10px 10px 0 $a8
+
+                &:nth-child(2)
+
+                    // Responsive
+
+                    +screen($sm)
+
+                        display: none
+
+                    // Pseudo
+                    
+                    &:before
+
+                        background-color: $a3
+                        box-shadow: 10px 10px 0 $a3
+
+                &:nth-child(3)
+
+                    // Responsive
+
+                    +screen($sm)
+
+                        display: none
+
+                    // Pseudo
+                    
+                    &:before
+
+                        background-color: $a4
+                        box-shadow: 10px 10px 0 $a4
+                
+                &:nth-child(4)
+
+                    // Responsive
+
+                    +screen($sm)
+
+                        display: none
+
+                    // Pseudo
+                    
+                    &:before
+
+                        background-color: $a6
+                        box-shadow: 10px 10px 0 $a6
+
                 // Children
+
+                .inner
+
+                    position: relative
+                    z-index: 2
+
+                    height: 400%
+
+                    +transform(translateY, 0)
+                    +animation(bottleRotate, 1s, linear, infinite)
+
+                    // Children
+
+                    img
+
+                        display: block
+
+                        width: 100%
+                        height: 25%
+
+                        padding: 25px
+
+                        object-fit: contain
+
+    &.quizContainer
+
+        // Children
+
+        .quiz
+
+            position: relative
+            display: block
+
+            margin-left: auto
+            margin-right: auto
+
+            +maxWidth($md)
+
+            // Children
+
+            .question, .result
+
+                position: relative
+
+                background-color: $light
+                border: $borderW solid $dark
+
+                box-shadow: 10px 10px 0 $light
+
+                +transition((opacity, visibility), (.2s, .2s))
+                
+                @extend %padding
+
+                // Classes
+
+                &.-off
+                    
+                    opacity: 0
+                    visibility: hidden
+
+                &.-on
+                    
+                    opacity: 1
+                    visibility: visible
+                    
+                    // Children
+
+                    h3, p, .btn, img
+
+                        opacity: 1
+
+                        +transform(translateY, 0px)
+
+            .result
+
+                display: none
+
+                width: 60%
+
+                margin-left: auto
+                margin-right: auto
+
+                text-align: center
+
+                // Responsive
+
+                +screen($md)
+
+                    width: 100%
+
+                // Children
+
+                h3, p, .btn, img
+
+                    opacity: 0
+
+                    +transform(translateY, -10px)
+                    +transition((opacity, transform), (.2s, .2s), (.5s, .5s))
+
+                h3, p
+
+                    margin: 0
+                    margin-bottom: $globalSpace / 4
+
+                .btn
+
+                    display: inline-block
 
                 img
 
                     display: block
 
+                    width: 400px
+
+                    margin-bottom: $globalSpace / 4
+
+                    @extend %center
+
+            .progress
+
+                $s: 60px
+
+                display: block
+                position: absolute
+                z-index: 2
+
+                top: 0
+                right: 0
+
+                width: auto
+                height: $s
+
+                padding: 0 20px
+            
+                line-height: $s
+
+                background-color: $a2
+                border: $borderW solid $dark
+
+                @extend %boxSize
+
+                // Responsive
+
+                +screen($sm)
+
+                    height: $s / 1.5
+
+                    padding: 0 10px
+
+                    font-size: $fontBase / 1.2
+                    line-height: $s / 1.5
+
+                // Psudeo
+
+                &:before
+
+                    content: attr(data-step)
+
+                &:after
+
+                    content: attr(data-total)
+                
+            p.qTitle
+
+                display: flex
+                justify-content: space-between
+                align-items: center
+
+                margin-bottom: $globalSpace / 3
+                padding-bottom: 10px
+
+                font-size: $h3
+
+                border-bottom: 4px solid $dark
+
+                // Responsive
+
+                +screen($md)
+
+                    font-size: $h3 - 4px
+
+                +screen($sm)
+
+                    padding-top: 20px
+
+            ol
+
+                display: flex
+                flex-direction: column
+
+                list-style-type: none
+                counter-reset: answers
+                
+                // Children
+
+                li
+
+                    display: block
+                    position: relative
+
                     width: 100%
-                    height: 25%
+                    height: auto
 
-                    padding: 50px
+                    margin: $globalSpace / 10 0
 
-                    object-fit: contain
+                    counter-increment: answers
 
+                    opacity: 0
 
+                    +transition((transform, opacity),(.1s, .1s))
+                    +transform(translateY, -10px)
 
+                    // Pseudo
+
+                    &:nth-child(1)
+                        
+                        // Children
+
+                        a:before
+
+                            background-color: $a8
+
+                    &:nth-child(2)
+
+                        -webkit-transition-delay: .1s
+                        transition-delay: .1s
+                        
+                        // Children
+
+                        a:before
+
+                            background-color: $a2
+
+                    &:nth-child(3)
+
+                        -webkit-transition-delay: .2s
+                        transition-delay: .2s
+                        
+                        // Children
+
+                        a:before
+
+                            background-color: $a3
+
+                    &:nth-child(4)
+
+                        -webkit-transition-delay: .3s
+                        transition-delay: .3s
+                        
+                        // Children
+
+                        a:before
+
+                            background-color: $a6
+
+                    &:nth-child(5)
+
+                        -webkit-transition-delay: .4s
+                        transition-delay: .4s
+                        
+                        // Children
+
+                        a:before
+
+                            background-color: $a7
+
+                    &:nth-child(6)
+
+                        -webkit-transition-delay: .5s
+                        transition-delay: .5s
+                        
+                        // Children
+
+                        a:before
+
+                            background-color: $a5
+
+                    // Classes
+
+                    &.-on
+
+                        opacity: 1
+
+                        +transform(translateY, 0px)
+
+                    &.-off
+
+                        // Children
+
+                        a
+
+                            opacity: .3
+
+                    &.-selected
+
+                        // Psuedo
+
+                        &:nth-child(1)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a8, 15%)
+
+                        &:nth-child(2)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a2, 15%)
+
+                        &:nth-child(3)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a3, 15%)
+
+                        &:nth-child(4)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a6, 15%)
+
+                        &:nth-child(5)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a7, 15%)
+
+                        &:nth-child(6)
+
+                            // Children
+
+                            a
+
+                                background-color: lighten($a5, 15%)
+
+                        // Children
+
+                        a
+
+                            opacity: 1
+
+                    // Children
+
+                    a
+
+                        display: flex
+                        align-items: center
+
+                        width: 100%
+                        height: 100%
+
+                        margin: auto 0
+                        padding: 10px $globalSpace / 1.4
+
+                        background-color: $light
+                        color: $dark
+                        border: $borderW solid $dark
+
+                        text-transform: none
+
+                        +transition((opacity, background-color), (.1s, .1s))
+
+                        // Responsive
+
+                        +screen($md)
+
+                            font-size: $fontBase / 1.2
+
+                        // Pseudo
+
+                        &:before
+
+                            content: counter(answers, upper-alpha)
+
+                            display: flex
+                            position: absolute
+                            align-items: center
+                            justify-content: center
+
+                            top: 0
+                            left: 0
+
+                            height: 100%
+                            width: 60px
+
+                            margin-right: 25px
+
+                            text-align: center
+                            font-weight: 600
+                            font-size: $fontBase + 10px
+
+                            border: $borderW solid $dark
+
+                            @extend %boxSize
+
+            .btnGroup
+
+                display: flex
+                justify-content: space-between
+
+                margin-top: $globalSpace / 2
+
+            a.btn
+
+                margin-left: auto
+                padding: 12px 22px
+
+                font-size: $fontBase / 1.2
+                text-align: center
+
+                background-color: $a2
+                color: $dark
+
+                border: $borderW solid $dark
+                box-shadow: 5px 5px 0 $a2
+
+                +transition((box-shadow, background-color), (.1s, .1s))
+
+                // Responsive
+
+                +screen($md)
+
+                    width: 100%
+
+                // States
+
+                &:hover
+
+                    background-color: $primary
+
+                    box-shadow: -5px -5px 0 $primary
+
+                // Classes
+
+                &.-disabled
+
+                    $c1: darken($light, 10%)
+                    $c2: darken($c1, 20%)
+
+                    background-color: $c1
+                    color: $c2
+                    border-color: $c2
+
+                    box-shadow: 5px 5px 0 $c1
+
+                    cursor: not-allowed
+        
 
     // Children
 
@@ -525,18 +1200,14 @@ section
 
         &:before
 
-            content: '⭐️⭐️⭐️⭐⭐️'
+            content: '★★★★★'
 
             position: relative
             z-index: 1
 
-            opacity: .5
-
-            +filter(saturate, 0%)
+            opacity: .2
 
         &:after
-
-            content: '⭐️⭐️⭐️⭐️⭐️'
 
             position: absolute
             z-index: 2
@@ -556,48 +1227,58 @@ section
 
             &:before
 
-                content: '🚫'
+                content: '⦸'
 
             &:after
 
-                content: ''
+                content: '⦸'
 
         &.-half:after
+
+            content: '★'
 
             width: 10%
 
         &.-one:after
 
-            width: 20%
+            content: '★'
 
         &.-onehalf:after
+
+            content: '★★'
 
             width: 30%
 
         &.-two:after
 
-            width: 40%
+            content: '★★'
 
         &.-twohalf:after
+
+            content: '★★★'
 
             width: 50%
 
         &.-three:after
 
-            width: 60%
+            content: '★★★'
 
         &.-threehalf:after
+
+            content: '★★★★'
 
             width: 70%
 
         &.-four:after
 
-            width: 80%
+            content: '★★★★'
 
         &.-fourhalf:after
+
+            content: '★★★★★'
 
             width: 90%
 
         &.-five:after
 
-            width: 100%
+            content: '★★★★★'
