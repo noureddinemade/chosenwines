@@ -25,7 +25,11 @@ class: home
 
         <!-- Prepare image filename -->
 
-        {% assign imgLink = post.url | remove: ".html" | remove: "/" %}
+        {% assign linkRemove = post.url | remove: "/" | remove: ".html" %}
+        {% assign linkSplit = linkRemove | split: "-" %}
+        {% capture linkCapitilise %}{% for link in linkSplit %} {{ link | capitalize }}{% endfor %}{% endcapture %}
+        {% assign linkJoin = linkCapitilise | replace: " ", "-" %}
+        {% assign imgLink = linkJoin | replace_first: "-", "" %}
         {% assign imgClass = post.type | replace: "é", "e" | downcase %}
 
         <!-- Display each post as a wine bottle -->
