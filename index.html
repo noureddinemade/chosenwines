@@ -25,7 +25,7 @@ class: home
 
         <!-- Prepare image filename -->
 
-        {% assign imgLink = post.url | remove: ".html" %}
+        {% assign imgLink = post.url | remove: ".html" | remove: "/" %}
         {% assign imgClass = post.type | replace: "é", "e" | downcase %}
 
         <!-- Display each post as a wine bottle -->
