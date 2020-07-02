@@ -7,7 +7,12 @@ const reviews   = [
     'drink-the-sun',
     'big-fine-girl',
     'two-pairs',
-    'purple-reign'
+    'purple-reign',
+    'ded-reckoning',
+    'gris-diddly-dee',
+    'the-winery-of-good-hope-chenin-blanc',
+    'vortex',
+    'rosatea-field-blend'
 
     ];
 
