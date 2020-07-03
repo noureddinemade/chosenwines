@@ -1,0 +1,60 @@
+---
+title: Miscellaneous Wine Reviews
+type: miscellaneous
+class: home
+permalink: /misc/
+---
+
+{% assign counter = 0 %}
+
+<section class="blocks">
+
+    <div class="title">
+        <h1>We have reviewed <span data-type="{{ page.type }}"></span></h1>
+    </div>
+
+    {% for post in site.posts %}
+
+        {% if post.type == "Misc" or post.type == "Purple" %}
+
+            {% assign linkRemove = post.url | remove: "/" | remove: ".html" %}
+            {% assign linkSplit = linkRemove | split: "-" %}
+            {% capture linkCapitilise %}{% for link in linkSplit %} {{ link | capitalize }}{% endfor %}{% endcapture %}
+            {% assign linkJoin = linkCapitilise | replace: " ", "-" %}
+            {% assign imgLink = linkJoin | replace_first: "-", "" %}
+            {% assign imgClass = post.type | replace: "é", "e" | downcase %}
+            {% assign counter = counter | plus: 1 %}
+
+            <a href="{{ post.url }}" class="item {% if imgClass == "purple" %} -b-misc {% else %} -b-{{ imgClass }} {% endif %}" data-type="{{ imgClass }}">
+
+                <img srcset="/assets/img/wines/{{ imgLink }}@2x.png 2x, /assets/img/wines/{{ imgLink }}.png" src="/assets/img/wines/{{ imgLink }}@2x.png.png" alt="{{ post.title }}">
+
+                <h2>{{ post.title }}</h2>
+
+                <p>
+                    {% unless post.winery == "" %}
+                        <span class="winery">{{ post.winery }}</span>
+                    {% endunless %}
+                    {% unless post.vintage == "" %}
+                        <span class="vintage">{{ post.vintage }}</span>
+                    {% endunless %}
+                    {% unless post.region == "" %}
+                        <span class="region">{{ post.region }}</span>
+                    {% endunless %}
+                </p>
+
+                <div class="rating -{{ post.rating }}"></div>
+
+                <span class="type" data-type="{{ post.type }}"></span>
+
+            </a>
+
+        {% endif %}
+
+    {% endfor %}
+
+    <div class="counterInfo" data-counter="{{ counter }}"></div>
+
+</section>
+
+<script src="assets/js/types.js"></script>

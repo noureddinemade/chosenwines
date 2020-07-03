@@ -25,3 +25,14 @@ defaults:
 description: The Chosen Wines blog!
 baseurl:
 url:
+gems:
+- jekyll-paginate-v2
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 8
+  permalink: '/archive/:num/'
+  title: ' Archive of reviews - Page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true

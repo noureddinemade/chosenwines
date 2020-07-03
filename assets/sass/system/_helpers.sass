@@ -62,6 +62,48 @@
     -moz-osx-font-smoothing: grayscale
     font-feature-settings: 'liga'
 
+// Button
+
+%btn
+
+    padding: 12px 22px
+
+    font-size: $fontBase / 1.2
+
+    background-color: $a2
+    color: $dark
+
+    border: $borderW solid $dark
+    box-shadow: 5px 5px 0 $a2
+
+    +transition((box-shadow, background-color), (.1s, .1s))
+
+    // Responsive
+
+    +screen($sm)
+
+        width: 100%
+
+        text-align: center
+
+    // States
+
+    &:hover
+
+        background-color: $primary
+
+        box-shadow: -5px -5px 0 $primary
+
+    // Pseudo
+
+    &:first-child
+
+        // Responsive
+
+        +screen($md)
+
+            display: none
+
 // Hide
 
 @each $label, $size in $hideList

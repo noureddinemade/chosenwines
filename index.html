@@ -1,6 +1,8 @@
 ---
 title: The blog!
 class: home
+pagination: 
+  enabled: true
 ---
 
 <section class="blocks">
@@ -21,7 +23,7 @@ class: home
 
     </div>
 
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
 
         {% assign linkRemove = post.url | remove: "/" | remove: ".html" %}
         {% assign linkSplit = linkRemove | split: "-" %}
@@ -55,5 +57,17 @@ class: home
         </a>
 
     {% endfor %}
+
+    <div class="pagination">
+
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="btn previous">Older Reviews</a>
+        {% endif %}
+
+        {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="btn next">Newer Reviews</a>
+        {% endif %}
+        
+    </div>
 
 </section>

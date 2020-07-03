@@ -69,6 +69,28 @@ main, header, footer, section.quizContainer .quiz .result img {
   margin-left: auto;
   margin-right: auto; }
 
+section.blocks .pagination a.btn, section .title a {
+  padding: 12px 22px;
+  font-size: 18.33333px;
+  background-color: #DEFF7E;
+  color: black;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0 #DEFF7E;
+  transition-property: box-shadow, background-color;
+  transition-duration: 0.1s, 0.1s;
+  transition-delay: 0s;
+  transition-timing-function: linear; }
+  @media screen and (max-width: 800px) {
+    section.blocks .pagination a.btn, section .title a {
+      width: 100%;
+      text-align: center; } }
+  section.blocks .pagination a.btn:hover, section .title a:hover {
+    background-color: #FF99CC;
+    box-shadow: -5px -5px 0 #FF99CC; }
+  @media screen and (max-width: 1024px) {
+    section.blocks .pagination a.btn:first-child, section .title a:first-child {
+      display: none; } }
+
 @media screen and (max-width: 1600px) {
   .hideXL {
     display: none; } }
@@ -104,13 +126,13 @@ body {
   background-color: white;
   background-image: repeating-linear-gradient(-145deg, white, white 5%, #fafafa, #fafafa 5% 10%);
   color: black; }
-  body.about .title h1, body.wineGrapeQuiz .title h1 {
+  body.about .title h1 {
     width: 100%; }
   body.about {
     background-color: #FFFF90;
     background-image: repeating-linear-gradient(-145deg, #FFFF90, #FFFF90 5%, #ffff77, #ffff77 5% 10%); }
   body.wineGrapeQuiz {
-    background-color: #FFC466;
+    background-color: #85FFFF;
     background-image: repeating-linear-gradient(-145deg, #85FFFF, #85FFFF 5%, #9fffff, #9fffff 5% 10%); }
 
 main {
@@ -249,6 +271,7 @@ section {
     section.blocks .group a.item {
       text-align: center; }
       section.blocks .group a.item.about {
+        background-color: #DEFF7E;
         background-image: repeating-linear-gradient(125deg, #DEFF7E, #DEFF7E 40px, #FFFF90, #FFFF90 40px 80px);
         box-shadow: 10px 10px 0 #DEFF7E; }
         @media screen and (max-width: 640px) {
@@ -259,6 +282,7 @@ section {
         section.blocks .group a.item.about:hover {
           box-shadow: -10px -10px 0 #FFFF90; }
       section.blocks .group a.item.quiz {
+        background-color: #85FFFF;
         background-image: repeating-linear-gradient(-125deg, #85FFFF, #85FFFF 40px, #7CFFA8, #7CFFA8 40px 80px);
         box-shadow: 10px 10px 0 #85FFFF; }
         @media screen and (max-width: 640px) {
@@ -287,6 +311,9 @@ section {
             display: block;
             padding: 0 20%;
             font-size: 5vmin !important; } }
+  section.blocks .title h1 {
+    width: 100%;
+    font-size: 4vmin; }
   section.blocks a.item {
     display: flex;
     flex-direction: row;
@@ -431,51 +458,9 @@ section {
           -webkit-transform: scale(1);
           -ms-transform: scale(1);
           transform: scale(1); } }
-  section.single .title {
+  section.blocks .pagination {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-    padding-bottom: 25px;
-    border-bottom: 10px solid black; }
-    @media screen and (max-width: 1024px) {
-      section.single .title {
-        flex-direction: column; } }
-    section.single .title h1 {
-      display: block;
-      padding: 0 5%;
-      text-align: center;
-      text-transform: uppercase; }
-    section.single .title a {
-      padding: 12px 22px;
-      font-size: 18.33333px;
-      background-color: #DEFF7E;
-      color: black;
-      border: 3px solid black;
-      box-shadow: 5px 5px 0 #DEFF7E;
-      transition-property: box-shadow, background-color;
-      transition-duration: 0.1s, 0.1s;
-      transition-delay: 0s;
-      transition-timing-function: linear; }
-      @media screen and (max-width: 800px) {
-        section.single .title a {
-          width: 100%;
-          text-align: center; } }
-      section.single .title a:hover {
-        background-color: #FF99CC;
-        box-shadow: -5px -5px 0 #FF99CC; }
-      @media screen and (max-width: 1024px) {
-        section.single .title a:first-child {
-          display: none; } }
-      section.single .title a.randomEpisode:after, section.single .title a.watchEpisode:after {
-        padding-left: 10px; }
-      section.single .title a.randomEpisode:after {
-        content: '↻'; }
-      section.single .title a.watchEpisode:after {
-        content: '⬎';
-        font-size: 22px; }
-      section.single .title a.watchEpisode.on:after {
-        content: '⬏'; }
+    justify-content: space-around; }
   section.single .vid {
     position: relative;
     display: none;
@@ -925,6 +910,34 @@ section {
       width: 90%; }
     section .rating.-five:after {
       content: '★★★★★'; }
+  section .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    border-bottom: 10px solid black; }
+    @media screen and (max-width: 1024px) {
+      section .title {
+        flex-direction: column; } }
+    section .title h1 {
+      display: block;
+      padding: 0 5%;
+      text-align: center;
+      text-transform: uppercase; }
+    section .title a.randomEpisode:after, section .title a.watchEpisode:after {
+      padding-left: 10px; }
+    section .title a.randomEpisode:after {
+      content: '↻'; }
+    section .title a.watchEpisode:after {
+      content: '⬎';
+      font-size: 22px; }
+    section .title a.watchEpisode.on:after {
+      content: '⬏'; }
+    section .title a.backToBlog:before {
+      content: '⮐';
+      padding-right: 10px;
+      font-size: 15.71429px; }
 
 .-b-sparkling {
   background-color: #ffffdd;
@@ -1144,6 +1157,11 @@ ul.tags li {
     content: ' and '; }
   ul.tags li:last-child:after {
     content: ''; }
+
+ul.wineInfo li.type a {
+  padding-left: 4px;
+  font-size: 15.71429px;
+  font-weight: 600; }
 
 ul.wineInfo li.abv:after {
   content: '% Alcohol'; }

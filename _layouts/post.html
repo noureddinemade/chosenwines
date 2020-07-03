@@ -12,6 +12,12 @@
     {% assign imgLink = linkJoin | replace_first: "-", "" %}
     {% assign imgClass = page.type | replace: "é", "e" | downcase %}
 
+    {% if imgClass == "purple" %}
+        {% assign typeLink = "misc" %}
+    {% else %}
+        {% assign typeLink = imgClass %}
+    {% endif %}
+
     {% include header.html %}
 
     <main>
@@ -20,7 +26,7 @@
 
             <div class="title">
 
-                <a href="/">Back to blog</a>
+                <a href="/" class="backToBlog">Back to blog</a>
 
                 <h1>{{ page.title }}</h1>
 
@@ -56,7 +62,7 @@
 
                     <ul class="wineInfo">
                         <li class="winery">{{ page.winery }}</li>
-                        <li class="type">{{ page.type }}</li>
+                        <li class="type">{{ page.type }} <a href="/{{typeLink}}/">View more {{ page.type }} wines</a></li>
                         <li class="vintage">{{ page.vintage }}</li>
                         <li class="region">{{ page.region }}</li>
                         <li class="abv">{{ page.abv }}</li>
@@ -104,10 +110,10 @@
 
             </div>
 
+            {% unless page.rotate == "0" %}
+
             <div class="images">
 
-                {% unless page.rotate == "0" %}
-
                 <div class="rotate">
 
                     <div class="inner">
@@ -159,10 +165,10 @@
                     </div>
 
                 </div>
-
-                {% endunless %}
 
             </div>
+
+            {% endunless %}
 
         </section>
 
