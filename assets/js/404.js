@@ -6,7 +6,7 @@ const reviews   = [
     'inara-pinot-gris',
     'drink-the-sun',
     'big-fine-girl',
-    'two-pairs',
+    'two-pairs-grenache',
     'purple-reign',
     'ded-reckoning',
     'gris-diddly-dee',
