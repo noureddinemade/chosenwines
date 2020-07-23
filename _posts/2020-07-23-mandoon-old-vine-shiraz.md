@@ -11,7 +11,7 @@ rating: "four"
 pairings: [Red meat, Smokey dishes, Rich Dishes]
 tags: [Rich, Berries, Jammy]
 permalink: :title:output_ext
-comparison: true
+comparison: false
 comparisonLink: "maneggiare-con-cura"
 comparisonTitle: "Maneggiare Con Cura"
 ---
