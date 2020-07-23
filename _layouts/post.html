@@ -30,13 +30,15 @@
 
                 <h1>{{ page.title }}</h1>
 
-                <a class="watchEpisode">Watch Episode</a>
+                <a class="watchEpisode" style="{% unless page.video != false %}opacity:0;{% endunless %}">Watch Episode</a>
 
             </div>
 
             <div class="vid">
-                <iframe src='https://www.youtube.com/embed/{{ page.video }}' frameborder='0' allowfullscreen></iframe>
-            </div>
+                {% unless page.video == false %}
+                    <iframe src='https://www.youtube.com/embed/{{ page.video }}' frameborder='0' allowfullscreen></iframe>
+                {% endunless %}
+            </div>      
 
             <div class="group">
 
@@ -47,6 +49,12 @@
                 </div>
 
                 <div class="col -text">
+
+                    {% unless page.comparison != true %}
+                        <span class="notice">
+                            We compared this wine to <a href="{{ page.comparisonLink }}.html">{{ page.comparisonTitle }}</a>.
+                        </span>
+                    {% endunless %}
 
                     {{ content }}
 
@@ -110,7 +118,7 @@
 
             </div>
 
-            {% unless page.rotate == "0" %}
+            {% unless page.rotate == false %}
 
             <div class="images">
 

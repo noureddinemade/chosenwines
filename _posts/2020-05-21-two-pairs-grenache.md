@@ -11,7 +11,7 @@ rating: "fourhalf"
 pairings: [Cheese board, Sunday roast]
 tags: [Soft tannins, Red fruit, Female winemaker, Autumn red]
 permalink: :title:output_ext
-rotate: "0"
+rotate: false
 ---
 
 This is the first red wine we&rsquo;ve reviewed and also had in quite a while. And what a great wine to get you back to the dark side.

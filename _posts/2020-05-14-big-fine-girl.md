@@ -11,7 +11,7 @@ rating: "four"
 pairings: [Fish and chips, Halloumi]
 tags: [Aromatic, Citrus fruits, Acidic]
 permalink: :title:output_ext
-rotate: "0"
+rotate: false
 ---
 
 Jeanneret winery started as a passion project between two friends who were able to acquire their vineyard in Clare Valley in 1992.

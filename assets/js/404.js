@@ -12,7 +12,11 @@ const reviews   = [
     'gris-diddly-dee',
     'the-winery-of-good-hope-chenin-blanc',
     'vortex',
-    'rosatea-field-blend'
+    'rosatea-field-blend',
+    'o',
+    'bonkers',
+    'mandoon-old-vine-shiraz',
+    'maneggiare-con-cura'
 
     ];
 

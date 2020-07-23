@@ -535,6 +535,14 @@ section {
               -webkit-transform: scale(1);
               -ms-transform: scale(1);
               transform: scale(1); } }
+      section.single .group .col.-text span.notice {
+        display: inline-block;
+        margin: 25px 0;
+        font-size: 26px;
+        font-weight: 600;
+        border-bottom: 3px solid #FFFF33; }
+        section.single .group .col.-text span.notice a {
+          text-transform: none; }
     section.single .group p:first-child {
       margin-top: 50px; }
   section.single .details {
