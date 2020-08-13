@@ -18,7 +18,8 @@ const reviews   = [
     'mandoon-old-vine-shiraz',
     'maneggiare-con-cura',
     'late-harvest-lamour',
-    'orange'
+    'orange',
+    'alamos-malbec'
 
     ];
 
