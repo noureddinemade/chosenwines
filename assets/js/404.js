@@ -19,7 +19,8 @@ const reviews   = [
     'maneggiare-con-cura',
     'late-harvest-lamour',
     'orange',
-    'alamos-malbec'
+    'alamos-malbec',
+    'preservative-free-sauvignon-blanc'
 
     ];
 
