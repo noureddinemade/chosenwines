@@ -11,7 +11,7 @@ rating: "threehalf"
 pairings: [Pork, Curry]
 tags: [Organic, Sweet, Fruity]
 permalink: :title:output_ext
-comparison: false
+comparison: true
 comparisonLink: "natures-step-sauvignon-blanc"
 comparisonTitle: "Nature's Step Sauvignon Blanc"
 ---
