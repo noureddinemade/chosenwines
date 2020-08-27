@@ -20,7 +20,8 @@ const reviews   = [
     'late-harvest-lamour',
     'orange',
     'alamos-malbec',
-    'preservative-free-sauvignon-blanc'
+    'preservative-free-sauvignon-blanc',
+    'vivo'
 
     ];
 
