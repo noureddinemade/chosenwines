@@ -21,7 +21,10 @@ const reviews   = [
     'orange',
     'alamos-malbec',
     'preservative-free-sauvignon-blanc',
-    'vivo'
+    'vivo',
+    'rose-is-the-new-black',
+    'petit-sios',
+    'old-school-blanc'
 
     ];
 
