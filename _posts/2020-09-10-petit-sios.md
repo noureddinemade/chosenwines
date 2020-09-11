@@ -12,7 +12,7 @@ pairings: [Umami, Spicy dishes, Katsu curry]
 tags: [Aromatic, Bold, Peaches]
 permalink: :title:output_ext
 comparison: true
-comparisonLink: "old-school-blanc"
+comparisonLink: "old-school-blanc-by-any-natural-means-necessary"
 comparisonTitle: "Old School Blanc By Any (Natural Means Necessary)"
 rotate: false
 ---
