@@ -24,7 +24,9 @@ const reviews   = [
     'vivo',
     'rose-is-the-new-black',
     'petit-sios',
-    'old-school-blanc'
+    'old-school-blanc-by-any-natural-means-necessary',
+    'tarot-pinot-grigio'
+
 
     ];
 
