@@ -25,8 +25,8 @@ const reviews   = [
     'rose-is-the-new-black',
     'petit-sios',
     'old-school-blanc-by-any-natural-means-necessary',
-    'tarot-pinot-grigio'
-
+    'tarot-pinot-grigio',
+    'la-ruchette-doree'
 
     ];
 
