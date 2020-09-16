@@ -26,7 +26,8 @@ const reviews   = [
     'petit-sios',
     'old-school-blanc-by-any-natural-means-necessary',
     'tarot-pinot-grigio',
-    'la-ruchette-doree'
+    'la-ruchette-doree',
+    'gratis'
 
     ];
 
